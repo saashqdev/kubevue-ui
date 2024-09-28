@@ -1,7 +1,7 @@
-import { getStyle, getScrollSize } from 'cloud-ui.kubevue/src/base/utils/style';
-import { ellipsisTitle } from 'proto-ui.kubevue/src/base/directives';
-import { deepCopy } from 'cloud-ui.kubevue/src/base/utils/index';
-import i18n from 'cloud-ui.kubevue/src/u-table-view.vue/i18n';
+import { getStyle, getScrollSize } from 'cloud-ui.vusion/src/base/utils/style';
+import { ellipsisTitle } from 'proto-ui.vusion/src/base/directives';
+import { deepCopy } from 'cloud-ui.vusion/src/base/utils/index';
+import i18n from 'cloud-ui.vusion/src/u-table-view.vue/i18n';
 
 export default {
     name: 'u-table-view',
@@ -51,22 +51,22 @@ export default {
             default: 'fixed',
         },
         border: { type: Boolean, default: false },
-        xScroll: { type: Boolean, default: false }, // 用来处理当表格出现水平滚动条时，默认scroll事件走表格的水平滚动
+        xScroll: { type: Boolean, default: false }, // Used to handle the horizontal scroll bar when the table appears. The default scroll event is to scroll horizontally.
         width: [String, Number],
         visible: { type: Boolean, default: true },
-        pattern: { type: String, default: 'normal' }, // 特殊显示内容情形 三种形式 瀑布流 暂未支持
-        limit: { type: Number, default: 5 }, // 用来默认显示limit条数据
+        pattern: { type: String, default: 'normal' }, // Special display content situation Three forms of waterfall flow are not supported yet
+        limit: { type: Number, default: 5 }, // Used to display limit data by default
         limitText: { type: String, default() { return this.$t('limitText'); } },
         allText: { type: String, default() { return this.$t('allText'); } },
         defaultText: { type: String, default: '-' },
         expandPattern: { type: String, default: 'toggle' },
-        // mode: { type: String, default: 'self' }, // fixed布局的时候计算方式是走原生表格的还是走自定义计算规则配置项
-        showHeader: { type: Boolean, default: true }, // 展示表格头部
-        loadText: { type: String, default: '' }, // 加载状态显示的文字
-        rowClassName: { type: Function, default() { return ''; } }, // 自定义表格单行的样式
+        // mode: { type: String, default: 'self' }, // When using fixed layout, is the calculation method to use the native table or the custom calculation rule configuration item
+        showHeader: { type: Boolean, default: true }, // Display table header
+        loadText: { type: String, default: '' }, // Text displayed when loading
+        rowClassName: { type: Function, default() { return ''; } }, // Customize the style of a single row in a table
         color: String,
-        forceFilter: { type: Boolean, default: false }, // 用来强制在数据源发生变化情况下就进行过滤
-        forceSort: { type: Boolean, default: false }, // 用来强制在数据源发生变化的情况下进行排序
+        forceFilter: { type: Boolean, default: false }, // Used to force filtering when the data source changes
+        forceSort: { type: Boolean, default: false }, // Used to force sorting when the data source changes
         showColor: {
             type: Boolean,
             default: false,
@@ -83,31 +83,31 @@ export default {
             columnsWidth: [],
             currentRadioValue: this.radioValue,
             fixedRightWidth: [],
-            copyTdata: [], // tdata的复制版本主要用来过滤
-            tableWidth: undefined, // display值为none的时候需要特殊处理这个值
+            copyTdata: [], // The copied version of tdata is mainly used for filtering
+            tableWidth: undefined, //When the display value is none, this value needs to be handled specially
             bodyHeight: undefined,
             maxBodyHeight: undefined,
             minBodyHeight: undefined,
-            fixedTableHeight: undefined, // 当固定列和表格的高度一起使用的时候
+            fixedTableHeight: undefined, // When fixed columns and table height are used together
             fixedMaxTableHeight: undefined,
             fixedMinTableHeight: undefined,
-            bodyWidth: undefined, // 当出现垂直滚动条的时候，需要减去滚动条的宽度，确保不会出现水平滚动条
+            bodyWidth: undefined, // When a vertical scroll bar appears, you need to subtract the width of the scroll bar to ensure that no horizontal scroll bar appears
             scrollWidth: undefined,
-            over: false, // 当mouseover在表格时，此值为true
-            fixedHeight: [], // 当fixed时表格行的高度值
-            fixedLeftWidth: null, // fixed 时表格左部分宽度和的值
-            rightColumns: [], // fixed值是right时需要重构columns顺序
-            rightColumnsWidth: [], // fixed值是right时需要重构columnsWidth顺序
-            isXScroll: false, // 判断是否会出现水平滚动条的情况
-            isYScroll: false, // 判断添加height属性后，垂直方向是否应该添加滚动条
-            fixedHover: false, // 用来实现党左右列固定的时候，hover到左右列的时候，阴影效果能够同步实现
-            // filterValue: undefined, // 用来记录当前filter选项的值，方便在过滤的时候点击更多显示正确的数据
-            // filterColumn: undefined, // 用来记录当前filter列，方便在过滤的时候点击更多显示正确的数据
-            filterTdata: undefined, // 用来记录当前filter列过滤后符合条件的所有数据
-            currentSortColumn: undefined, // 表示当前排序列
+            over: false, // When mouseover is in the table, this value is true
+            fixedHeight: [], // The height of the table row when fixed
+            fixedLeftWidth: null, // The sum of the width of the left part of the table when fixed
+            rightColumns: [], // When the fixed value is right, the columns order needs to be reconstructed
+            rightColumnsWidth: [], // When the fixed value is right, the columnsWidth order needs to be reconstructed
+            isXScroll: false, // Determine whether a horizontal scroll bar will appear
+            isYScroll: false, // Determine whether a scroll bar should be added in the vertical direction after adding the height attribute
+            fixedHover: false, // Used to realize that when the left and right columns are fixed, the shadow effect can be realized synchronously when hovering to the left and right columns
+            // filterValue: undefined, // Used to record the value of the current filter option, so that you can click more to display the correct data when filtering
+            // filterColumn: undefined, // Used to record the current filter column, so that you can click more to display the correct data when filtering
+            filterTdata: undefined, // used to record all data that meets the conditions after filtering the current filter column
+            currentSortColumn: undefined, // indicates the current sort column
             currentSort: this.defaultSort,
             // scrollDiff: false,
-            rootBottomBorder: false, // 解决tr加border-bottom带来样式上的异常问题，采用给根元素添加伪元素的方式实现
+            rootBottomBorder: false, // Solve the abnormal style problem caused by adding border-bottom to tr by adding pseudo-elements to the root element
         };
     },
     directives: { ellipsisTitle },
@@ -158,7 +158,7 @@ export default {
             return this.tdata.every((item) => item.disabled);
         },
         showColumns() {
-            // visible属性为true的列集合
+            // A collection of columns whose visible attribute is true
             return this.columns.filter((column) => column.visible);
         },
         radioColumn() {
@@ -177,7 +177,7 @@ export default {
                 // this.copyTdata = this.initTableData();
                 const flag = this.showColumns.some((column) => column.filter);
                 if (flag && this.forceFilter) {
-                    // 在有filter列的情况下  数据如果发生变化是需要对数据进行过滤显示的
+                    // If the data changes in the filter column, it is necessary to filter and display the data
                     let columnIndex;
                     if (this.defaultFilter.title === undefined) {
                         this.showColumns.some((item, index) => {
@@ -214,7 +214,7 @@ export default {
 
                 if (this.currentSortColumn && this.forceSort) {
                     const order = this.currentSort.order === 'asc' ? -1 : 1;
-                    // 此处有问题 异步执行 数据改变不希望我们在执行排序操作
+                    // There is a problem here. Asynchronous execution of data changes does not want us to perform sorting operations.
                     this.sortData(this.currentSortColumn, order, 'change');
                 }
                 this.handleResize();
@@ -260,11 +260,11 @@ export default {
             this.handleResize();
         },
         loading(newVal) {
-            // 比较复杂情况下，可能会先赋值data，再将loading设为false
+            // In more complex cases, data may be assigned first, and then loading is set to false
             this.handleResize();
         },
         columns() {
-            // 列表的列修改会导致变化 列表设置
+            // List column modification will result in changes to list settings
             this.handleResize();
         },
         showColumns() {
@@ -312,7 +312,7 @@ export default {
             }
             return true;
         },
-        // 展示表格单元格具体内容函数 现在规则是row[column.label]是对象，数组全部不展示内容，只展示基本类型
+        // Display the specific content of the table cell function. The current rule is that row[column.label] is an object, and the array does not display the content at all, only the basic type is displayed.
         showContent(column, value) {
             if (value === 0)
                 return value;
@@ -340,12 +340,12 @@ export default {
             }
         },
         sortData(column, order, type) {
-            // type 字段在data发生变化时传入，此时不能抛sort-change方法，防止死循环
+            // The type field is passed in when data changes. The sort-change method cannot be called at this time to prevent an infinite loop
             const label = column.label;
             const sortRemoteMethod = this.sortRemoteMethod || column.sortRemoteMethod;
             const sortMethod = this.sortMethod || column.sortMethod;
             if (sortRemoteMethod) {
-                // 异步执行排序方法
+                // Asynchronous execution sorting method
                 sortRemoteMethod(label, this.currentSort.order, column);
             } else {
                 if (sortMethod)
@@ -381,7 +381,7 @@ export default {
                 if (!row.disabled)
                     noDisabledCount++;
             });
-            // 这里有坑 行数据的checkbox有disabled状态 点击全选 可以是全选的
+            // Here, the checkboxes for the pit row data are in disabled state. Click Select All to select all.
             if (selectionIndexes.length === noDisabledCount && selectionIndexes.length !== 0)
                 this.allSel = true;
             else
@@ -407,8 +407,8 @@ export default {
         },
         initTableData(value) {
             let tdata = [];
-            // 现在是将原始数据进行了深拷贝操作 现在的原因是不进行深拷贝会影响到原始数据，会添加一些新的属性，导致原始数据的变化
-            // 1 需不需要进行深拷贝（如何解决影响原始数据变化的问题）2 进行深拷贝，数据变化需不需要$emit事件
+            // Now the original data is deep copied. The reason now is that not making a deep copy will affect the original data, adding some new attributes, causing changes in the original data.
+            // 1 Is it necessary to perform a deep copy (how to solve the problem of affecting the change of the original data) 2 Perform a deep copy, does the data change require $emit events
             const copyData = deepCopy([], this.data);
             this.copyTdata = copyData;
             copyData.forEach((item, index) => {
@@ -453,7 +453,7 @@ export default {
             }
             if (!copyData.length)
                 this.allSel = false;
-            // 固定左右列同步阴影实现方案
+            //Fixed left and right column synchronization shadow implementation scheme
             if (this.fixedLeftColumns.length > 0 || this.fixedRightColumns.length > 0)
                 tdata.forEach((item) => item.hover = false);
 
@@ -469,20 +469,20 @@ export default {
         handleResize() {
             if (this.layout !== 'auto') {
                 this.$nextTick(() => {
-                    // 判断是否会出现水平滚动条
+                    // Determine whether a horizontal scroll bar will appear
                     let parentWidth;
                     parentWidth = this.$el.offsetWidth;
                     let tableWidth = this.$refs.body && this.$refs.body.offsetWidth;
                     if (parentWidth === 0) {
-                        // 初始表格是隐藏的需要特殊处理的，此时上面两个值默认是0
+                        // The initial table is hidden and needs special processing. The above two values   default to 0.
                         let parentNode = this.$refs.root.parentNode;
                         while (parentNode && parentNode.offsetWidth === 0)
                             parentNode = parentNode.parentNode;
                         parentWidth = tableWidth = parentNode.offsetWidth || 0;
                     }
 
-                    // 分别获取有百分比 具体数值 和无width的column集合
-                    // 获取具体数值和非数值的列集合
+                    // Get the column sets with specific percentage values   and without width respectively
+                    // Get a set of columns with specific values   and non-values
                     const percentColumns = [];
                     const valueColumns = [];
                     const noWidthColumns = [];
@@ -498,7 +498,7 @@ export default {
 
                     let leaveWidth = 0;
 
-                    // 全部都是百分数
+                    // All are percentages
                     if (percentColumns.length === this.showColumns.length) {
                         let sumWidth = 0;
                         this.showColumns.forEach((item) => {
@@ -511,7 +511,7 @@ export default {
                         }
                     }
 
-                    // 全部是数值的情况 并且和是小于当前的总宽度 特殊情况
+                    // Special case where all values   are numeric and the sum is less than the current total width
                     let isAutoWidthChange = false;
                     if (valueColumns.length === this.showColumns.length) {
                         let sumWidth = 0;
@@ -554,7 +554,7 @@ export default {
                         this.tableWidth = parseFloat(getStyle(parentNode, 'width')) + 'px';
                     } else
                         this.tableWidth = parseFloat(getStyle(this.$el, 'width')) + 'px';
-                    // 由于百分数可能带来小数点问题，引起浮点数精度问题 典型的0.2+0.1不等于0.3问题，需要特殊处理这里的比较
+                    // Since percentages may cause decimal point problems, causing floating point precision problems, the typical 0.2+0.1 is not equal to 0.3, the comparison here needs special processing
 
                     if (parseFloat(this.tableWidth) - parentWidth <= 0) {
                         this.tableWidth = parentWidth;
@@ -597,12 +597,12 @@ export default {
 
                     this.columnsWidth = [];
 
-                    // 在点击排序和过滤的时候 不需要再减去一次滚动条的宽度
-                    // 处理有滚动条的情况下 宽度问题
+                    // When clicking sorting and filtering, there is no need to subtract the scroll bar width again
+                    // Handle the width problem when there is a scroll bar
                     let diffCurrentWidth = parseFloat(this.tableWidth);
                     this.showColumns.forEach((item, index) => {
-                        // 存储item.currentWidth可能变化前的值，是由于如果出现水平滚动条，会导致item.currentWidth的值发生变化，
-                        // 这时候，组成tbody的表格对应的col最后一个的宽度应该是本身宽度减去滚动条的宽度，不然会导致对不齐的问题出现
+                        //Store the value of item.currentWidth before it may change, because if a horizontal scroll bar appears, the value of item.currentWidth will change.
+                        // At this time, the width of the last col corresponding to the table that makes up the tbody should be its own width minus the width of the scroll bar, otherwise it will cause misalignment problems
                         diffCurrentWidth = Math.abs(diffCurrentWidth - parseFloat(item.currentWidth));
                         if (index === this.showColumns.length - 1 && diffCurrentWidth > 1 && !isAutoWidthChange){
                             this.columnsWidth.push(parseFloat(item.currentWidth) + this.scrollWidth);
@@ -628,7 +628,7 @@ export default {
             this.defaultFilter.title = column.title;
             this.defaultFilter.value = option.value;
             this.defaultFilter.column = column;
-            // 需要考虑数据为空 进行过滤 异步加载数据的情况
+            // Need to consider the case where the data is empty to filter and load data asynchronously
             this.filterTdata = this.tdata = this.copyTdata.filter((item) => {
                 if (column.filterMethod)
                     return column.filterMethod(option.value, item[column.label], item, column);
@@ -645,8 +645,8 @@ export default {
             });
         },
         /**
-         * 选中或者取消事件
-         * @param {row} 当前选中行数据
+         * Select or cancel events
+         * @param {row} currently selected row data
          */
         changeSelect(row) {
             const selection = this.getSelection();
@@ -659,7 +659,7 @@ export default {
         },
         rowClick(row, index) {
             if (this.radioColumn && !row.disabled) {
-                // 单选按钮存在的情况下要满足点击行能整个选中
+                // If a radio button exists, the clicked row must be selected
                 this.currentRadioValue = row[this.radioValueField];
             }
             this.$emit('row-click', {
@@ -741,7 +741,7 @@ export default {
             else
                 copyRowData.iconName = 'down';
             this.tdata.splice(index, 1, copyRowData);
-            // 由于点击会导致页面出现滚动条 表格fixed布局不会有变化导致表格显示有问题 需要重新计算下布局
+            // Since clicking will cause a scroll bar to appear on the page, the table fixed layout will not change, resulting in problems with the table display and the layout needs to be recalculated
             this.handleResize();
             this.$emit('toggle-expand', {
                 index,
@@ -749,7 +749,7 @@ export default {
                 row: copyRowData,
             });
         },
-        bodyScroll(e) {
+        bodyScroll(s) {
             this.$refs.head.scrollLeft = e.target.scrollLeft;
             if (this.fixedLeftColumns.length > 0)
                 this.$refs.lefttable.scrollTop = e.target.scrollTop;

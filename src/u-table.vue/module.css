@@ -4,8 +4,8 @@
     table-layout: fixed;
     width: 100%;
     background: white;
-    word-break: keep-all; /* 不换行 */
-    white-space: nowrap; /* 不换行 */
+    word-break: keep-all; /* No line breaks */
+    white-space: nowrap; /* No line breaks */
 }
 
 .root th {

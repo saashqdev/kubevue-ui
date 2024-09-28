@@ -1,94 +1,94 @@
-# 表格 Table
+# Table
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-table>
     <thead>
         <tr>
-            <th width="20%">序号</th>
-            <th width="20%">姓名</th>
-            <th>地址</th>
-            <th width="20%">出生日期</th>
+            <th width="20%">Serial Number</th>
+            <th width="20%">Name</th>
+            <th>Address</th>
+            <th width="20%">Date of Birth</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
-            <td>张三</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦</td>
+            <td>Homer Simpson</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>小明</td>
-            <td>浙江省杭州市滨江区江虹路459号英飞特科技园</td>
+            <td>Marge Simpson</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>李四</td>
-            <td>浙江省杭州市滨江区秋溢路606号西可科技园</td>
+            <td>Bart Simpson</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>李华</td>
-            <td>浙江省杭州市滨江区长河路590号东忠科技园</td>
+            <td>Dave Cork</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>王五</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦二期</td>
+            <td>John Doe</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>1991-05-28</td>
         </tr>
     </tbody>
 </u-table>
 ```
 
-### 样式扩展
+### Style Extensions
 
 ``` html
 <u-table ghost>
     <thead>
         <tr>
-            <th width="20%">序号</th>
-            <th width="20%">姓名</th>
-            <th>地址</th>
-            <th width="20%">出生日期</th>
+            <th width="20%">Serial Number</th>
+            <th width="20%">Name</th>
+            <th>Address</th>
+            <th width="20%">Date of Birth</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
-            <td>张三</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦</td>
+            <td>Homer Simpson</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>小明</td>
-            <td>浙江省杭州市滨江区江虹路459号英飞特科技园</td>
+            <td>Marge Simpson</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>李四</td>
-            <td>浙江省杭州市滨江区秋溢路606号西可科技园</td>
+            <td>Bart Simpson</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>李华</td>
-            <td>浙江省杭州市滨江区长河路590号东忠科技园</td>
+            <td>Dave Cork</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>王五</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦二期</td>
+            <td>John Doe</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>1991-05-28</td>
         </tr>
     </tbody>
@@ -99,88 +99,88 @@
 <u-table ghost striped>
     <thead>
         <tr>
-            <th width="20%">序号</th>
-            <th width="20%">姓名</th>
-            <th>地址</th>
-            <th width="20%">出生日期</th>
+            <th width="20%">Serial Number</th>
+            <th width="20%">Name</th>
+            <th>Address</th>
+            <th width="20%">Date of Birth</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
-            <td>张三</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦</td>
+            <td>Homer Simpson</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>小明</td>
-            <td>浙江省杭州市滨江区江虹路459号英飞特科技园</td>
+            <td>Marge Simpson</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>李四</td>
-            <td>浙江省杭州市滨江区秋溢路606号西可科技园</td>
+            <td>Bart Simpson</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>李华</td>
-            <td>浙江省杭州市滨江区长河路590号东忠科技园</td>
+            <td>Dave Cork</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>王五</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦二期</td>
+            <td>John Doe</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>1991-05-28</td>
         </tr>
     </tbody>
 </u-table>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-table ghost size="small">
     <thead>
         <tr>
-            <th width="20%">序号</th>
-            <th width="20%">姓名</th>
-            <th>地址</th>
-            <th width="20%">出生日期</th>
+            <th width="20%">Serial Number</th>
+            <th width="20%">Name</th>
+            <th>Address</th>
+            <th width="20%">Date of Birth</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>1</td>
-            <td>张三</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦</td>
+            <td>Homer Simpson</td>
+            <td>Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>小明</td>
-            <td>浙江省杭州市滨江区江虹路459号英飞特科技园</td>
+            <td>Marge Simpson</td>
+            <td>Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>李四</td>
-            <td>浙江省杭州市滨江区秋溢路606号西可科技园</td>
+            <td>Bart Simpson</td>
+            <td>Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>李华</td>
-            <td>浙江省杭州市滨江区长河路590号东忠科技园</td>
+            <td>Dave Cork</td>
+            <td>Springfield Technology Park, 29 Camden Street, Toronto, Ontario</td>
             <td>1991-05-28</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>王五</td>
-            <td>浙江省杭州市滨江区网商路599号网易大厦二期</td>
+            <td>John Doe</td>
+            <td>Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario</td>
             <td>1991-05-28</td>
         </tr>
     </tbody>
@@ -193,4 +193,4 @@
 
 #### (default)
 
-在表格中插入`<thead>`、`<tbody>`、`<tr>`、`<th>`、`<td>`
+Insert `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>` into the table

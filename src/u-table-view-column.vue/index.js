@@ -18,9 +18,9 @@ export default {
         width: String,
         minWidth: { type: [String, Number], default: '80' },
         formatter: Function,
-        sortMethod: Function, // 准备废弃的属性
-        sortRemoteMethod: Function, // 准备废弃的属性
-        filterMethod: Function, // 准备废弃的属性
+        sortMethod: Function, // Prepare deprecated properties
+        sortRemoteMethod: Function, // Prepare to discard properties
+        filterMethod: Function, // Prepare to discard properties
         placement: {
             type: String,
             default: 'bottom-start',
@@ -34,12 +34,12 @@ export default {
         fixed: { type: String, validator: (value) => ['left', '', 'right'].includes(value) },
         defaultText: { type: String, default: '-' },
         expandIcon: { type: String, default: 'right-down', validator: (value) => ['up-down', 'right-down'].includes(value) },
-        expandStrict: { type: Boolean, default: false }, // 开启expand严格匹配模式， 只有对应的label字段有值才显示icon
-        expandLabel: String, // 配合expand模式使用，可能出现字段组合的情况
-        expandClass: String, // 自定义expand的icon样式
-        headClass: { type: String, default: '' }, // 满足自定义头部样式需求
-        columnClass: { type: String }, // 满足自定义表格列样式需求
-        visible: { type: Boolean, default: true }, // 特殊业务场景下某些列的展示需要根据条件来判断
+        expandStrict: { type: Boolean, default: false }, // Turn on the expand strict matching mode. The icon will be displayed only if the corresponding label field has a value.
+        expandLabel: String, // When used with expand mode, field combinations may occur.
+        expandClass: String, // Customize the icon style of expand
+        headClass: { type: String, default: '' }, // Meet custom head style requirements
+        columnClass: { type: String }, // Meet custom table column style requirements
+        visible: { type: Boolean, default: true }, // The display of certain columns in special business scenarios needs to be judged based on conditions
     },
     mixins: [Emitter],
     data() {
@@ -52,7 +52,7 @@ export default {
             parentVM: undefined,
             currentWidth: this.getWidth(),
             copyWidth: this.getWidth(),
-            fixedWidth: undefined, // 当表格高度固定和表格列固定一起使用的时候，这时候有的列的宽度需要特殊做处理，这时候在固定右列的时候，宽度需要时原来的正常宽度，不能减去滚动条的宽度
+            fixedWidth: undefined, // When table height fixed and table column fixed are used together, the width of some columns needs special processing. At this time, when the right column is fixed, the width needs to be the original normal width, and the width of the scroll bar cannot be subtracted.
         };
     },
     watch: {
@@ -66,7 +66,7 @@ export default {
             this.currentWidth = this.copyWidth = this.getWidth(newValue);
         },
         type() {
-            // 使用v-if的时候会复用现有的元素，这时候会存在类型变化的情况，导致宽度变化，需要特殊处理初始化宽度大小
+            // When using v-if, existing elements will be reused. At this time, the type will change, causing the width to change. Special processing is required to initialize the width size.
             this.currentWidth = this.copyWidth = this.getWidth();
         },
     },

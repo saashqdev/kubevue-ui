@@ -174,7 +174,7 @@
     box-sizing: border-box;
     white-space: normal;
     word-break: break-all;
-    /* 解决在火狐浏览器下英文换行显示问题 */
+    /* Solve the problem of English line wrapping display in Firefox browser */
     word-wrap: break-word;
     line-height: 1.4;
 }
@@ -187,7 +187,7 @@
     z-index: 1065;
     background: white;
     border: 1px solid #f1f1f1;
-    /* 对于一些很长的过滤 有最大高度的限制 */
+    /* For some very long filters there is a maximum height limit */
     max-height: 182px;
     overflow-y: auto;
     /* margin-left: -10px; */

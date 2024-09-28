@@ -2,7 +2,7 @@
     :open="open" :hide-delay="hideDelay" :follow-cursor="followCursor" :offset="offset" v-on="$listeners" :disabled="disabled || !hasContent">
     <slot></slot>
     <div :class="[$style.root, $style.popper]" ref="popperEl" slot="popper">
-        <div :class="$style.arrow"></div><!-- popper在某些场景下可以移动该元素 -->
+        <div :class="$style.arrow"></div><!-- popper can move the element in some scenarios -->
         <slot name="popper">
             <div :class="[$style.body, $style.wrap]" :size="size">
                 <slot name="body">

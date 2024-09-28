@@ -1,80 +1,80 @@
-# 工具提示 Tooltip
+# Tooltip
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-linear-layout>
-    <u-tooltip content="使用 content 属性比较方便">
-        <u-button>使用属性</u-button>
+    <u-tooltip content="It is more convenient to use the content attribute">
+        <u-button>Use attributes</u-button>
     </u-tooltip>
     <u-tooltip>
-        <u-button>使用 slot</u-button>
-        <span slot="content">使用 content <u-link>slot</u-link> 更加灵活</span>
+        <u-button>Use slot</u-button>
+        <span slot="content">Use content <u-link>slot</u-link> for more flexibility</span>
     </u-tooltip>
-    <u-button v-tooltip="'使用指令最简单'">使用指令</u-button>
+    <u-button v-tooltip="'The easiest way to use commands'">Use commands</u-button>
 </u-linear-layout>
 ```
 
-### 触发方式
+### Trigger Method
 
 ``` html
 <u-linear-layout>
     <u-tooltip content="Tooltip" trigger="hover">
-        <u-button>hover（默认）</u-button>
+        <u-button>Hover (default)</u-button>
     </u-tooltip>
     <u-tooltip content="Tooltip" trigger="click">
-        <u-button>click</u-button>
+        <u-button>Click</u-button>
     </u-tooltip>
     <u-tooltip content="Tooltip" trigger="right-click">
-        <u-button>right-click</u-button>
+        <u-button>Right-Click</u-button>
     </u-tooltip>
     <u-tooltip content="Tooltip" trigger="double-click">
-        <u-button>double-click</u-button>
+        <u-button>Double-Click</u-button>
     </u-tooltip>
 </u-linear-layout>
 ```
 
-#### 指定偏移距离
+#### Specify Offset Distance
 ``` html
 <u-linear-layout>
     <u-tooltip offset="10" content="Tooltip" trigger="hover">
-        <u-button>hover（默认）</u-button>
+        <u-button>Hover (default)</u-button>
     </u-tooltip>
     <u-tooltip offset="10% 10px" content="Tooltip" trigger="hover">
-        <u-button>hover（默认）</u-button>
+        <u-button>Hover (default)</u-button>
     </u-tooltip>
 </u-linear-layout>
 ```
 
-#### 延迟消失(hover)
+#### Delayed Disappearance (hover)
 ``` html
 <u-linear-layout>
     <u-tooltip content="Tooltip" trigger="hover" :hide-delay="300">
-        <u-button>hover（默认）</u-button>
+        <u-button>Hover (default)</u-button>
     </u-tooltip>
 </u-linear-layout>
 ```
 
-#### 指令形式
+#### Command Form
 
 ``` html
 <u-linear-layout>
-    <u-button v-tooltip="'Tooltip'">hover（默认）</u-button>
-    <u-button v-tooltip.click="'Tooltip'">click</u-button>
-    <u-button v-tooltip.right-click="'Tooltip'">right-click</u-button>
-    <u-button v-tooltip.double-click="'Tooltip'">double-click</u-button>
+    <u-button v-tooltip="'Tooltip'">Hover (default)</u-button>
+    <u-button v-tooltip.click="'Tooltip'">Click</u-button>
+    <u-button v-tooltip.right-click="'Tooltip'">Right-Click</u-button>
+    <u-button v-tooltip.double-click="'Tooltip'">Double-Click</u-button>
 </u-linear-layout>
 ```
 
-#### 手动触发
+#### Manual Trigger
 
-也可以手动触发工具提示的弹出/隐藏：
+Tooltip popup/hide can also be triggered manually:
 
-``` vue
+```vue
 <template>
 <u-tooltip content="Tooltip" trigger="manual" :open.sync="open">
-    <u-button @click="open = !open">{{ open ? '隐藏' : '弹出' }}</u-button>
+    <u-button @click="open = !open">{{ open ? 'Hide' : 'Pop' }}</u-button>
 </u-tooltip>
 </template>
 
@@ -89,85 +89,84 @@ export default {
 </script>
 ```
 
-### 弹出位置
-
+### Popup location
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
         <u-tooltip content="Tooltip" placement="top-start">
-            <u-button>top-start</u-button>
+            <u-button>Top-Start</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="top">
-            <u-button>top</u-button>
+            <u-button>Top</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="top-end">
-            <u-button>top-end</u-button>
+            <u-button>Top-End</u-button>
         </u-tooltip>
     </u-linear-layout>
     <u-linear-layout>
         <u-tooltip content="Tooltip" placement="left-start">
-            <u-button>left-start</u-button>
+            <u-button>Left-Start</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="left">
-            <u-button>left</u-button>
+            <u-button>Left</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="left-end">
-            <u-button>left-end</u-button>
+            <u-button>Left-End</u-button>
         </u-tooltip>
     </u-linear-layout>
     <u-linear-layout>
         <u-tooltip content="Tooltip" placement="right-start">
-            <u-button>right-start</u-button>
+            <u-button>Right-Start</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="right">
-            <u-button>right</u-button>
+            <u-button>Right</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="right-end">
-            <u-button>right-end</u-button>
+            <u-button>Right-End</u-button>
         </u-tooltip>
     </u-linear-layout>
     <u-linear-layout>
         <u-tooltip content="Tooltip" placement="bottom-start">
-            <u-button>bottom-start</u-button>
+            <u-button>Bottom-Start</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="bottom">
-            <u-button>bottom</u-button>
+            <u-button>Bottom</u-button>
         </u-tooltip>
         <u-tooltip content="Tooltip" placement="bottom-end">
-            <u-button>bottom-end</u-button>
+            <u-button>Bottom-End</u-button>
         </u-tooltip>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-#### 指令形式
+#### Command Form
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
-        <u-button v-tooltip.top-start="'Tooltip'">top-start</u-button>
-        <u-button v-tooltip.top="'Tooltip'">top</u-button>
-        <u-button v-tooltip.top-end="'Tooltip'">top-end</u-button>
+        <u-button v-tooltip.top-start="'Tooltip'">Top-Start</u-button>
+        <u-button v-tooltip.top="'Tooltip'">Top</u-button>
+        <u-button v-tooltip.top-end="'Tooltip'">Top-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.left-start="'Tooltip'">left-start</u-button>
-        <u-button v-tooltip.left="'Tooltip'">left</u-button>
-        <u-button v-tooltip.left-end="'Tooltip'">left-end</u-button>
+        <u-button v-tooltip.left-start="'Tooltip'">Left-Start</u-button>
+        <u-button v-tooltip.left="'Tooltip'">Left</u-button>
+        <u-button v-tooltip.left-end="'Tooltip'">Left-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.right-start="'Tooltip'">right-start</u-button>
-        <u-button v-tooltip.right="'Tooltip'">right</u-button>
-        <u-button v-tooltip.right-end="'Tooltip'">right-end</u-button>
+        <u-button v-tooltip.right-start="'Tooltip'">Right-Start</u-button>
+        <u-button v-tooltip.right="'Tooltip'">Right</u-button>
+        <u-button v-tooltip.right-end="'Tooltip'">Right-End</u-button>
     </u-linear-layout>
     <u-linear-layout>
-        <u-button v-tooltip.bottom-start="'Tooltip'">bottom-start</u-button>
-        <u-button v-tooltip.bottom="'Tooltip'">bottom</u-button>
-        <u-button v-tooltip.bottom-end="'Tooltip'">bottom-end</u-button>
+        <u-button v-tooltip.bottom-start="'Tooltip'">Bottom-Start</u-button>
+        <u-button v-tooltip.bottom="'Tooltip'">Bottom</u-button>
+        <u-button v-tooltip.bottom-end="'Tooltip'">Bottom-End</u-button>
     </u-linear-layout>
 </u-linear-layout>
 ```
 
-### 禁用
+### Disable
 
 ``` html
 <u-tooltip content="Tooltip" disabled>
@@ -175,22 +174,22 @@ export default {
 </u-tooltip>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ``` vue
 <template>
 <u-linear-layout>
     <u-tooltip :content="content" size="small">
-        <u-button>small</u-button>
+        <u-button>Small</u-button>
     </u-tooltip>
     <u-tooltip :content="content">
-        <u-button>normal</u-button>
+        <u-button>Normal</u-button>
     </u-tooltip>
     <u-tooltip :content="content" size="large">
-        <u-button>large</u-button>
+        <u-button>Large</u-button>
     </u-tooltip>
     <u-tooltip :content="content" size="auto">
-        <u-button>auto</u-button>
+        <u-button>Auto</u-button>
     </u-tooltip>
 </u-linear-layout>
 </template>
@@ -199,22 +198,22 @@ export default {
 export default {
     data() {
         return {
-            content: '深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜。其间有一个十一二岁的少年，项带银圈，手捏一柄钢叉，向一匹猹尽力地刺去。那猹却将身一扭，反从他的胯下逃走了。',
+            content: 'A golden full moon hangs in the deep blue sky, and below is the sandy land on the seaside, where endless green watermelons are planted. Among them was a boy of eleven or twelve years old, wearing a silver ring around his neck, holding a steel fork in his hand, and stabbed a yun with all his strength. Na Yuan twisted her body and escaped from his crotch. ',
         };
     },
 };
 </script>
 ```
 
-#### 指令形式
+#### Command Form
 
 ``` vue
 <template>
 <u-linear-layout>
-    <u-button v-tooltip.small="content">small</u-button>
-    <u-button v-tooltip="content">normal</u-button>
-    <u-button v-tooltip.large="content">large</u-button>
-    <u-button v-tooltip.auto="content">auto</u-button>
+    <u-button v-tooltip.small="content">Small</u-button>
+    <u-button v-tooltip="content">Normal</u-button>
+    <u-button v-tooltip.large="content">Large</u-button>
+    <u-button v-tooltip.auto="content">Auto</u-button>
 </u-linear-layout>
 </template>
 
@@ -222,7 +221,7 @@ export default {
 export default {
     data() {
         return {
-            content: '深蓝的天空中挂着一轮金黄的圆月，下面是海边的沙地，都种着一望无际的碧绿的西瓜。其间有一个十一二岁的少年，项带银圈，手捏一柄钢叉，向一匹猹尽力地刺去。那猹却将身一扭，反从他的胯下逃走了。',
+            content: 'A golden full moon hangs in the deep blue sky, and below is the sandy land on the seaside, where endless green watermelons are planted. Among them was a boy of eleven or twelve years old, wearing a silver ring around his neck, holding a steel fork in his hand, and stabbed a yun with all his strength. Na Yuan twisted her body and escaped from his crotch. ',
         };
     },
 };
@@ -234,57 +233,57 @@ export default {
 
 | Attr/Prop | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| content | String | `'提示内容'` | 提示内容 |
-| open.sync | Boolean | `false` | 弹出/隐藏状态 |
-| trigger | String | `'click'` | 工具提示的触发方式。可选值：`'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
-| placement | String | `'bottom'` | 工具提示的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
-| disabled | Boolean | `false` | 是否禁用 |
-| size | String | `'normal'` | 大小扩展，支持一个值： `'small'`, `'normal'`, `'large'`, `'auto'`，或两个值的组合，前者表示高度，后者表示宽度，类似CSS的padding书写格式 |
-| hideDelay | Number | `0` | 提示内容消失延迟时间，单位是`'ms'` |
-| offset | String | `'0'` | 弹出层偏移，如：'10', '10px 10px', '10% 10%', 第一个值表示水平偏移，第二个值表示垂直位移, 默认单位是`px` |
+| content | String | `'Prompt content'` | Prompt content |
+| open.sync | Boolean | `false` | Pop/hide state |
+| trigger | String | `'click'` | How to trigger the tooltip. Optional values: `'click'`, `'hover'`, `'right-click'`, `'double-click'`, `'manual'` |
+| placement | String | `'bottom'` | The pop-up direction of the tooltip. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start' `, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
+| disabled | Boolean | `false` | Whether to Disable |
+| size | String | `'normal'` | Size extension, supports one value: `'small'`, `'normal'`, `'large'`, `'auto'`, or a combination of the two values, the former Represents the height, the latter represents the width, similar to the CSS padding writing format |
+| hideDelay | Number | `0` | The delay time for prompt content to disappear, the unit is `'ms'` |
+| offset | String | `'0'` | Pop-up layer offset, such as: '10', '10px 10px', '10% 10%', the first value represents the horizontal offset, the second value represents the vertical displacement , the default unit is `px` |
 
 ### Slots
 
 #### (default)
 
-触发节点，该 slot 只能插入一个节点。Tooltip 除了会给该节点绑定触发事件，不会对它做任何事情。
+Trigger node, only one node can be inserted into this slot. Tooltip will not do anything to it except binding a trigger event to the node.
 
-#### popper
+#### Popper
 
-自定义整个弹出层。
+Customize the entire popup layer.
 
-#### body
+#### Body
 
-自定义滚动区域。
+Custom scroll area.
 
-#### content
+#### Content
 
-自定义内容文本。
+Custom content text.
 
 ### Events
 
 #### @before-toggle
 
-弹出/隐藏前触发
+Triggered before popup/hide
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| open | Boolean | 弹出/隐藏状态 |
-| $event.preventDefault | Function | 阻止弹出/隐藏流程 |
+| open | Boolean | Pop/hide status |
+| $event.preventDefault | Function | Prevent pop-up/hide process |
 
 #### @toggle
 
-弹出/隐藏时触发
+Triggered when popping up/hiding
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.open | Boolean | 弹出/隐藏状态 |
+| $event.open | Boolean | Pop/hide state |
 
 ### Methods
 
 #### update
 
-更新 popper 实例
+Update popper instance
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |

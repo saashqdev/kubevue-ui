@@ -1,24 +1,24 @@
-# 多行输入 Textarea
+# Multi-Line Input Textarea
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
-大部分属性与`<textarea>`元素一致。
+Most of the attributes are consistent with the `<textarea>` element.
 
 ``` html
 <u-textarea placeholder="Details" autofocus></u-textarea>
 ```
 
-### 只读与禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>
-    <u-textarea value="只读" readonly></u-textarea>
-    <u-textarea value="禁用" disabled></u-textarea>
+    <u-textarea value="readonly" readonly></u-textarea>
+    <u-textarea value="disabled" disabled></u-textarea>
 </u-linear-layout>
 ```
 
-### 调整大小
+### Resize
 
 ``` html
 <u-linear-layout>
@@ -29,7 +29,7 @@
 </u-linear-layout>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ```html
 <u-linear-layout direction="vertical">
@@ -57,50 +57,50 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| value | String | | 输入框的值 |
-| placeholder | String | | 原生属性 |
-| minlength | Number | | 原生属性 |
-| maxlength | Number | | 原生属性 |
-| autofocus | Boolean | | 原生属性 |
-| readonly | Boolean | | 原生属性 |
-| disabled | Boolean | | 原生属性 |
-| resize | String | | 原生属性 |
-| size | String | `'normal'` | 大小扩展，支持一个值：`'normal'`, `'large'`, `'huge'`, `'full'`，或两个值的组合，前者表示高度，后者表示宽度，类似CSS的padding书写格式 |
+| value | String | | The value of the input box |
+| placeholder | String | | Native properties |
+| minlength | Number | | Native properties |
+| maxlength | Number | | Native properties |
+| autofocus | Boolean | | Native properties |
+| readonly | Boolean | | Native properties |
+| disabled | Boolean | | Native attribute |
+| resize | String | | Native properties |
+| size | String | `'normal'` | Size extension, supports one value: `'normal'`, `'large'`, `'huge'`, `'full'`, or a combination of the two values, the former Represents the height, the latter represents the width, similar to the CSS padding writing format |
 
-<!-- | autosize | String | `'none'` | 自适应内容宽高。可选值：`none`、`both`、`horizontal`、`vertical` | -->
+<!-- | autosize | String | `'none'` | Adaptive content width and height. Optional values: `none`, `both`, `horizontal`, `vertical` | -->
 
 
 ### Events
 #### @input
 
-输入时触发
+Fires on input
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 输入框的值 |
+| $event | String | Value of input box |
 
 #### @change
 
-值变化时触发（与原生事件不同）
+Triggered when the value changes (different from native events)
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | String | 改变后的值 |
-| $event.oldValue | String | 旧的值 |
+| $event.value | String | Changed value |
+| $event.oldValue | String | Old value |
 
 #### @focus
 
-获得焦点时触发
+Triggered when focus is obtained
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 原生事件对象 |
+| $event | String | Native event object |
 
 #### @blur
 
-失去焦点时触发
+Triggered when focus is lost
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 原生事件对象 |
+| $event | String | Native event object |
 

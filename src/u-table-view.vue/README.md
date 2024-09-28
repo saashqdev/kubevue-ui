@@ -1,19 +1,19 @@
-# 表格视图 TableView
+# Table View
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 ``` vue
 <template>
     <div>
         <u-table-view :data="tdata" border>
-            <u-table-view-column title="日期" label="date"></u-table-view-column>
-            <u-table-view-column ellipsis title="姓名" label="name"></u-table-view-column>
-            <u-table-view-column ellipsis title="地址" label="address" sortable>
+            <u-table-view-column title="Date" label="Date"></u-table-view-column>
+            <u-table-view-column ellipsis title="Name" label="Name"></u-table-view-column>
+            <u-table-view-column ellipsis title="address" label="Address" sortable>
                 <template slot-scope="scope">
                     {{scope.row.address}}
                 </template>
             </u-table-view-column>
-            <u-table-view-column title="性别" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
+            <u-table-view-column title="Gender" label="Female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
         </u-table-view>
     </div>
 </template>
@@ -22,43 +22,43 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-02',
-                name: '王小虎aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                address: '浙江省杭州市滨江区网商路 599号 11111111111111111111111111111111',
-                female: '男',
+                date: '2024-05-02',
+                name: 'Homer Simpson',
+                address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-04',
-                name: '王大虎ssssssssssssssssssssssssssssssssssssssssssssssssssssss',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '男',
+                date: '2024-05-04',
+                name: 'Marge Simpson',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎dddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '女',
+                date: '2024-05-01',
+                name: 'Bart Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'female',
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
-                female: '男',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '男',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'male',
             }],
             options: [
                 {
-                    name: '全部',
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男'
+                    name: 'Male',
+                    value: 'Male'
                 },
                 {
-                    name: '女',
-                    value: '女'
+                    name: 'Female',
+                    value: 'Female'
                 },
             ],
             value: ''
@@ -66,8 +66,8 @@ export default {
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         },
@@ -82,9 +82,9 @@ export default {
 ```
 
 
-#### 默认显示limit条行数据
+#### Display Limit Rows of Data by Default
 
-表格列`pattern`属性设置为`limit`值即可，可通过设置`limit`属性控制显示条数
+The table column `pattern` attribute can be set to the `limit` value. The number of displayed items can be controlled by setting the `limit` attribute
 ``` vue
 <template>
     <div>
@@ -94,14 +94,14 @@ export default {
                     <span>11</span>
                 </template>
             </u-table-view-column>
-            <u-table-view-column title="日期" label="date" sortable></u-table-view-column>
-            <u-table-view-column ellipsis title="姓名" label="name" :formatter="formatter"></u-table-view-column>
-            <u-table-view-column ellipsis title="地址" label="address" sortable>
+            <u-table-view-column title="Date" label="Date" sortable></u-table-view-column>
+            <u-table-view-column ellipsis title="Name" label="Name" :formatter="formatter"></u-table-view-column>
+            <u-table-view-column ellipsis title="address" label="Address" sortable>
                 <template slot-scope="scope">
                     {{scope.row.address}}
                 </template>
             </u-table-view-column>
-            <u-table-view-column title="性别" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
+            <u-table-view-column title="Gender" label="Female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
         </u-table-view>
     </div>
 </template>
@@ -110,78 +110,78 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-02',
-                name: '王小虎aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                address: '浙江省杭州市滨江区网商路 599号 11111111111111111111111111111111',
-                female: '男',
+                date: '2024-05-02',
+                name: 'Homer Simpson',
+                address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-04',
-                name: '王大虎ssssssssssssssssssssssssssssssssssssssssssssssssssssss',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '男',
+                date: '2024-05-04',
+                name: 'Marge Simpson',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎dddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '女',
+                date: '2024-05-01',
+                name: 'Bart Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'female',
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
-                female: '男',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '男',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '女',
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'female',
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '女',
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'female',
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
-                female: '女',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'female',
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '男',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '女',
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'female',
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '男',
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'male',
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
-                female: '女',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'female',
             }],
             options: [
                 {
-                    name: '全部',
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男'
+                    name: 'Male',
+                    value: 'Male'
                 },
                 {
-                    name: '女',
-                    value: '女'
+                    name: 'Female',
+                    value: 'Female'
                 },
             ],
             value: ''
@@ -189,8 +189,8 @@ export default {
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         },
@@ -204,27 +204,27 @@ export default {
 </script>
 ```
 
-#### 在u-subtabs中使用表格组件
+#### Using table components in u-subtabs
 ``` vue
 <template>
     <u-subtabs value="B">
-        <u-subtab title="模板" value="A">
+        <u-subtab title="Template" value="A">
             <u-table-view :data="list">
-                <u-table-view-column title="名称" width="30%" label="name">
+                <u-table-view-column title="name" width="30%" label="Name">
                 </u-table-view-column>
-                <u-table-view-column ellipsis title="可用区" label="region"></u-table-view-column>
+                <u-table-view-column ellipsis title="Available Region" label="region"></u-table-view-column>
                 <u-table-view-column title="IP" label="IP" width="200px" sortable></u-table-view-column>
             </u-table-view>
         </u-subtab>
-        <u-subtab title="样式" value="B">
+        <u-subtab title="Style" value="B">
             <u-table-view :data="tdata">
-                <u-table-view-column label="date">
+                <u-table-view-column label="Date">
                     <div slot="headerTitle">
-                        日期
+                        Date
                     </div>
                 </u-table-view-column>
-                <u-table-view-column ellipsis title="姓名" label="name"></u-table-view-column>
-                <u-table-view-column title="地址" label="address" width="200px" sortable></u-table-view-column>
+                <u-table-view-column ellipsis title="Name" label="Name"></u-table-view-column>
+                <u-table-view-column title="address" label="Address" width="200px" sortable></u-table-view-column>
             </u-table-view>
         </u-subtab>
     </u-subtabs>
@@ -234,87 +234,87 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-02',
-                name: '王小虎aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Homer Simpson',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎ssssssssssssssssssssssssssssssssssssssssssssssssssssss',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Marge Simpson',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎dddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Bart Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }],
             list: [
                 {
                     name: 'dash',
-                    region: '可用区 A',
-                    IP: '私有网 10.18.203.14',
+                    region: 'Availability Zone A',
+                    IP: 'Private network 10.18.203.14',
                 },
                 {
                     name: 'asdf',
-                    region: '可用区 B',
-                    IP: '私有网 10.177.0.2',
+                    region: 'Availability Zone B',
+                    IP: 'Private network 10.177.0.2',
                 },
                 {
                     name: 'wert',
-                    region: '可用区 A',
-                    IP: '私有网 10.18.203.10',
+                    region: 'Availability Zone A',
+                    IP: 'Private network 10.18.203.10',
                 },
                 {
                     name: 'fghh',
-                    region: '可用区 A',
-                    IP: '私有网 10.18.203.9',
+                    region: 'Availability Zone A',
+                    IP: 'Private network 10.18.203.9',
                 },
                 {
                     name: 'zxcv',
-                    region: '可用区 B',
-                    IP: '私有网 10.18.203.8',
+                    region: 'Availability Zone B',
+                    IP: 'Private network 10.18.203.8',
                 },
             ],
         };
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         }
@@ -323,21 +323,21 @@ export default {
 </script>
 ```
 
-#### 自定义列显/隐
-在业务中经常出现某一列的显/隐是依据某个变量来的，为了保证列顺序不会出现变更，使用`visible`属性来控制列的显/隐
+#### Customize Display/Hide
+In business, it is often the case that the visibility of a column is based on a variable. In order to ensure that the order of the columns does not change, the `visible` property is used to control the visibility of the column.
 ``` vue
 <template>
     <div>
         <u-table-view :data="tdata" border max-height="400">
-            <u-table-view-column :visible="isShow" label="date">
+            <u-table-view-column :visible="isShow" label="Date">
                 <div slot="headerTitle">
-                    日期
+                    Date
                 </div>
             </u-table-view-column>
-            <u-table-view-column ellipsis title="姓名" label="name" :formatter="formatter"></u-table-view-column>
-            <u-table-view-column title="地址" label="address" width="200px" sortable></u-table-view-column>
+            <u-table-view-column ellipsis title="Name" label="Name" :formatter="formatter"></u-table-view-column>
+            <u-table-view-column title="Address" label="Address" width="200px" sortable></u-table-view-column>
         </u-table-view>
-        <u-button style="margin-top: 10px;" @click="toggle">toggle</u-button>
+        <u-button style="margin-top: 10px;" @click="toggle">Toggle</u-button>
     </div>
 </template>
 <script>
@@ -345,61 +345,61 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-02',
-                name: '王小虎aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Homer Simpson',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎ssssssssssssssssssssssssssssssssssssssssssssssssssssss',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Marge Simpson',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎dddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Bart Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }],
             isShow: false,
         };
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         },
@@ -411,20 +411,20 @@ export default {
 </script>
 ```
 
-#### 排序和格式化
-某一列进行排序，需要为此列中设置`sortable`属性，自定义表头传入`slot='headerTitle'`，对于显示日期列，可通过给`u-table-view-column`标签添加`type="time"`属性来实现时间戳转换成YYYY-MM-DD HH:mm:ss格式，如果想自定义日期显示格式，可以通过传入`timeFormat="YYYY-MM-DD"`属性来自定义日期格式
+#### Sorting and Formatting
+To sort a column, you need to set the `sortable` attribute for this column, pass in `slot='headerTitle'` to customize the header, and for the date column, you can add the `type="time"` attribute to the `u-table-view-column` tag to convert the timestamp into the YYYY-MM-DD HH:mm:ss format. If you want to customize the date display format, you can customize the date format by passing in the `timeFormat="YYYY-MM-DD"` attribute.
 ``` vue
 <template>
     <div>
         <u-table-view :data="tdata" border max-height="400">
-            <u-table-view-column label="date">
+            <u-table-view-column label="Date">
                 <div slot="headerTitle">
-                    日期
+                    date
                 </div>
             </u-table-view-column>
-            <u-table-view-column ellipsis title="姓名" label="name" :formatter="formatter"></u-table-view-column>
-            <u-table-view-column title="地址" label="address" width="200" sortable></u-table-view-column>
-            <u-table-view-column title="出生年月" label="date" type="time"></u-table-view-column>
+            <u-table-view-column ellipsis title="Name" label="Name" :formatter="formatter"></u-table-view-column>
+            <u-table-view-column title="address" label="Address" width="200" sortable></u-table-view-column>
+            <u-table-view-column title="Date of Birth" label="Date" type="time"></u-table-view-column>
         </u-table-view>
     </div>
 </template>
@@ -433,72 +433,72 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-02',
-                name: '王小虎aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Homer Simpson',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
                 date: 728524800000,
             }, {
-                date: '2016-05-04',
-                name: '王大虎ssssssssssssssssssssssssssssssssssssssssssssssssssssss',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
+                date: '2024-05-04',
+                name: 'Marge Simpson',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
                 date: 696902400000,
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎dddddddddddddddddddddddddddddddddddddddddddddddddddddddd',
-                address: '浙江省杭州市滨江区 西可科技园',
+                date: '2024-05-01',
+                name: 'Bart Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
                 date: 665366400000,
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
                 date: 665366400000,
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
                 date: 665366400000,
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
                 date: 728524800000,
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
                 date: 696902400000,
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
                 date: 665366400000,
             }, {
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
                 date: 760060800000,
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
                 date: 728524800000,
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
                 date: 665366400000,
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
                 date: 760060800000,
             }],
         };
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         }
@@ -508,14 +508,14 @@ export default {
 ```
 
 
-#### 自定义排序方法
-同步方式自定义排序方法传入`sortMethod`属性即可，点击排序，异步获取后端数据需要传入`sortRemoteMethod`方法即可，点击排序会自动执行`sortRemoteMethod`方法，默认让某一列处于排序状态，需要在`u-table-view`上添加`defaultSort`属性即可
+#### Custom Sorting Method
+To customize the sorting method in synchronous mode, just pass in the `sortMethod` attribute. Click to sort. To asynchronously obtain backend data, you need to pass in the `sortRemoteMethod` method. Clicking to sort will automatically execute the `sortRemoteMethod` method. By default, a column is sorted. You need to add the `defaultSort` attribute on `u-table-view`.
 ``` vue
 <template>
     <u-table-view :data="tdata" :default-sort="defaultSort" @sort-change="sortChange">
-        <u-table-view-column title="日期" label="date" sortable :sort-method="sortMethod"></u-table-view-column>
-        <u-table-view-column title="姓名" label="name"></u-table-view-column>
-        <u-table-view-column title="地址" label="address"></u-table-view-column>
+        <u-table-view-column title="Date" label="Date" sortable :sort-method="sortMethod"></u-table-view-column>
+        <u-table-view-column title="Name" label="Name"></u-table-view-column>
+        <u-table-view-column title="Address" label="Address"></u-table-view-column>
     </u-table-view>
 </template>
 <script>
@@ -523,24 +523,24 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                date: '2024-05-02',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
             }, {
-                date: '2016-05-04',
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼'
+                date: '2024-05-04',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario'
             }, {
-                date: '2016-05-01',
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                date: '2024-05-01',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }],
             defaultSort: {
-                title: '日期',
+                title: 'Date',
                 order: 'asc',
             },
         };
@@ -563,21 +563,21 @@ export default {
 </script>
 ```
 
-#### 删除选中行
+#### Delete the Selected Row
 
-对于`type`类型为`selection`的表格列，可以控制`checkbox`的选择状态，传入`data`中每个对象中属性`selected`属性表示默认是否处于选中状态，`disabled`表示是否可选择
+For table columns whose `type` type is `selection`, you can control the selection state of `checkbox`. The `selected` attribute of each object passed in `data` indicates whether it is selected by default, and `disabled` indicates whether it is selectable.
 
-同时也可在表格列规定`headSelection`属性，来控制列表是否可以全选。
+You can also specify the `headSelection` attribute on the table column to control whether the list can be fully selected.
 
 ``` vue
 <template>
     <u-linear-layout direction="vertical">
-            <u-button color="primary" style="width:160px;" :disabled="checkedData.length === 0" @click="delData">删除</u-button>
+            <u-button color="primary" style="width:160px;" :disabled="checkedData.length === 0" @click="delData">Delete</u-button>
             <u-table-view :data="tdata" @selection-change="selectionChange($event)">
                 <u-table-view-column type="selection"></u-table-view-column>
-                <u-table-view-column title="日期" label="date" type="time"></u-table-view-column>
-                <u-table-view-column title="姓名" label="name" ></u-table-view-column>
-                <u-table-view-column title="地址" label="address" ></u-table-view-column>
+                <u-table-view-column title="Date" label="Date" type="time"></u-table-view-column>
+                <u-table-view-column title="Name" label="Name" ></u-table-view-column>
+                <u-table-view-column title="Address" label="Address" ></u-table-view-column>
             </u-table-view>
     </u-linear-layout>
 </template>
@@ -587,37 +587,37 @@ export default {
         return {
             tdata: [{
                 date: 1521551897133,
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
                 selected: true,
             }, {
                 date: 1521551897133,
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
                 disabled: true,
             }, {
                 date: 1521551897133,
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
                 date: 1521551897133,
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
                 disabled: true,
             }],
             allChecked: false,
             checkedData: [],
         };
     },
-    watch: {
+    watch:
         allChecked(newValue) {
             console.log(newValue);
         },
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         },
@@ -626,16 +626,16 @@ export default {
             this.checkedData = data;
         },
         delData() {
-            let indexs = undefined;
+            let indexes = undefined;
             this.checkedData.forEach((item) => {
                 this.tdata.some((checked, index) => {
                     if (item.name === checked.name) {
-                        indexs = index;
+                        indexes = index;
                         return true;
                     }
                 });
                 if (indexs !== undefined)
-                    this.tdata.splice(indexs, 1);
+                    this.tdata.splice(indexes, 1);
             });
             this.checkedData = [];
         },
@@ -644,16 +644,16 @@ export default {
 </script>
 ```
 
-#### 有标题的selection
-给`type='selection'`列正常添加`title`属性即可
+#### Selection with Title
+Just add the `title` attribute to the `type='selection'` column normally
 ``` vue
 <template>
     <u-linear-layout direction="vertical">
         <u-table-view :data="tdata" @selection-change="selectionChange($event)">
-            <u-table-view-column type="selection" title="选择" width="100"></u-table-view-column>
-            <u-table-view-column title="日期" label="date" type="time"></u-table-view-column>
-            <u-table-view-column title="姓名" label="name" ></u-table-view-column>
-            <u-table-view-column title="地址" label="address" ></u-table-view-column>
+            <u-table-view-column type="selection" title="Selection" width="100"></u-table-view-column>
+            <u-table-view-column title="Date" label="Date" type="time"></u-table-view-column>
+            <u-table-view-column title="Name" label="Name" ></u-table-view-column>
+            <u-table-view-column title="Address" label="Address" ></u-table-view-column>
         </u-table-view>
     </u-linear-layout>
 </template>
@@ -663,37 +663,37 @@ export default {
         return {
             tdata: [{
                 date: 1521551897133,
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
                 selected: true,
             }, {
                 date: 1521551897133,
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
                 disabled: true,
             }, {
                 date: 1521551897133,
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园'
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario'
             }, {
                 date: 1521551897133,
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
                 disabled: true,
             }],
             allChecked: false,
             checkedData: [],
         };
     },
-    watch: {
+    watch:
         allChecked(newValue) {
             console.log(newValue);
         },
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         },
@@ -706,16 +706,16 @@ export default {
 </script>
 ```
 
-#### 单选
-自定义表格第一列是单选按钮，设置`type='radio'`即可
+#### Single Choice
+The first column of the custom table is a radio button, just set `type='radio'`
 ``` vue
 <template>
     <u-linear-layout direction="vertical">
         <u-table-view :data="tdata" show-color radio-value-field="id" :radioValue.sync="radioValue" @radio-change="selectionChange($event)">
             <u-table-view-column type="radio" ellipsis width="56"></u-table-view-column>
-            <u-table-view-column title="日期" label="date" type="time"></u-table-view-column>
-            <u-table-view-column title="姓名" label="name" ></u-table-view-column>
-            <u-table-view-column title="地址" label="address" ></u-table-view-column>
+            <u-table-view-column title="Date" label="Date" type="time"></u-table-view-column>
+            <u-table-view-column title="Name" label="Name" ></u-table-view-column>
+            <u-table-view-column title="Address" label="Address" ></u-table-view-column>
         </u-table-view>
     </u-linear-layout>
 </template>
@@ -725,24 +725,24 @@ export default {
         return {
             tdata: [{
                 date: 1521551897133,
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
                 selected: true,
                 id: '1',
             }, {
                 date: 1521551897133,
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
                 id: '2',
             }, {
                 date: 1521551897133,
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
                 id: '3',
             }, {
                 date: 1521551897133,
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
                 id: '4',
             }],
             allChecked: false,
@@ -750,7 +750,7 @@ export default {
             radioValue: '1',
         };
     },
-    watch: {
+    watch:
         allChecked(newValue) {
             console.log(newValue);
         },
@@ -760,8 +760,8 @@ export default {
     },
     methods: {
         formatter(row, column) {
-            if (row.name === '天王盖地虎')
-                return '逗比一号';
+            if (row.name === 'Homer Simpson')
+                return 'Funny One';
             else
                 return row.name;
         },
@@ -774,16 +774,16 @@ export default {
 </script>
 ```
 
-#### 过滤异步数据
-带有过滤数据功能的表格，如果要实现过滤异步加载数据，请监听`filter-change`方法，并发送异步请求获取数据，更改`tdata`即可
+#### Filtering Asynchronous Data
+For a table with data filtering function, if you want to filter and load data asynchronously, please listen to the `filter-change` method, send an asynchronous request to get data, and change `tdata`.
 
 ``` vue
 <template>
     <u-table-view :data="tdata" @filter-change="filterChange">
-        <u-table-view-column title="日期" label="date" sortable :formatter="dateFormat"></u-table-view-column>
-        <u-table-view-column title="姓名" label="name" ></u-table-view-column>
-        <u-table-view-column title="地址" label="address" ></u-table-view-column>
-        <u-table-view-column title="性别" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
+        <u-table-view-column title="Date" label="Date" sortable :formatter="dateFormat"></u-table-view-column>
+        <u-table-view-column title="Name" label="Name" ></u-table-view-column>
+        <u-table-view-column title="Address" label="Address" ></u-table-view-column>
+        <u-table-view-column title="Gender" label="Female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
     </u-table-view>
 </template>
 <script>
@@ -792,45 +792,45 @@ export default {
         return {
             tdata: [{
                 date: 1501977600000,
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '男',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1502236800000,
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '女',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'female',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503100800000,
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '男',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503964800000,
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
-                female: '女',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'female',
                 use: 12,
                 total: 20,
             }],
             options: [
                 {
-                    name: '全部',
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男'
+                    name: 'Male',
+                    value: 'Male'
                 },
                 {
-                    name: '女',
-                    value: '女'
+                    name: 'Female',
+                    value: 'Female'
                 },
             ],
             value: ''
@@ -859,22 +859,22 @@ export default {
 };
 </script>
 ```
-#### 作用域插槽方式
-为了满足自定义单元格的内容显示，可以通过作用域插槽的方式，在`u-table-view-column`标签内通过`slot-scope="{row}"`来获取当前行内容，自定义单元格内容显示
+#### Scoped Slot Mode
+In order to customize the content display of cells, you can use scope slots to get the current row content through `slot-scope="{row}"` in the `u-table-view-column` tag, and customize the cell content display
 ``` vue
 <template>
     <div>
         <u-table-view :data="tdata" v-show="show">
-            <u-table-view-column title="日期" width="20%" label="date" sortable :formatter="dateFormat"></u-table-view-column>
-            <u-table-view-column title="姓名" width="10%" label="name" ></u-table-view-column>
-            <u-table-view-column title="地址" width="15%" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="10%" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="20%" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="10%" label="address"></u-table-view-column>
-            <u-table-view-column title="性别" width="15%" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
-            <u-table-view-column title="占比" width="200">
+            <u-table-view-column title="Date" width="20%" label="Date" sortable :formatter="dateFormat"></u-table-view-column>
+            <u-table-view-column title="Name" width="10%" label="Name" ></u-table-view-column>
+            <u-table-view-column title="Address" width="15%" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="10%" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="20%" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="10%" label="Address"></u-table-view-column>
+            <u-table-view-column title="Gender" width="15%" label="Female" filter :options="options" :value="value" :filter-method="filterMethod"></u- table-view-column>
+            <u-table-view-column title="Proportion" width="200">
                 <template slot-scope="{row}">
-                    <u-button @click="click(row)">配置</u-button>
+                    <u-button @click="click(row)">Configuration</u-button>
                 </template>
             </u-table-view-column>
         </u-table-view>
@@ -884,7 +884,7 @@ export default {
                 <span style="margin-left:10px;">{{current.address}}</span>
             </div>
         </u-modal>
-        <u-button @click="tableShow"> show </u-button>
+        <u-button @click="tableShow"> Show </u-button>
     </div>
 </template>
 <script>
@@ -893,45 +893,45 @@ export default {
         return {
             tdata: [{
                 date: 1501977600000,
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '男',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1502236800000,
-                name: '王大虎',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '女',
+                name: 'Ned Flanders',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'female',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503100800000,
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '男',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503964800000,
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园',
-                female: '女',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'female',
                 use: 12,
                 total: 20,
             }],
             options: [
                 {
-                    name: '全部',
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男'
+                    name: 'Male',
+                    value: 'Male'
                 },
                 {
-                    name: '女',
-                    value: '女'
+                    name: 'Female',
+                    value: 'Female'
                 },
             ],
             value: '',
@@ -970,15 +970,15 @@ export default {
 </script>
 ```
 
-#### loading 加载中的状态
-给组件设置`loading`属性即可显示加载状态，自定义加载文字传入`loadText`属性
+#### Loading Status
+Set the `loading` property to display the loading status of the component, and pass the custom loading text to the `loadText` property
 ``` vue
 <template>
 <div>
-    <u-table-view :data="tdata" loading load-text="正在加载中…">
-        <u-table-view-column title="日期" label="date" sortable></u-table-view-column>
-        <u-table-view-column title="姓名" label="name"></u-table-view-column>
-        <u-table-view-column title="地址" label="address" ></u-table-view-column>
+    <u-table-view :data="tdata" loading load-text="Loading..."">
+        <u-table-view-column title="Date" label="Date" sortable></u-table-view-column>
+        <u-table-view-column title="Name" label="Name"></u-table-view-column>
+        <u-table-view-column title="Address" label="Address" ></u-table-view-column>
     </u-table-view>
 </div>
 </template>
@@ -987,9 +987,9 @@ export default {
     data: function () {
         return {
             tdata: [{
-                date: '2016-05-03',
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区 东忠科技园'
+                date: '2024-05-03',
+                name: 'John Doe',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario'
             }],
         };
     }
@@ -997,19 +997,19 @@ export default {
 </script>
 ```
 
-#### data为空数组自定义显示文本
-自定义表格空态显示文案是通过属性`noDataText`或者自定义具名插槽`slot="no-data-text"`
+#### Data is an Empty Array to Customize the Display Text
+Customize the empty state text of the table through the attribute `noDataText` or custom named slot `slot="no-data-text"`
 ``` vue
 <template>
 <div>
     <u-table-view :data="tdata" >
         <u-table-view-column type="selection"></u-table-view-column>
-        <u-table-view-column title="日期" label="date" sortable></u-table-view-column>
-        <u-table-view-column title="姓名" label="name"></u-table-view-column>
-        <u-table-view-column title="地址" label="address" ></u-table-view-column>
+        <u-table-view-column title="Date" label="Date" sortable></u-table-view-column>
+        <u-table-view-column title="Name" label="Name"></u-table-view-column>
+        <u-table-view-column title="Address" label="Address" ></u-table-view-column>
         <div slot="no-data-text">
-            <span style="margin-right:10px">暂无数据,</span>
-            <u-link>请刷新页面</u-link>
+            <span style="margin-right:10px">No data yet,</span>
+            <u-link>Please refresh the page</u-link>
         </div>
     </u-table-view>
 </div>
@@ -1025,9 +1025,9 @@ export default {
 </script>
 ```
 
-#### 表格行可展开
+#### Table Rows can be Expanded
 
-使用场景：表格的内容过多，展示不下，需要注意的是expand中自定义的内容会受到表格添加的样式对其产生的影响，比如说不换行，居中等，如果不是需要的效果，需要自己自定义消除父元素对其自定义元素内容样式的影响
+Usage scenario: The table has too much content to display. It should be noted that the custom content in expand will be affected by the style added to the table, such as no line break, centering, etc. If it is not the desired effect, you need to customize it to eliminate the influence of the parent element on the custom element content style.
 ``` vue
 <template>
     <div>
@@ -1035,29 +1035,29 @@ export default {
             <u-table-view-column type="expand" default-text="">
                 <template slot="expandContent" slot-scope="scope">
                     <u-info-list style="overflow:hidden;text-align:left;white-space:initial;">
-                        <u-info-list-group title="基本信息">
-                            <u-info-list-item label="VPC名称">{{scope.row.name}}</u-info-list-item>
+                        <u-info-list-group title="Basic Information">
+                            <u-info-list-item label="VPC Name">{{scope.row.name}}</u-info-list-item>
                             <u-info-list-item label="UUID">152f36a3cfff4572a3a35</u-info-list-item>
-                            <u-info-list-item label="网段">10.3.0.4/16</u-info-list-item>
-                            <u-info-list-item label="默认VPC">是</u-info-list-item>
-                            <u-info-list-item label="创建时间">2018-02-22</u-info-list-item>
+                            <u-info-list-item label="Network Segment">10.3.0.4/16</u-info-list-item>
+                            <u-info-list-item label="Default VPC">Yes</u-info-list-item>
+                            <u-info-list-item label="Creation Time">2018-02-22</u-info-list-item>
                         </u-info-list-group>
-                        <u-info-list-group title="基本信息">
-                            <u-info-list-item label="VPC名称">defaultVPC</u-info-list-item>
+                        <u-info-list-group title="Basic Information">
+                            <u-info-list-item label="VPC Name">defaultVPC</u-info-list-item>
                             <u-info-list-item label="UUID">152f36a3cfff4572a3a35</u-info-list-item>
-                            <u-info-list-item label="网段">10.3.0.4/16</u-info-list-item>
-                            <u-info-list-item label="默认VPC">是</u-info-list-item>
-                            <u-info-list-item label="创建时间">2018-02-22</u-info-list-item>
+                            <u-info-list-item label="Network Segment">10.3.0.4/16</u-info-list-item>
+                            <u-info-list-item label="Default VPC">Yes</u-info-list-item>
+                            <u-info-list-item label="Creation Time">2018-02-22</u-info-list-item>
                         </u-info-list-group>
                     </u-info-list>
                 </template>
             </u-table-view-column>
-            <u-table-view-column title="日期" label="date" sortable type="time" time-format="YYYY-MM-DD"></u-table-view-column>
-            <u-table-view-column title="姓名" label="name" ></u-table-view-column>
-            <u-table-view-column title="性别" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
-            <u-table-view-column title="操作" width="150">
+            <u-table-view-column title="Date" label="Date" sortable type="time" time-format="YYYY-MM-DD"></u-table-view-column>
+            <u-table-view-column title="Name" label="Name" ></u-table-view-column>
+            <u-table-view-column title="Gender" label="Female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
+            <u-table-view-column title="Operation" width="150">
                 <template slot-scope="scope">
-                    <u-button @click="click(scope.row)">配置</u-button>
+                    <u-button @click="click(scope.row)">Configuration</u-button>
                 </template>
             </u-table-view-column>
         </u-table-view>
@@ -1075,45 +1075,45 @@ export default {
         return {
             tdata: [{
                 date: 1501977600000,
-                name: '王小虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '男',
+                name: 'Dave Cork',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1502236800000,
-                name: '王大虎',
-                address: '浙江省杭州市滨江区网商路 599号',
-                female: '女',
+                name: 'Ned Flanders',
+                address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                female: 'female',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503100800000,
-                name: '天王盖地虎',
-                address: '浙江省杭州市滨江区 西可科技园',
-                female: '男',
+                name: 'Lisa Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                female: 'male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503964800000,
-                name: '小鸡炖蘑菇',
-                address: '浙江省杭州市滨江区英飞特 D栋3楼',
-                female: '女',
+                name: 'John Doe',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'female',
                 use: 12,
                 total: 20,
             }],
             options: [
                 {
-                    name: '全部',
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男'
+                    name: 'Male',
+                    value: 'Male'
                 },
                 {
-                    name: '女',
-                    value: '女'
+                    name: 'Female',
+                    value: 'Female'
                 },
             ],
             value: '',
@@ -1152,14 +1152,14 @@ export default {
 </script>
 ```
 
-#### expand 的高级用法
-默认只会展开一个icon中的内容，如果不想有此限制，请给`u-table-view`传入`expandPattern`属性，只要值不等于`'toggle'`就可以，建议传入`'normal'`，默认要展开第一行，需要在第一行数据中设置`'expanded'`值为`true`
-```vue
+#### Advanced Usage of Expand
+By default, only the content in an icon will be expanded. If you do not want this limitation, please pass the `expandPattern` property to `u-table-view`. As long as the value is not equal to `'toggle'`, it is OK. It is recommended to pass `'normal'`. By default, to expand the first row, you need to set the `'expanded'` value to `true` in the first row of data.
+```Vue
 <template>
     <u-table-view :show-header="false" expand-pattern="normal" :data="tdata" :row-class-name="rowClassName" @toggle-expand="toggleExpand" border>
-        <u-table-view-column title="日期" label="date"></u-table-view-column>
-        <u-table-view-column title="详细信息" column-class="info" label="info"></u-table-view-column>
-        <u-table-view-column title="icon" expand-class="infoIcon" type="expand" label="listlogs" default-text="" expand-strict expand-icon="up-down">
+        <u-table-view-column title="Date" label="Date"></u-table-view-column>
+        <u-table-view-column title="Details" column-class="info" label="Info"></u-table-view-column>
+        <u-table-view-column title="Icon" expand-class="infoIcon" type="expand" label="Listlogs" default-text="" expand-strict expand-icon="up-down">
             <template slot="expandContent" slot-scope="scope">
                 <div>
                     <p v-for="item in scope.row.listlogs" v-text="item"></p>
@@ -1172,49 +1172,49 @@ export default {
 export default {
     data() {
         return {
-            tdata:  [
+            tdata: [
                 {
                     date: '2018-04-19 14:54:02',
-                    info: '创建实例完成',
+                    info: 'Instance creation completed',
                     listlogs:[
-                        '2018-04-19 14:52:49实例开始创建..',
-                        '2018-04-19 14:52:49云主机开始创建...',
-                        '2018-04-19 14:53:20云主机创建完成，云主机 UUID：05ab50b1-a981-492d-bfac-ebbbf94cea5e',
-                        '2018-04-19 14:53:20云硬盘开始创建...',
+                        '2018-04-19 14:52:49 Instance creation started..',
+                        '2018-04-19 14:52:49 Cloud host creation started...',
+                        '2018-04-19 14:53:20 Cloud host creation completed, cloud host UUID: 05ab50b1-a981-492d-bfac-ebbbf94cea5e',
+                        '2018-04-19 14:53:20 Cloud disk creation started...',
                     ],
                     expanded: true,
                 },
                 {
                     date: '2018-05-19 14:54:02',
-                    info: '创建实例完成',
+                    info: 'Instance creation completed',
                     listlogs:[
-                        '2018-05-19 14:52:49实例开始创建..',
-                        '2018-05-19 14:52:49云主机开始创建...',
-                        '2018-05-19 14:53:20云主机创建完成，云主机 UUID：05ab50b1-a981-492d-bfac-ebbbf94cea5e',
-                        '2018-05-19 14:53:20云硬盘开始创建...',
+                        '2018-05-19 14:52:49 Instance creation started..',
+                        '2018-05-19 14:52:49 Cloud host creation started...',
+                        '2018-05-19 14:53:20 Cloud host creation completed, cloud host UUID: 05ab50b1-a981-492d-bfac-ebbbf94cea5e',
+                        '2018-05-19 14:53:20 Cloud disk creation started...',
                     ],
                 },
                 {
                     date: '2018-06-19 14:54:02',
-                    info: '创建实例完成',
+                    info: 'Instance creation completed',
                     listlogs:[
-                        '2018-06-19 14:52:49实例开始创建..',
-                        '2018-06-19 14:52:49云主机开始创建...',
-                        '2018-06-19 14:53:20云主机创建完成，云主机 UUID：05ab50b1-a981-492d-bfac-ebbbf94cea5e',
-                        '2018-06-19 14:53:20云硬盘开始创建...',
+                        '2018-06-19 14:52:49 Instance creation started..',
+                        '2018-06-19 14:52:49 Cloud host creation started...',
+                        '2018-06-19 14:53:20 Cloud host creation completed, cloud host UUID: 05ab50b1-a981-492d-bfac-ebbbf94cea5e',
+                        '2018-06-19 14:53:20 Cloud disk creation started...',
                     ],
                 },
                 {
                     date: '2018-07-19 14:54:02',
-                    info: '创建实例完成',
+                    info: 'Instance creation completed',
                 },
             ],
             currentIndex: 0,
-            direction: '',        }
+            direction: '', }
     },
     methods: {
         toggleExpand(e) {
-            // {index, direction, row} index 表示第几行，direction表示方向， row表示当前行的所有数据对象
+            // {index, direction, row} index indicates the row number, direction indicates the direction, and row indicates all data objects in the current row
             this.currentIndex = e.index;
             this.direction = e.direction;
         },
@@ -1240,29 +1240,29 @@ export default {
 </style>
 ```
 
-#### 固定左右列
+#### Fixed Left and Right Columns
 
-使用场景：表格列过多
+Use scenario: too many columns in a table
 ``` vue
 <template>
     <div>
         <u-table-view :data="tdata" width="800" border :loading="loading">
-            <u-table-view-column width="200" fixed="left" title="日期" label="date" sortable type="time" time-format="YYYY-MM-DD"></u-table-view-column>
-            <u-table-view-column title="姓名" width="200" label="name" ></u-table-view-column>
-            <u-table-view-column title="地址" width="200" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="200" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="200" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="200" label="address"></u-table-view-column>
-            <u-table-view-column title="地址" width="200" label="address"></u-table-view-column>
-            <u-table-view-column title="性别" width="200" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
-            <u-table-view-column title="操作" fixed="right" width="150">
+            <u-table-view-column width="200" fixed="left" title="Date" label="Date" sortable type="time" time-format="YYYY-MM-DD"></u- table-view-column>
+            <u-table-view-column title="Name" width="200" label="Name" ></u-table-view-column>
+            <u-table-view-column title="Address" width="200" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="200" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="200" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="200" label="Address"></u-table-view-column>
+            <u-table-view-column title="Address" width="200" label="Address"></u-table-view-column>
+            <u-table-view-column title="Gender" width="200" label="Female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table -view-column>
+            <u-table-view-column title="Operation" fixed="right" width="150">
                 <template slot-scope="scope">
-                    <u-button @click="click(scope.row)">配置</u-button>
+                    <u-button @click="click(scope.row)">Configuration</u-button>
                 </template>
             </u-table-view-column>
             <div slot="no-data-text">
-                <span style="margin-right:10px">暂无数据,</span>
-                <u-link>请刷新页面</u-link>
+                <span style="margin-right:10px">No data yet,</span>
+                <u-link>Please refresh the page</u-link>
             </div>
         </u-table-view>
         <u-modal :visible.sync="visible">
@@ -1280,16 +1280,16 @@ export default {
             tdata: [],
             options: [
                 {
-                    name: '全部',
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男'
+                    name: 'Male',
+                    value: 'Male'
                 },
                 {
-                    name: '女',
-                    value: '女'
+                    name: 'Female',
+                    value: 'Female'
                 },
             ],
             value: '',
@@ -1300,68 +1300,68 @@ export default {
         };
     },
     created() {
-        this.loading= true;
+        this.loading = true;
         setTimeout(() => {
             this.loading = false;
             this.tdata= [
                 {
                     date: 1501977600000,
-                    name: '王小虎',
-                    address: '浙江省杭州市滨江区网商路 599号',
-                    female: '男',
+                    name: 'Dave Cork',
+                    address: 'Kubeworkz Phase II, Kubeworkz Building, 666 Mockingbird Lane, Fort Erie, Ontario',
+                    female: 'male',
                     use: 12,
                     total: 20,
                 }, {
                     date: 1502236800000,
-                    name: '王大虎',
-                    address: '浙江省杭州市滨江区',
-                    female: '女',
+                    name: 'Ned Flanders',
+                    address: 'Binjiang District, Hangzhou City, Zhejiang Province',
+                    female: 'female',
                     use: 12,
                     total: 20,
                 }, {
                     date: 1503100800000,
-                    name: '天王盖地虎',
-                    address: '浙江省杭州市滨江区 西可科技园',
-                    female: '男',
+                    name: 'Lisa Simpson',
+                    address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                    female: 'male',
                     use: 12,
                     total: 20,
                 }, {
                     date: 1503964800000,
-                    name: '小鸡炖蘑菇',
-                    address: '浙江省杭州市滨江区',
-                    female: '女',
+                    name: 'John Doe',
+                    address: 'Binjiang District, Hangzhou City, Zhejiang Province',
+                    female: 'female',
                     use: 12,
                     total: 20,
                 },
                 {
                     date: 1503964800000,
-                    name: '小鸡炖蘑菇',
-                    address: '浙江省杭州市滨江区',
-                    female: '女',
+                    name: 'John Doe',
+                    address: 'Binjiang District, Hangzhou City, Zhejiang Province',
+                    female: 'female',
                     use: 12,
                     total: 20,
                 },
                 {
                     date: 1503964800000,
-                    name: '小鸡炖蘑菇',
-                    address: '浙江省杭州市滨江区',
-                    female: '女',
+                    name: 'John Doe',
+                    address: 'Binjiang District, Hangzhou City, Zhejiang Province',
+                    female: 'female',
                     use: 12,
                     total: 20,
                 },
                 {
                     date: 1503964800000,
-                    name: '小鸡炖蘑菇',
-                    address: '浙江省杭州市滨江区',
-                    female: '女',
+                    name: 'John Doe',
+                    address: 'Binjiang District, Hangzhou City, Zhejiang Province',
+                    female: 'female',
                     use: 12,
                     total: 20,
                 },
                 {
                     date: 1503964800000,
-                    name: '小鸡炖蘑菇',
-                    address: '浙江省杭州市滨江区',
-                    female: '女',
+                    name: 'John Doe',
+                    address: 'Binjiang District, Hangzhou City, Zhejiang Province',
+                    female: 'female',
                     use: 12,
                     total: 20,
                 },
@@ -1399,200 +1399,200 @@ export default {
 ```
 
 
-## TableView API
+TableView API
 ### Attrs/Props
 
-#### 视图相关属性
+#### View Related Properties
 
 | Attr/Prop | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| color | String |  | 值为`'light'`的时，表格头背景是`#fff` |
-| visible| Boolean | `true` | 表格是否可见 |
-| showHeader| Boolean | `true` | 是否展示表格头 |
-| layout| String | `'fixed'` | 表格的布局方式, 可选值: `'fixed'`, `'auto'` |
-| border | Boolean | `'false'` | 是否展示表格边框 |
-| width | Integer/String |  | 表格组件的宽度 |
-| height| Integer/String |  | 表格组件的高度 |
-| maxHeight| Integer/String |  | 表格组件的最大高度 |
-| minHeight| Integer/String |  | 表格组件的最小高度 |
-| radioTextField | String |`'radioText'`| 单选按钮 文案字段key |
-| radioValueField | String/Number |`'radioLabel'`| 单选按钮值key |
-| defaultText | String | `'-'` | 默认当单元格取值为空时，默认显示的内容，此处是设置整个表格 |
-| loading| Boolean | `false` | 是否展示加载中的状态信息 |
-| loadText| String | `''` | 加载中的文字信息提示 |
-| noDataText | String | `''` | 当`data`属性为空数组时，展示的信息 |
-| pattern| String | `'normal'` | 值设置为`'limit'`可支持显示指定数目的数据，可选值: `'normal'`, `'limit'` |
-| limit| String, Number | `5` | 在`pattern`属性值为`'limit'`时，默认显示数据的数目 |
-| limitText| String | `'查看更多'` | 在`pattern`属性值为`'limit'`时，数据的数目大于`'limit'`属性 的值时默认在表格最后一行显示的提示内容 |
-| allText| String | `'收起'`| 在`pattern`属性值为`'limit'`时，显示所有数据后默认在表格最后一行显示的提示内容 |
-| expandPattern | String | `'toggle'` | 规定`type`属性值为`'expand'`列的展开行为，可选值: `'toggle'`，`'normal'`。值为`'toggle'`时，展开一行后其他行将收回。 值为`'normal'`时，每行都可以展开。|
-| rowClassName | Function |  | 给表格行添加自定义class函数，第一个参数表示索引，即在第几行中，第二个参数是表格当前行数据 |
-| xScroll | Boolean | `false` | 鼠标滚动时表格是否可以横向滚动 |
-| showColor | Boolean | `false` | 单选选中行是否显示背景颜色 |
+| color | String | | When the value is `'light'`, the table header background is `#fff` |
+| visible| Boolean | `true` | Is the table visible |
+| showHeader| Boolean | `true` | Whether to display the table header |
+| layout| String | `'fixed'` | Table layout, optional values: `'fixed'`, `'auto'` |
+| border | Boolean | `'false'` | Whether to display the table border |
+| width | Integer/String | | Width of the table component |
+| height| Integer/String | | The height of the table component |
+| maxHeight| Integer/String | | Maximum height of table component |
+| minHeight| Integer/String | | Minimum height of table component |
+| radioTextField | String |`'radioText'`| Radio button text field key |
+| radioValueField | String/Number |`'radioLabel'`| Radio button value key |
+| defaultText | String | `'-'` | The default content displayed when the cell value is empty. Here is to set the entire table |
+| loading| Boolean | `false` | Whether to display loading status information |
+| loadText| String | `''` | Text message prompt during loading |
+| noDataText | String | `''` | Information displayed when the `data` attribute is an empty array |
+| pattern| String | `'normal'` | Setting the value to `'limit'` supports displaying a specified number of data. Optional values: `'normal'`, `'limit'` |
+| limit| String, Number | `5` | When the `pattern` attribute value is `'limit'`, the default number of displayed data |
+| limitText| String | `'View more'` | When the `pattern` attribute value is `'limit'`, the default prompt content displayed in the last row of the table when the number of data is greater than the value of the `'limit'` attribute |
+| allText| String | `'Collapse'`| When the `pattern` attribute value is `'limit'`, the default prompt content displayed in the last row of the table after all data is displayed |
+| expandPattern | String | `'toggle'` | Specifies the expansion behavior of columns whose `type` attribute value is `'expand'`. Optional values: `'toggle'`, `'normal'`. When the value is `'toggle'`, other rows will be retracted after one row is expanded. When the value is `'normal'`, every row can be expanded. |
+| rowClassName | Function | | Add a custom class function to the table row. The first parameter indicates the index, i.e. the row number. The second parameter is the current row data of the table. |
+| xScroll | Boolean | `false` | Whether the table can scroll horizontally when the mouse is rolled |
+| showColor | Boolean | `false` | Whether to display the background color of the selected row |
 
-#### 数据相关属性
+#### Data Related Properties
 
 | Attr/Prop | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| title | String |  | 表格的标题 |
-| data | Array |  | 表格默认要显示的数据 |
-| allChecked.sync | Boolean | `false` | 默认是否全部选中 |
-| defaultSort | Object\< title, order \> |  | 默认的排序列和顺序值，其中`title`属性指定默认排序的列。`order`指定默认排序的顺序，可选值: `'desc'`,`'asc'`。 |
-| defaultFilter | Object\< title, value, column \> |  | 默认采用某列进行过滤，其中`title`属性指定默认过滤的列，`value`指定默认过滤的值，在存在多个过滤列的时候可以使用此属性指定，当前只有一个列的时候可以不指定，默认会使用第一个filter列 |
-| forceFilter | Boolean | `false` | 数据发生变化时，存在数据过滤列，是否需要进行过滤，默认是不需要的 |
-| forceSort | Boolean | `false` | 数据发生变化时，存在数据排序，是否需要进行排序，默认是不需要的 |
-| sortMethod | Function |  | 自定义排序方法，第一个参数为该列前一行数据，第二个参数为该列后一行数据，方法需要返回值，返回类型为`Boolean`|
-| sortRemoteMethod | Function|  | 异步执行排序传入的方法，第一个参数是列字段，第二个参数是排序顺序，第三个参数是列对象 |
-| filterMethod | Function |  | 自定义过滤方法，第一个参数为该列数据，第二个参数为列实例 |
+| title | String | | Title of the table |
+| data | Array | | The default data to be displayed in the table |
+| allChecked.sync | Boolean | `false` | Are all checked by default? |
+| defaultSort | Object\< title, order \> | | Default sorting column and order value, where the `title` attribute specifies the default sorting column. `order` specifies the default sorting order, optional values: `'desc'`, `'asc'`. |
+| defaultFilter | Object\< title, value, column \> | | By default, a column is used for filtering. The `title` attribute specifies the default filtered column, and `value` specifies the default filtered value. This attribute can be used to specify when there are multiple filter columns. It can be left unspecified when there is only one column. The first filter column will be used by default. |
+| forceFilter | Boolean | `false` | When data changes, if there is a data filter column, is filtering required? The default is no filtering. |
+| forceSort | Boolean | `false` | When data changes, there is data sorting. Is it necessary to sort? The default is not necessary |
+| sortMethod | Function | | Custom sorting method. The first parameter is the previous row of data in the column. The second parameter is the next row of data in the column. The method needs to return a value. The return type is `Boolean`|
+| sortRemoteMethod | Function| | Asynchronously execute the sorting method passed in. The first parameter is the column field, the second parameter is the sorting order, and the third parameter is the column object. |
+| filterMethod | Function | | Custom filtering method, the first parameter is the column data, the second parameter is the column instance |
 
 
 ### Slots
 
 #### (default)
 
-插入`<u-table-view-column>`子组件。
+Insert the `<u-table-view-column>` child component.
 
-#### title
+#### Title
 
-自定义表格标题
+Customize table title
 
-#### limit-text
+#### Limit-Text
 
-在`pattern`属性值为`'limit'`时，数据的数目大于`'limit'`属性 的值时默认在表格最后一行显示的提示内容
+When the `pattern` attribute value is `'limit'`, the default prompt content displayed in the last row of the table when the number of data is greater than the value of the `'limit'` attribute
 
-#### all-text
+#### All-Text
 
-在`pattern`属性值为`'limit'`时，显示所有数据后默认在表格最后一行显示的提示内容
+When the `pattern` attribute value is `'limit'`, the default prompt content displayed in the last row of the table after all data is displayed
 
-#### no-data-text
+#### No-Data-Text
 
-数据为空时自定义显示文本
+Customize the text displayed when the data is empty
 
 #### expandIcon
 
-在列中`type`属性值为`'expand'`时，替换默认的切换图标
+Replace the default toggle icon when the `type` attribute value in the column is `'expand'`
 
 ### Events
 #### @sort-change
 
-点击排序标签触发
+Click on the sorting label to trigger
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.column | Object | 当前列`column`的实例，含有当前列的所有信息，实质是`table-view-column`实例 |
-| $event.label | String  | 当前列的标签值  |
-| $event.order | String  | 当前列排序值： `'asc'`或`'desc'`  |
+| $event.column | Object | The instance of the current column `column`, which contains all the information of the current column. It is actually an instance of `table-view-column` |
+| $event.label | String | The label value of the current column |
+| $event.order | String | Current column sort value: `'asc'` or `'desc'` |
 
 #### @filter-change
 
-点击过滤标签触发
+Click the filter tag to trigger
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.column | Object | 当前列`column`的实例，含有当前列的所有信息，实质是`table-view-column`实例 |
-| $event.value | String  | 选中的标签值  |
-| $event.index | Number  | 当前列的索引值  |
+| $event.column | Object | The instance of the current column `column`, which contains all the information of the current column. It is actually an instance of `table-view-column` |
+| $event.value | String | The selected tag value |
+| $event.index | Number | The index value of the current column |
 
 
 #### @selection-change
 
-点击checkbox触发
+Click on the checkbox to trigger
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Array | 选中的行的数据集合 |
+| $event | Array | Data collection of selected rows |
 
 #### @radio-change
 
-点击radio触发
+Click on the radio trigger
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | String | 选中的行的单选值 |
-| $event.row | Object | 选中的行的值 |
-| $event.index | Number | 选中的行的索引 |
+| $event.value | String | Radio value of the selected row |
+| $event.row | Object | The value of the selected row |
+| $event.index | Number | The index of the selected row |
 
 #### @row-click
 
-点击表格行触发
+Click on the table row to trigger
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.data | Object | 选中的行的数据集合 |
-| $event.index | Int | 行数据所在的索引值 |
+| $event.data | Object | Data collection of the selected row |
+| $event.index | Int | The index value of the row data |
 
 #### @toggle-expand
 
-列展开或收回时触发
+Fired when a column is expanded or retracted
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.index | Int | 选中的行的数据索引 |
-| $event.direction | String | icon的方向，向哪个方向展开或收起 |
-| $event.row | Object | 选中行的数据 |
+| $event.index | Int | The data index of the selected row |
+| $event.direction | String | The direction of the icon, in which direction to expand or collapse |
+| $event.row | Object | Data of the selected row |
 
 #### @mouseenter
 
-表格某行数据上的鼠标处于mouseenter
+The mouse on a row of data in the table is in the mouseenter
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.index | Int | 行数据索引 |
+| $event.index | Int | Row data index |
 
 #### @mouseleave
 
-表格某行数据鼠标处于mouseleave
+The mouse of a row of data in the table is in mouseleave
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.index | Int | 行数据索引 |
+| $event.index | Int | Row data index |
 
 ## TableViewColumn API
-### Props/Attrs
+Props/Attrs
 
-#### 视图相关属性
-
-| Prop/Attr | Type | Default | Description |
-| --------- | ---- | ------- | ----------- |
-| width | String |  | 是指列的宽度值 |
-| border | Boolean | `false` | 是否有边框，默认无 |
-| fixed | String | | 将列固定在左边或右边，参见例子`固定左右列`，可选值：`'left'`,`'right'`,`''` |
-| ellipsis | Boolean | `false` | 是否换行，默认换行，值为`true`则开启不换行，超出部分显示为省略号 |
-| defaultText | String | `'-'` | 默认当单元格取值为空时，默认显示的内容，此处是设置某一列的显示 |
-| headClass | String | `''` | 给表格头部`'th'`添表格内容过多加自定义`'class'`名称，方便对表格头部自定义样式 |
-| placement | String | `'bottom-start'` | 可过滤列选项弹出层的弹出方向，可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start'`,`'left-end'`, `'right-start'`, `'right-end'` |
-| expandIcon | String | `'right-down'` | `icon`的图标展开方向，提供两种类型，一种是默认向右点击向下`'right-down'`，另一种是默认向下点击向上`'up-down'` |
-| expandStrict | Boolean | `false` | 当`type`属性值为`'expand'`时，开启`'expand'`严格匹配模式， 只有对应的`label`字段有值才显示`icon` |
-| expandLabel | String |  | 当`type`属性值为`'expand'`时，当出现组合形式的时候，使用此字段指定`icon`展开依赖的属性字段 |
-| expandClass | String |  | 当`type`属性值为`'expand'`时，定义`icon`的样式 |
-| visible | Boolean | `true` | 控制列的显示/隐藏 |
-| horizontal | String | `` | 控制列的对齐方式 默认是左对齐 |
-| columnClass | String | `` | 自定义列样式,给某一列添加class |
-
-#### 数据相关属性
+#### View related properties
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| title | String |  | 列的标题 |
-| value | String |  | 默认过滤项选中的值 |
-| label | String |  | 对象data中对象的属性 |
-| type | String |  | 可选值：`'selection'`,`'expand'`,`'time'`。值为`'selection'`,表示此列是否是可选择的， 对于日期类型的值可以设置值为`'time'`,配合`timeFormat`属性，转换成想要的日期格式, `'expand'`表示在当前行出现icon标识，点击icon当前行下新增新一行数据 |
-| timeFormat | String | `'YYYY-MM-DD HH:mm:ss'` | 定义`type`属性值为`'time'`时，返回的指定日期格式的值 |
-| sortable | Boolean | `false` | 列是否可排序 |
-| filter | Boolean | `false` | 列是否可过滤 |
-| headSelection | Boolean | `true` | 列表是否可全选 |
-| options | Array\{name, value} |  | 过滤项列表 |
-| formatter | Function |  | 自定义格式化列数据，第一个参数是含有该行数据的对象，第二个参数是列实例 |
-| sortMethod（准备废弃，提升到父元素上） | Function |  | 自定义排序方法，第一个参数为该列前一行数据，第二个参数为该列后一行数据，方法需要返回值，返回类型为`Boolean`|
-| sortRemoteMethod（准备废弃，提升到父元素上） | Function|  | 异步执行排序传入的方法，第一个参数是列字段，第二个参数是排序顺序，第三个参数是列对象 |
-| filterMethod（准备废弃，提升到父元素上） | Function |  | 自定义过滤方法，第一个参数为该列数据，第二个参数为列实例 |
+| width | String | | Refers to the width of the column |
+| border | Boolean | `false` | Whether to have a border, default is none |
+| fixed | String | | Fix the column to the left or right, see the example `Fix left and right columns`, optional values: `'left'`,`'right'`,`''` |
+| ellipsis | Boolean | `false` | Whether to wrap, the default is to wrap, the value is `true` to enable no wrap, and the excess part will be displayed as ellipsis |
+| defaultText | String | `'-'` | The default content displayed when the cell value is empty. Here is to set the display of a column |
+| headClass | String | `''` | Add a custom `'class'` name to the table header `'th'` to facilitate customizing the style of the table header |
+| placement | String | `'bottom-start'` | The pop-up direction of the filterable column option pop-up layer. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start'`,`'left-end'`, `'right-start'`, `'right-end'` |
+| expandIcon | String | `'right-down'` | The expansion direction of the icon `icon`. Two types are provided. One is the default right click down `'right-down'`, and the other is the default down click up `'up-down'` |
+| expandStrict | Boolean | `false` | When the `type` attribute value is `'expand'`, enable the `'expand'` strict matching mode. The `icon` will only be displayed if the corresponding `label` field has a value |
+| expandLabel | String | | When the `type` attribute value is `'expand'`, when a combination form appears, this field is used to specify the attribute field that `icon` depends on for expansion |
+| expandClass | String | | Defines the style of `icon` when the `type` attribute value is `'expand'` |
+| visible | Boolean | `true` | Controls whether the column is shown/hidden |
+| horizontal | String | `` | Controls the alignment of the column. The default is left-aligned. |
+| columnClass | String | `` | Customize column style, add class to a column |
+
+#### Data Related Properties
+
+| Prop/Attr | Type | Default | Description |
+| --------- | ---- | ------- | ----------- |
+| title | String | | The title of the column |
+| value | String | | The value selected by the default filter item |
+| label | String | | Attribute of the object in object data |
+| type | String | | Optional values: `'selection'`, `'expand'`, `'time'`. The value is `'selection'`, indicating whether this column is selectable. For date type values, the value can be set to `'time'`, and converted to the desired date format with the `timeFormat` property. `'expand'` means that an icon appears in the current row. Clicking the icon will add a new row of data under the current row. |
+| timeFormat | String | `'YYYY-MM-DD HH:mm:ss'` | When the `type` attribute value is defined as `'time'`, the value returned is in the specified date format |
+| sortable | Boolean | `false` | Whether the column is sortable |
+| filter | Boolean | `false` | Whether the column is filterable |
+| headSelection | Boolean | `true` | Whether the list can be fully selected |
+| options | Array\{name, value} | | Filter item list |
+| formatter | Function | | Customize the formatting of column data. The first parameter is the object containing the row data, and the second parameter is the column instance. |
+| sortMethod (to be discarded, promoted to the parent element) | Function | | Custom sorting method, the first parameter is the previous row of data in the column, the second parameter is the next row of data in the column, the method needs to return a value, the return type is `Boolean` |
+| sortRemoteMethod (to be discarded, promoted to the parent element) | Function| | Asynchronously execute the sorting method passed in. The first parameter is the column field, the second parameter is the sorting order, and the third parameter is the column object |
+| filterMethod (to be discarded, promoted to the parent element) | Function | | Custom filtering method, the first parameter is the column data, the second parameter is the column instance |
 
 ### Slots
 
 #### headerTitle
 
-插入自定义`th`标签内容。
+Insert custom `th` tag content.
 
 #### expandContent
 
-插入自定义`icon`展开的内容。
+Insert a custom `icon` into the expanded content.

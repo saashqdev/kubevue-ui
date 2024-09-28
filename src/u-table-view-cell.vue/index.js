@@ -9,7 +9,7 @@ export default {
         },
         column: Object,
         expand: { type: Boolean, default: false },
-        text: { type: Boolean, default: false }, // 表示纯文本内容
+        text: { type: Boolean, default: false }, // Represents plain text content
     },
     render(h) {
         let vnode = null;
@@ -19,7 +19,7 @@ export default {
             else if (this.column.$scopedSlots.expandContent)
                 vnode = this.column.$scopedSlots.expandContent;
         } else if (this.text) {
-            // 表格的自定义头部内容
+            // Custom header content for tables
             vnode = this.column.$slots.headerTitle || this.column.$slots.iconContent;
         } else {
             if (this.column.$scopedSlots.default)
