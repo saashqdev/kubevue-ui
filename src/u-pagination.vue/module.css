@@ -1,0 +1,37 @@
+@import 'proto-ui.kubevue/src/u-pagination.vue/module.css';
+
+.item {
+    border-radius: 50%;
+}
+
+.item:not(:last-child) {
+    margin-right: 5px;
+}
+
+.item:hover {
+    background: $background-color-base;
+}
+
+.item[selected] {
+    background: $brand-primary;
+    color: white;
+}
+
+.item[disabled] {
+    cursor: $cursor-not-allowed;
+    color: $brand-disabled;
+}
+
+.item[role="prev"]::before {
+    icon-font: url('i-line-awesome.vue/assets/angle-left.svg');
+    vertical-align: -2px;
+}
+
+.item[role="next"]::before {
+    icon-font: url('i-line-awesome.vue/assets/angle-right.svg');
+    vertical-align: -2px;
+}
+
+.root[disabled] .item[selected] {
+    background: $brand-disabled-dark;
+}

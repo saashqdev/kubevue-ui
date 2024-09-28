@@ -1,0 +1,305 @@
+@import 'proto-ui.kubevue/src/u-button.vue/module.css';
+
+.root {
+    padding: 0 20px;
+    border-color: $border-color-base;
+    border-radius: $border-radius-base;
+    transition: all $transition-duration-base;
+}
+
+.root:hover {
+    border-color: $border-color-base;
+    color: $color-base;
+    background: $background-color-base;
+}
+
+.root:active {
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.root[disabled] {
+    border-color: $border-color-base;
+    color: $border-color-base;
+    background: white;
+    box-shadow: none;
+}
+
+/**
+ * Color extends
+ */
+
+.root[color="primary"] {
+    background: $brand-primary;
+    color: white;
+    border: none;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="primary"]:hover {
+    background: #5d93e6;
+}
+
+.root[color="primary"][disabled] {
+    background: $brand-disabled-light;
+}
+
+.root[color="primary"][ghost] {
+    background: white;
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
+}
+
+.root[color="primary"][ghost]:hover {
+    background: $brand-primary;
+    color: white;
+}
+
+.root[color="success"] {
+    background: $brand-success;
+    color: white;
+    border: none;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="success"]:hover {
+    background: #2ca189;
+}
+
+.root[color="success"]:active {
+    background: #299781;
+}
+
+.root[color="success"][disabled] {
+    background: $brand-disabled-light;
+}
+
+.root[color="success"][ghost] {
+    background: white;
+    color: $brand-success;
+    border: 1px solid $brand-success;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="success"][ghost]:hover {
+    background: $brand-success;
+    color: white;
+}
+
+.root[color="success"][ghost]:active {
+    background: #299781;
+}
+
+.root[color="success"][ghost][disabled] {
+    color: $border-color-base;
+    border-color: $border-color-base;
+    background: white;
+    box-shadow: none;
+}
+
+.root[color="info"] {
+    background: $brand-info;
+    color: white;
+    border: none;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="info"]:hover {
+    background: #1192f6;
+}
+
+.root[color="info"]:active {
+    background: #0a8cf0;
+}
+
+.root[color="info"][disabled] {
+    background: $brand-disabled-light;
+}
+
+.root[color="info"][ghost] {
+    background: white;
+    color: $brand-info;
+    border: 1px solid $brand-info;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="info"][ghost]:hover {
+    background: $brand-info;
+    color: white;
+}
+
+.root[color="info"][ghost]:active {
+    background: #0a8cf0;
+}
+
+.root[color="info"][ghost][disabled] {
+    color: $border-color-base;
+    border-color: $border-color-base;
+    background: white;
+    box-shadow: none;
+}
+
+.root[color="warning"] {
+    background: $brand-warning;
+    color: white;
+    border: none;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="warning"]:hover {
+    background: #fbaa00;
+}
+
+.root[color="warning"]:active {
+    background: #eea200;
+}
+
+.root[color="warning"][disabled] {
+    background: $brand-disabled-light;
+}
+
+.root[color="warning"][ghost] {
+    background: white;
+    color: $brand-warning;
+    border: 1px solid $brand-warning;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="warning"][ghost]:hover {
+    background: $brand-warning;
+    color: white;
+}
+
+.root[color="warning"][ghost]:active {
+    background: #eea200;
+}
+
+.root[color="warning"][ghost][disabled] {
+    color: $border-color-base;
+    border-color: $border-color-base;
+    background: white;
+    box-shadow: none;
+}
+
+.root[color="error"] {
+    background: $brand-error;
+    color: white;
+    border: none;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="error"]:hover {
+    background: #f22d4e;
+}
+
+.root[color="error"]:active {
+    background: #f12143;
+}
+
+.root[color="error"][disabled] {
+    background: $brand-disabled-light;
+}
+
+.root[color="error"][ghost] {
+    background: white;
+    color: $brand-error;
+    border: 1px solid $brand-error;
+    line-height: calc($height-base - 2px);
+    vertical-align: 1px;
+}
+
+.root[color="error"][ghost]:hover {
+    background: $brand-error;
+    color: white;
+}
+
+.root[color="error"][ghost]:active {
+    background: #f12143;
+}
+
+.root[color="error"][ghost][disabled] {
+    color: $border-color-base;
+    border-color: $border-color-base;
+    background: white;
+    box-shadow: none;
+}
+
+.root[ghost] {
+    padding: 0 19px;
+    vertical-align: 0;
+}
+
+/**
+ * Size extends
+ */
+
+.root[size="small"] {
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+}
+
+.root[size="small"][ghost] {
+    padding: 0 9px;
+}
+
+.root[size="large"] {
+    height: 40px;
+    line-height: 38px;
+    padding: 0 15px;
+}
+
+.root[size="large"][ghost] {
+    padding: 0 14px;
+}
+
+.root[square] {
+    width: $height-base;
+    padding: 0;
+}
+
+/**
+ * Icon extends
+ */
+.root[icon="create"]::before {
+    icon-font: url('cloud-ui.kubevue/src/u-icon.vue/icons/create.svg');
+    vertical-align: -2px;
+    margin-right: 8px;
+}
+
+.root[square][icon="refresh"]::before {
+    icon-font: url('cloud-ui.kubevue/src/u-icon.vue/icons/refresh.svg');
+    vertical-align: -2px;
+    color: #9ba4ad;
+}
+
+.root[square][icon="refresh"]:hover::before {
+    color: $brand-primary;
+}
+
+.root[icon="loading"]::before {
+    content: '';
+    display: inline-block;
+    vertical-align: -4px;
+    margin-left: -2px;
+    margin-right: 6px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 100%;
+    animation: rotate 1s ease-in-out 0s infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0); }
+    80% { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
+}

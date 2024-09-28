@@ -1,0 +1,10 @@
+@import 'proto-ui.kubevue/src/u-slider.vue/module.css';
+
+.track {
+    height: 3px;
+}
+
+.handle {
+    top: -2px;
+    border: 2px solid #ddd;
+}

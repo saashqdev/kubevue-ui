@@ -1,0 +1,28 @@
+@import 'proto-ui.kubevue/src/u-label.vue/module.css';
+
+.root {
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    background: #eaeaea;
+}
+
+.root[color="primary"] {
+    background: $brand-primary;
+    color: white;
+}
+
+.root[color="success"] {
+    background: $brand-success;
+    color: white;
+}
+
+.root[color="warning"] {
+    background: $brand-warning;
+    color: white;
+}
+
+.root[color="error"] {
+    background: $brand-error;
+    color: white;
+}

@@ -1,0 +1,135 @@
+$chart-padding: 15px;
+$chart-title-height: 40px;
+$chart-title-small-height: 30px;
+$chart-legend-height: 35px;
+
+.root {
+    position: relative;
+    box-sizing: border-box;
+    padding: 15px;
+    height: 450px;
+}
+
+.title {
+    position: absolute;
+    z-index: 95;
+    top: calc($chart-padding - 5px);
+    left: $chart-padding;
+    right: $chart-padding;
+    height: $chart-title-height;
+    line-height: $chart-title-height;
+    font-size: 16px;
+}
+
+.caption {
+    position: absolute;
+    top: calc($chart-padding + $chart-title-height);
+    left: $chart-padding;
+    right: $chart-padding;
+    text-align: center;
+}
+
+.content {
+    position: absolute;
+    top: $chart-padding;
+    left: $chart-padding;
+    right: $chart-padding;
+    bottom: $chart-padding;
+}
+
+.title ~ .content {
+    top: 65px;
+}
+
+.caption ~ .content {
+    top: 65px;
+}
+
+.legend ~ .content {
+    bottom: 45px;
+}
+
+.legend {
+    position: absolute;
+    bottom: 5px;
+    height: $chart-legend-height;
+    line-height: 1.28;
+    left: calc($chart-padding - 10px);
+    right: calc($chart-padding - 10px);
+    font-size: 12px;
+    text-align: center;
+}
+
+.legend-item {
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 1em;
+    max-width: 18%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.legend-item-icon {
+    background: $brand-info;
+    display: inline-block;
+    content: '';
+    width: 10px;
+    height: 10px;
+    vertical-align: text-bottom;
+    margin-right: 4px;
+    position: relative;
+    top: -2px;
+}
+
+.legend-item:nth-of-type(5n+1) .legend-item-icon, .legend-item .legend-item-icon[color][color="info"] { background: $brand-info; }
+.legend-item:nth-of-type(5n+2) .legend-item-icon, .legend-item .legend-item-icon[color][color="warning"] { background: $brand-warning; }
+.legend-item:nth-of-type(5n+3) .legend-item-icon, .legend-item .legend-item-icon[color][color="success"] { background: $brand-success; }
+.legend-item:nth-of-type(5n+4) .legend-item-icon, .legend-item .legend-item-icon[color][color="error"] { background: $brand-error; }
+.legend-item:nth-of-type(5n+5) .legend-item-icon, .legend-item .legend-item-icon[color][color="primary"] { background: $brand-primary; }
+
+.legend-item[muted] {
+    color: $brand-disabled;
+}
+
+.legend-item[muted] .legend-item-icon {
+    background: $brand-disabled;
+}
+
+/* @TODO: border 是否需要更多含义 */
+.root[border] {
+    border: 1px solid $border-color-base;
+}
+
+.operate {
+    position: relative;
+    z-index: 100;
+}
+
+.loading[display="full"][class] {
+    background: white;
+}
+
+.empty {
+    width: 100%;
+    height: 100%;
+    background: url('./assets/empty.png') center center no-repeat;
+}
+
+.root[size="small"] {
+    height: 320px !important;
+}
+
+.root[size="small"] .title {
+    height: $chart-title-small-height;
+    line-height: $chart-title-small-height;
+    font-size: 14px;
+}
+.root[size="small"] .title ~ .content {
+    top: 45px;
+}
+
+.root[size="large"] {
+    height: 600px !important;
+}

@@ -1,0 +1,48 @@
+.root {
+    composes: group from '../u-sidebar.vue/module.css';
+}
+
+.head {
+    composes: group_head from '../u-sidebar.vue/module.css';
+    display: block;
+    cursor: pointer;
+    color: #8191a9;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.expander {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: transform $transition-duration-base;
+}
+
+.expander::after {
+    icon-font: url('i-line-awesome.vue/assets/angle-right.svg');
+}
+
+.head:hover {
+    /* color: white; */
+    /* background: #17263c; */
+    /* background-color: #dde8f0; */
+}
+
+.expander[expanded] {
+    transform: rotate(90deg);
+}
+
+.body {
+    composes: group_body from '../u-sidebar.vue/module.css';
+    background: #ebeff5;
+    transition: $transition-duration-base height ease-in-out, $transition-duration-base padding-top ease-in-out, $transition-duration-base padding-bottom ease-in-out;
+}
+

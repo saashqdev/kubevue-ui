@@ -1,0 +1,5 @@
+@import 'proto-ui.kubevue/src/u-checkbox.vue/module.css';
+
+.box {
+    border-radius: 3px;
+}

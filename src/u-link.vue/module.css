@@ -1,0 +1,8 @@
+@import 'proto-ui.kubevue/src/u-link.vue/module.css';
+
+.root {
+    color: #508de8;
+}
+.root[disabled] {
+    cursor: not-allowed;
+}
