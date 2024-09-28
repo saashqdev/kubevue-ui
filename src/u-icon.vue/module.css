@@ -2,8 +2,8 @@
     icon-font: url("./icons/area.svg");
 }
 
-.root[name="netease-cloud-logo"]::before {
-    icon-font: url("./icons/netease-cloud-logo.svg");
+.root[name="kubevue-cloud-logo"]::before {
+    icon-font: url("./icons/kubevue-cloud-logo.svg");
 }
 
 .root[name="portrait"]::before {
