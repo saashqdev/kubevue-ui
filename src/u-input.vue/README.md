@@ -1,29 +1,29 @@
-# 单行输入 Input
+# Single Line Input
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
-大部分属性与`<input>`元素一致。
-
-``` html
-<u-input maxlength="12" placeholder="1~12位小写字母" autofocus></u-input>
-```
-
-### 加密
+Most of the attributes are the same as those of the `<input>` element.
 
 ``` html
-<u-input type="password" maxlength="12" placeholder="请输入密码"></u-input>
+<u-input maxlength="12" placeholder="1~12 lowercase letters" autofocus></u-input>
 ```
 
-### 数字
+### Encryption
 
-使用`v-model`的`number`修饰符，可以轻松将输入值转成number类型。
+``` html
+<u-input type="password" maxlength="12" placeholder="Please enter password"></u-input>
+```
 
-``` vue
+### Number
+
+Using the `number` modifier of `v-model`, you can easily convert the input value to the number type.
+
+```vue
 <template>
 <div>
-    <u-input v-model.number="value" maxlength="12" placeholder="请输入端口号" @input="onInput"></u-input>
-    输出：{{ output }}
+    <u-input v-model.number="value" maxlength="12" placeholder="Please enter the port number" @input="onInput"></u-input>
+    Output: {{ output }}
 </div>
 </template>
 
@@ -47,16 +47,16 @@ export default {
 </script>
 ```
 
-### 只读与禁用
+### Read Only and Disabled
 
 ``` html
 <u-linear-layout>
-    <u-input value="只读" readonly></u-input>
-    <u-input value="禁用" disabled></u-input>
+    <u-input value="readonly" readonly></u-input>
+    <u-input value="disabled" disabled></u-input>
 </u-linear-layout>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -96,9 +96,9 @@ export default {
 </u-linear-layout>
 ```
 
-### 删除功能
+### Delete Function
 ```html
-<u-input close size="normal large" placeholder="1~12位小写字母" autofocus></u-input>
+<u-input close size="normal large" placeholder="1~12 lowercase letters" autofocus></u-input>
 ```
 
 ## API
@@ -106,83 +106,83 @@ export default {
 
 | Attr/Prop | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| type | String | `'text'` | 输入框的类型，目前只支持两种：`'text'`和`'password'` |
-| value | String | | 输入框的值 |
-| placeholder | String | | 原生属性 |
-| maxlength | Number | | 原生属性 |
-| autofocus | Boolean | | 原生属性 |
-| readonly | Boolean | | 原生属性 |
-| disabled | Boolean | | 原生属性 |
-| size | String | `'normal'` | 大小扩展，支持一个值：`'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`, `'full'`，或两个值的组合，前者表示高度，后者表示宽度，类似CSS的padding书写格式 |
-| close | Boolean | `'false'` | 删除功能，默认值`false`，当值为`true`并且输入框有输入内容才显示 |
-| maxlengthMessage | String | | 输入内容达到上限时的错误提示，且被 [FormItem](#/components/u-form) 包裹时生效 |
+| type | String | `'text'` | The type of input box, currently only supports two types: `'text'` and `'password'` |
+| value | String | | The value of the input box |
+| placeholder | String | | Native properties |
+| maxlength | Number | | Native properties |
+| autofocus | Boolean | | Native properties |
+| readonly | Boolean | | Native properties |
+| disabled | Boolean | | Native attribute |
+| size | String | `'normal'` | Size extension, supports one value: `'mini'`, `'small'`, `'normal'`, `'large'`, `'huge'`, `' full'', or a combination of two values, the former represents height and the latter represents width, similar to CSS padding writing format |
+| close | Boolean | `'false'` | Delete function, default value `false`, it will only be displayed when the value is `true` and there is input content in the input box |
+| maxlengthMessage | String | | Error message when input content reaches the upper limit, and takes effect when wrapped by [FormItem](#/components/u-form) |
 
 ### Slots
 
 #### (default)
 
-插入 `HTML`或 `Component`, 可展示额外内容。
+Insert `HTML` or `Component` to display additional content.
 
 ### Events
 
 #### @input
 
-输入时触发
+Fires on input
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 输入框的值 |
+| $event | String | Value of input box |
 
 #### @change
 
-值变化时触发（与原生事件不同）
+Triggered when the value changes (different from native events)
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | String | 改变后的值 |
-| $event.oldValue | String | 旧的值 |
+| $event.value | String | Changed value |
+| $event.oldValue | String | Old value |
 
 #### @focus
 
-获得焦点时触发
+Triggered when focus is obtained
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 原生事件对象 |
+| $event | String | Native event object |
 
 #### @blur
 
-失去焦点时触发
+Triggered when focus is lost
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 原生事件对象 |
+| $event | String | Native event object |
 
 #### @reset
 
-点击删除icon时触发
+Triggered when the delete icon is clicked
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | String | 重置后的值 |
+| $event | String | Value after reset |
 
 ### Methods
-#### focus
+#### Focus
 
-使输入框处于焦点状态
-
-| Param | Type | Description |
-| ----- | ---- | ----------- |
-| |  |  |
-
-#### blur
-
-使输入框失去焦点
+Put the input box in focus
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| |  |  |
+| | | |
+
+#### Blur
+
+Make the input box lose focus
+
+| Param | Type | Description |
+| ----- | ---- | ----------- |
+| | | |
 
 #### removeValue()
 
-删除输入值
+Delete input value

@@ -1,4 +1,4 @@
-# 占位图 Placeholder
+# Placeholder
 
 ``` html
 <div style="position: relative; height: 300px;">

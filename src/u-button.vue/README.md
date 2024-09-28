@@ -1,24 +1,23 @@
-# 按钮 Button
+# Button Button
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
-<u-button>设 置</u-button>
+<u-button>Settings</u-button>
 ```
 
-### 链接
+### Link
 
 ``` html
 <u-linear-layout>
-    <u-button href="https://kubevue.github.io" target="_blank">href</u-button>
+    <u-button href="https://kubevue.github.io" target="_blank">Href</u-button>
     <u-button to="/proto-ui/u-link">to</u-button>
-    <u-button href="https://kubevue.github.io" disabled>disabled</u-button>
+    <u-button href="https://kubevue.github.io" disabled>Disabled</u-button>
 </u-linear-layout>
 ```
 
-### 颜色扩展
-
+### Color Extension
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
@@ -40,7 +39,7 @@
 </u-linear-layout>
 ```
 
-### 大小扩展
+### Size Expansion
 
 ``` html
 <u-linear-layout>
@@ -50,27 +49,27 @@
 </u-linear-layout>
 ```
 
-### 正方形
+### Square
 
 ``` html
 <u-button square icon="refresh"></u-button>
 ```
 
-### 图标
+### Icon
 
 ``` html
 <u-linear-layout>
-    <u-button color="primary" icon="create">创建实例</u-button>
-    <u-button color="primary" icon="loading">立即创建</u-button>
-    <u-button color="primary" icon="loading" disabled>立即创建</u-button>
+    <u-button color="primary" icon="create">Create Instance</u-button>
+    <u-button color="primary" icon="loading">Create Now</u-button>
+    <u-button color="primary" icon="loading" disabled>Create Now</u-button>
 </u-linear-layout>
 ```
 
-### 展示方式
+### Display method
 
 ``` html
-<u-button display="block">块级按钮</u-button>
-<u-button display="inline">行内按钮（默认）</u-button>
+<u-button display="block">Block Level Button</u-button>
+<u-button display="inline">Inline Button (default)</u-button>
 ```
 
 ## API
@@ -78,45 +77,45 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| href | String |  | 链接地址 |
-| target | String |  | （原生属性） |
-| to | String,  Location |  | 需要vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。 |
-| replace | Boolean | `false` | 需要vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。 |
-| append | Boolean | `false` | 需要vue-router，与`<router-link>`的`append`属性相同。如果为`true`，则在当前路径后追加`to`的路径。 |
-| color | String |  | 颜色扩展。可选值：`'primary'`或不填 |
-| size | String |  | 大小扩展。可选值：`'small'`或不填 |
-| square | Boolean | `false` | 是否显示为正方形 |
-| disabled | Boolean | `false` | 是否禁用。禁用后不会响应`click`事件。 |
+| href | String | | Link address |
+| target | String | | (native attribute) |
+| to | String, Location | | Requires vue-router, which is the same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location. |
+| replace | Boolean | `false` | Requires vue-router, the same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation. |
+| append | Boolean | `false` | Requires vue-router, the same as the `append` attribute of `<router-link>`. If `true`, append the path of `to` after the current path. |
+| color | String | | Color extension. Optional value: `'primary'` or leave blank |
+| size | String | | Size extension. Optional value: `'small'` or leave blank |
+| square | Boolean | `false` | Whether to display as a square |
+| disabled | Boolean | `false` | Whether to disable. When disabled, the `click` event will not be responded to. |
 
 ### Slots
 
 | Slot | Description |
 | ---- | ----------- |
-| (default) | 插入文本或HTML |
+| (default) | Insert text or HTML |
 
 ### Events
 
 #### $listeners
 
-监听所有`<a>`元素的事件。
+Listen for events on all `<a>` elements.
 
 #### @before-navigate
 
-使用router相关属性切换路由前触发
+Triggered before switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | String,  Location | `to`属性的值 |
-| $event.replace | Boolean | `replace`属性的值 |
-| $event.append | Boolean | `append`属性的值 |
-| $event.preventDefault | Function | 阻止切换流程 |
+| $event.to | String, Location | The value of the `to` attribute |
+| $event.replace | Boolean | The value of the `replace` attribute |
+| $event.append | Boolean | The value of the `append` attribute |
+| $event.preventDefault | Function | Prevent switching process |
 
 #### @navigate
 
-使用router相关属性切换路由时触发
+Triggered when switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | String,  Location | `to`属性的值 |
-| $event.replace | Boolean | `replace`属性的值 |
-| $event.append | Boolean | `append`属性的值 |
+| $event.to | String, Location | The value of the `to` attribute |
+| $event.replace | Boolean | The value of the `replace` attribute |
+| $event.append | Boolean | The value of the `append` attribute |

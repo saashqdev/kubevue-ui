@@ -1,13 +1,13 @@
-# 线型进度条 LinearProgress
+# Linear progress bar LinearProgress
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-linear-progress :percent="36"></u-linear-progress>
 ```
 
-### 高度扩展
+### Highly Scalable
 
 ``` html
 <u-linear-layout direction="vertical">
@@ -26,7 +26,7 @@
 </u-linear-layout>
 ```
 
-### 范围限制
+### Scope Restrictions
 ``` html
 <u-linear-layout direction="vertical">
     <u-linear-layout>
@@ -43,12 +43,12 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| percent | Number | `0` | 百分比 |
-| size | String | `'normal'` | 高度扩展，值有`'small'`, `'normal'`, `'large'`, `'huge'`四个值 |
-| range | Array | `[0, 100]` | 百分比范围限制 |
+| percent | Number | `0` | Percent |
+| size | String | `'normal'` | Height expansion, the value has four values: `'small'`, `'normal'`, `'large'`, `'huge'` |
+| range | Array | `[0, 100]` | Percent range limit |
 
 ### Slots
 
 #### (default)
 
-插入文本或HTML。
+Insert text or HTML.

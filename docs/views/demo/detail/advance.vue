@@ -1,5 +1,5 @@
 <template>
     <div>
-        高级详情页
+        Advanced Details Page
     </div>
 </template>

@@ -1,17 +1,17 @@
 <template>
     <div :class="$style.root">
         <div :class="$style.title">
-            <h1>每星期访问量</h1>
+            <h1>Visits per week</h1>
             <u-table :class="$style.table">
                 <thead>
                     <tr>
-                        <th>星期一</th>
-                        <th>星期二</th>
-                        <th>星期三</th>
-                        <th>星期四</th>
-                        <th>星期五</th>
-                        <th>星期六</th>
-                        <th>星期日</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                        <th>Sunday</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,15 +29,15 @@
             </div>
         <div :class="$style.row">
             <div :class="$style.chart">
-                <u-bar-chart :x-axis="{ key: 'week' }" :y-axis="{ min: 0 }" :series="[{key: 'number', name: '访问量' }]" :data="[{ week: '星期一', number: 150 }, { week: '星期二', number: 300 }, { week: '星期三', number: 28 }, { week: '星期四', number: 200 }, { week: '星期五', number: 74 }, { week: '星期六', number: 532 }, { week: '星期日', number: 420 }]" border legend title="每星期访问量"></u-bar-chart>
+                <u-bar-chart :x-axis="{ key: 'week' }" :y-axis="{ min: 0 }" :series="[{key: 'number', name: 'Visits' }]" :data="[{ week: 'Monday', number: 150 }, { week: 'Tuesday', number: 300 }, { week: 'Wednesday', number: 28 }, { week: 'Thursday ', number: 200 }, { week: 'Friday', number: 74 }, { week: 'Saturday', number: 532 }, { week: 'Sunday', number: 420 }]" border legend title="Every Weekly visits"></u-bar-chart>
             </div>
             <div :class="$style.chart">
-                <u-xbar-chart :y-axis="{ key: 'week' }" :x-axis="{ min: 0 }" :series="[{key: 'number', name: '访问量' }]" :data="[{ week: '星期一', number: 150 }, { week: '星期二', number: 300 }, { week: '星期三', number: 28 }, { week: '星期四', number: 200 }, { week: '星期五', number: 74 }, { week: '星期六', number: 532 }, { week: '星期日', number: 420 }]" border legend title="每星期访问量"></u-xbar-chart>
+                <u-xbar-chart :y-axis="{ key: 'week' }" :x-axis="{ min: 0 }" :series="[{key: 'number', name: 'Visits' }]" :data="[{ week: 'Monday', number: 150 }, { week: 'Tuesday', number: 300 }, { week: 'Wednesday', number: 28 }, { week: 'Thursday ', number: 200 }, { week: 'Friday', number: 74 }, { week: 'Saturday', number: 532 }, { week: 'Sunday', number: 420 }]" border legend title="Every Weekly visits"></u-xbar-chart>
             </div>
         </div>
         <div :class="$style.row">
             <div :class="$style.chart">
-                <u-line-chart :x-axis="{ key: 'week' }" :y-axis="{ min: 0 }" :series="[{ key: 'number' }]" :data="[{ week: '星期一', number: 150 }, { week: '星期二', number: 300 }, { week: '星期三', number: 28 }, { week: '星期四', number: 200 }, { week: '星期五', number: 74 }, { week: '星期六', number: 532 }, { week: '星期日', number: 420 }]" border legend title="每星期访问量"></u-line-chart>
+                <u-line-chart :x-axis="{ key: 'week' }" :y-axis="{ min: 0 }" :series="[{ key: 'number' }]" :data=" [{ week: 'Monday', number: 150 }, { week: 'Tuesday', number: 300 }, { week: 'Wednesday', number: 28 }, { week: 'Thursday', number: 200 }, { week: 'Friday', number: 74 }, { week: 'Saturday', number: 532 }, { week: 'Sunday', number: 420 }]" border legend title="Visits per week"></ u-line-chart>
             </div>
             <div :class="$style.chart">
                 <u-pie-chart :data="[
@@ -45,7 +45,7 @@
                     { 'percent': 25, 'name': 'selector2' },
                     { 'percent': 25, 'name': 'selector3' },
                     { 'percent': 25, 'name': 'selector4' }
-                    ]" border legend title="每星期访问量">
+                    ]" border legend title="Visits Per Week">
                 </u-pie-chart>
             </div>
         </div>

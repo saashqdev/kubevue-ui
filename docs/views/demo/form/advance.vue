@@ -1,50 +1,50 @@
 <template>
     <div>
-        <h1>高级表单</h1>
-        <p>高级表单通常用于数据项较多，场景比较复杂的表单场景</p>
+        <h1>Advanced Forms</h1>
+        <p>Advanced forms are usually used in form scenarios with a large number of data items and complex scenarios</p>
         <div :class="$style.part">
-            <h3>行内表单</h3>
+            <h3>Inline Form</h3>
                 <u-form layout="inline" label-size="auto">
-                    <u-form-item label="状态">
-                        <u-input maxlength="63" placeholder="认证中"></u-input>
+                    <u-form-item label="Status">
+                        <u-input maxlength="63" placeholder="Authenticating"></u-input>
                     </u-form-item>
-                    <u-form-item label="用户名">
-                        <u-input maxlength="63" placeholder="请输入用户名"></u-input>
+                    <u-form-item label="Username">
+                        <u-input maxlength="63" placeholder="Please enter username"></u-input>
                     </u-form-item>
-                    <u-form-item label="联系号码">
-                        <u-input maxlength="63" placeholder="请输入联系号码"></u-input>
+                    <u-form-item label="Contact Number">
+                        <u-input maxlength="63" placeholder="Please enter contact number"></u-input>
                     </u-form-item>
                     <u-form-item>
-                        <u-button color="primary">查询</u-button>
+                        <u-button color="primary">Query</u-button>
                     </u-form-item>
                 </u-form>
         </div>
         <div :class="$style.part">
-            <h3>表单验证</h3>
+            <h3>Form Validation</h3>
             <u-form ref="form" :rules="rules1" gap="large">
-                <u-form-item label="用户名" name="username">
-                    <u-input v-model="model.username" size="huge" maxlength="12" placeholder="4~12个字符"></u-input>
+                <u-form-item label="Username" name="username">
+                    <u-input v-model="model.username" size="huge" maxlength="12" placeholder="4~12 characters"></u-input>
                 </u-form-item>
-                <u-form-item label="邮箱" name="email">
-                    <u-input v-model="model.email" size="huge" maxlength="24" placeholder="请输入邮箱"></u-input>
+                <u-form-item label="Email" name="email">
+                    <u-input v-model="model.email" size="huge" maxlength="24" placeholder="Please enter your email"></u-input>
                 </u-form-item>
-                <u-form-item label="手机号码" name="phone">
-                    <u-input v-model="model.phone" size="huge" maxlength="11" placeholder="请输入手机号码"></u-input>
+                <u-form-item label="Mobile Phone Number" name="phone">
+                    <u-input v-model="model.phone" size="huge" maxlength="11" placeholder="Please enter your mobile phone number"></u-input>
                 </u-form-item>
                 <u-form-item>
-                    <u-button color="primary" @click="submit()">提交</u-button>
+                    <u-button color="primary" @click="submit()">Submit</u-button>
                 </u-form-item>
             </u-form>
         </div>
         <div :class="$style.part">
-            <h3>表格内表单</h3>
+            <h3>Form within a Table</h3>
             <u-table :class="$style.table">
                 <thead slot="thead">
                     <tr>
-                        <th :class="$style.th_label">姓名</th>
-                        <th :class="$style.th_label">年龄</th>
-                        <th :class="$style.th_label">出生日期</th>
-                        <th>操作</th>
+                        <th :class="$style.th_label">Name</th>
+                        <th :class="$style.th_label">Age</th>
+                        <th :class="$style.th_label">Date of Birth</th>
+                        <th>Operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,13 +68,13 @@
                         <td>
                             <u-form-item class="$style.item">
                                 <u-link size="small" @click="addList.splice(index,1)">
-                                    删除
+                                    Delete
                                 </u-link>
                             </u-form-item>
                         </td>
                     </tr>
                     <tr>
-                        <td :class="$style.add" colspan="4"><u-link @click="addInfo">添加</u-link></td>
+                        <td :class="$style.add" colspan="4"><u-link @click="addInfo">Add</u-link></td>
                     </tr>
                 </tbody>
             </u-table>
@@ -88,13 +88,13 @@ export default {
         return {
             rules: {
                 name: [
-                    { type: 'string', required: true, trigger: 'input + blur', message: '请输入实例名称' },
+                    { type: 'string', required: true, trigger: 'input + blur', message: 'Please enter the instance name' },
                 ],
                 label: [
-                    { type: 'string', required: true, trigger: 'input + blur', message: '请输入label' },
+                    { type: 'string', required: true, trigger: 'input + blur', message: 'Please enter label' },
                 ],
                 age: [
-                    { type: 'string', required: true, trigger: 'input + blur', message: '请输入年龄' },
+                    { type: 'string', required: true, trigger: 'input + blur', message: 'Please enter your age' },
                 ],
             },
             canSubmit: false,
@@ -105,27 +105,27 @@ export default {
             },
             rules1: {
                 username: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入用户名' },
-                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: '请输入4~12个字符' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter username' },
+                    { type: 'string', min: 4, max: 12, trigger: 'blur', message: 'Please enter 4~12 characters' },
                 ],
                 email: [
-                    { type: 'string', required: true, trigger: 'blur', message: '请输入邮箱' },
-                    { type: 'email', trigger: 'blur', message: '邮箱格式不正确' },
+                    { type: 'string', required: true, trigger: 'blur', message: 'Please enter your email' },
+                    { type: 'email', trigger: 'blur', message: 'The email format is incorrect' },
                 ],
                 phone: [
-                    { type: 'string', pattern: /^\d{11}$/, trigger: 'blur', message: '手机号码格式不正确' },
+                    { type: 'string', pattern: /^\d{11}$/, trigger: 'blur', message: 'Mobile phone number format is incorrect' },
                 ],
             },
             addList: [
-                { name: '张三', age: '20', date: '1992-09-10' },
-                { name: '李四', age: '22', date: '1990-2-13' },
+                { name: 'Homer Simpson', age: '20', date: '1992-09-10' },
+                { name: 'Marge Simpson', age: '22', date: '1990-2-13' },
             ],
         };
     },
     methods: {
         submit() {
             this.$refs.form.validate()
-                .then(() => alert('提交成功'))
+                .then(() => alert('Submission successful'))
                 .catch((err) => { console.log(err); });
         },
         addInfo() {

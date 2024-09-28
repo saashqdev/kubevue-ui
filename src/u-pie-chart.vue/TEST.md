@@ -1,19 +1,19 @@
-### 包含0的情况
+### Contains 0 Cases
 
 ``` html
 <u-pie-chart legend :data="[
-    { name: '请求成功数', value: 0, color: 'success' },
-    { name: '请求失败数', value: 2, color: 'error' },
-    { name: '线程拒绝次数', value: 0, color: 'info' },
+    { name: 'Number of successful requests', value: 0, color: 'success' },
+    { name: 'Number of failed requests', value: 2, color: 'error' },
+    { name: 'Number of thread rejections', value: 0, color: 'info' },
 ]"></u-pie-chart>
 ```
 
-### 包含 undefined 的情况
+### Contains Undefined Cases
 
 ``` html
 <u-pie-chart legend :data="[
-    { name: '请求成功数', value: 4, color: 'success' },
-    { name: '请求失败数', value: 2, color: 'error' },
-    { name: '线程拒绝次数', value: undefined, color: 'info' },
+    { name: 'Number of successful requests', value: 4, color: 'success' },
+    { name: 'Number of failed requests', value: 2, color: 'error' },
+    { name: 'Number of thread rejections', value: undefined, color: 'info' },
 ]"></u-pie-chart>
 ```

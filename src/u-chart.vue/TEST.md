@@ -1,45 +1,45 @@
-### 图例
+### Legend
 
-#### 图例过长
+#### Legend is Too Long
 
 ``` html
-<u-chart title="较多的图例" border legend :data="[1]" :series="[
-    { name: '很长很长很长很长很长很长的阅读数', field: 'readings' },
-    { name: '很长很长很长很长很长很长的点赞数', field: 'stars' },
-    { name: '很长很长很长很长很长很长的收藏数', field: 'favors' },
-    { name: '很长很长很长很长很长很长的阅读数', field: 'readings2' },
+<u-chart title="More legends" border legend :data="[1]" :series="[
+    { name: 'Very long, long, long, long, long, long number of readings', field: 'readings' },
+    { name: 'Very long, long, long, long, long, long, long number of likes', field: 'stars' },
+    { name: 'Very long, long, long, long, long, long collection number', field: 'favors' },
+    { name: 'Very long, long, long, long, long, long, long number of readings', field: 'readings2' },
 ]"></u-chart>
 ```
 
-#### 图例过窄
+#### Legend is Too Narrow
 
 ``` html
-<u-chart title="较多的图例" border legend style="width: 400px;" :data="[1]" :series="[
-    { name: '很长很长很长的阅读数', field: 'readings' },
-    { name: '很长很长很长的点赞数', field: 'stars' },
-    { name: '很长很长很长的收藏数', field: 'favors' },
-    { name: '很长很长很长的阅读数', field: 'readings2' },
+<u-chart title="More legends" border legend style="width: 400px;" :data="[1]" :series="[
+    { name: 'Very long, long, long number of readings', field: 'readings' },
+    { name: 'A long, long, long number of likes', field: 'stars' },
+    { name: 'Very long collection number', field: 'favors' },
+    { name: 'Very long, long, long number of readings', field: 'readings2' },
 ]"></u-chart>
 ```
 
-#### 图例过多
+#### Too Many Legends
 
 ``` html
-<u-chart title="较多的图例" border legend :data="[1]" :series="[
-    { name: '阅读数', field: 'readings' },
-    { name: '点赞数', field: 'stars' },
-    { name: '收藏数', field: 'favors' },
-    { name: '阅读数', field: 'readings2' },
-    { name: '点赞数', field: 'stars2' },
-    { name: '很长很长很长很长很长很长的收藏数', field: 'favors2' },
-    { name: '阅读数', field: 'readings3' },
-    { name: '点赞数', field: 'stars3' },
-    { name: '收藏数', field: 'favors3' },
-    { name: '很长很长很长很长很长很长的阅读数', field: 'readings4' },
-    { name: '点赞数', field: 'stars4' },
-    { name: '收藏数', field: 'favors4' },
-    { name: '阅读数', field: 'readings5' },
-    { name: '很长很长很长很长很长很长的点赞数', field: 'stars5' },
-    { name: '收藏数', field: 'favors5' },
+<u-chart title="More legends" border legend :data="[1]" :series="[
+    { name: 'Number of Readings', field: 'readings' },
+    { name: 'Number of Likes', field: 'stars' },
+    { name: 'Favorites', field: 'favors' },
+    { name: 'Number of Readings', field: 'readings2' },
+    { name: 'Number of Likes', field: 'stars2' },
+    { name: 'Very long, long, long, long, long, long collection number', field: 'favors2' },
+    { name: 'Readings', field: 'readings3' },
+    { name: 'Number of Likes', field: 'stars3' },
+    { name: 'Favorites', field: 'favors3' },
+    { name: 'Very long, long, long, long, long, long, long number of readings', field: 'readings4' },
+    { name: 'Number of Likes', field: 'stars4' },
+    { name: 'Favorites', field: 'favors4' },
+    { name: 'Readings', field: 'readings5' },
+    { name: 'Very long, long, long, long, long, long number of likes', field: 'stars5' },
+    { name: 'Favorites', field: 'favors5' },
 ]"></u-chart>
 ```

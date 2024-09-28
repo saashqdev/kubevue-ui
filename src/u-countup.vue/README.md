@@ -1,62 +1,62 @@
-# 数字渐变 CountUp
+# Digital Gradient CountUp
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-countup :end="100"></u-countup>
 ```
 
-#### 分组 (1,000 vs 1000)
+#### Grouping (1,000 vs 1000)
 ``` html
 <u-countup :end="1000" is-group></u-countup>
 ```
 
-#### 前缀，后缀
+#### Prefix, Suffix
 ``` html
-<u-countup :end="100" prefix="$" suffix="美元"></u-countup>
+<u-countup :end="100" prefix="$" suffix="USD"></u-countup>
 ```
 
-#### 小数
+#### Decimal
 ``` html
 <u-countup :end="100" :decimals="2"></u-countup>
 ```
 
-#### 动画函数
+#### Animation Function
 ``` html
 <u-countup :end="100" is-easing></u-countup>
 ```
 
-#### 渐变时间(时间单位是秒)
+#### Gradient Time (time unit is seconds)
 ``` html
 <u-countup :end="100" :duration="3"></u-countup>
 ```
 
-#### 转换单位简化数据
+#### Convert Units to Simplify Data
 ``` html
 <u-countup :end="4567890" simplify></u-countup>
 ```
 
-### 方法
+### Method
 ```vue
 <template>
     <u-form>
-    <u-form-item label="演示效果">
+    <u-form-item label="Demo Effect">
         <u-linear-layout>
         <u-countup ref="countup" :start="start" :end="end" :auto-start="autoStart" :is-easing="isEasing" :duration="duration"></u-countup>
-        <u-button style="vertical-align: bottom;" color="primary" @click="show">开启渐变</u-button>
-        <u-button style="vertical-align: bottom;" @click="reset">重置</u-button>
-         <u-button style="vertical-align: bottom;" @click="pause">{{ `${isPause?'恢复':'暂停'}` }}</u-button>
+        <u-button style="vertical-align: bottom;" color="primary" @click="show">Turn on Gradient</u-button>
+        <u-button style="vertical-align: bottom;" @click="reset">Reset</u-button>
+         <u-button style="vertical-align: bottom;" @click="pause">{{ `${isPause?'Resume':'Pause'}` }}</u-button>
         </u-linear-layout>
     </u-form-item>
-    <u-form-item label="结束值">
+    <u-form-item label="End Value">
         <u-input v-model.number="end"></u-input>
     </u-form-item>
-    <!-- 不支持动态改变属性 -->
-    <!-- <u-form-item label="渐变时间">
+    <!-- Does not support dynamically changing attributes -->
+    <!-- <u-form-item label="Gradient Time">
         <u-input v-model.number="duration"></u-input>
     </u-form-item>
-    <u-form-item label="启用动画函数">
+    <u-form-item label="Enable Animation Function">
         <u-capsules :value.sync="isEasing">
             <u-capsule :value="false">false</u-capsule>
             <u-capsule :value="true">true</u-capsule>
@@ -95,7 +95,7 @@ export default{
 </script>
 ```
 
-### 渐变结束回调函数
+### Gradient End Callback Function
 ```vue
 <template>
     <u-linear-layout>
@@ -115,7 +115,7 @@ export default{
             this.autoStart = true;
         },
         end() {
-            console.log('渐变结束');
+            console.log('Gradient ends');
         },
     },
 };
@@ -128,48 +128,48 @@ export default{
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| start | Number | `0` | 渐变开始数值 |
-| end | Number |  | 渐变结束数值 |
-| duration | Number | `2` | 渐变时间间隔，时间单位为秒 |
-| isEasing | Boolean | `false` | 是否使用 动画函数`easingFn`处理数据 |
-| isGroup | Boolean | `false` | 是否分组，默认分组分隔符`'separator'`属性值为`','` |
-| separator | String | `','` | 分组分隔符 |
-| decimals | Number | `0` | 小数点后几位 |
-| easingFn | Function | `'easeOutExpo'` | 自定义渐变动画，默认使用 `Robert Penner's easeOutExpo`函数 |
-| simplify | Boolean | `false` | 是否使用自定义单位简化数据 |
-| unit | Array | `[[3, 'K+'], [6, 'M+'], [9, 'G+']]` | 配合`'simplify'`属性使用的自定义单位 |
-| prefix | String | `''` | 前缀内容 |
-| suffix | String | `''` | 后缀内容 |
-| endCallback | Function | `` | 渐变结束后的回调函数 |
-| autoStart | Boolean | `false` | 是否开启渐变 |
+| start | Number | `0` | Gradient start value |
+| end | Number | | Gradient end value |
+| duration | Number | `2` | Gradient time interval, time unit is seconds |
+| isEasing | Boolean | `false` | Whether to use animation function `easingFn` to process data |
+| isGroup | Boolean | `false` | Whether to group, the default group separator `'separator'` attribute value is `','' |
+| separator | String | `','' | Group separator |
+| decimals | Number | `0` | Number of decimal places |
+| easingFn | Function | `'easeOutExpo'` | Custom gradient animation, default uses `Robert Penner's easeOutExpo` function |
+| simplify | Boolean | `false` | Whether to use custom units to simplify data |
+| unit | Array | `[[3, 'K+'], [6, 'M+'], [9, 'G+']]` | Custom unit used with the `'simplify'` attribute |
+| prefix | String | `''` | Prefix content |
+| suffix | String | `''` | Suffix content |
+| endCallback | Function | `` | Callback function after the gradient ends |
+| autoStart | Boolean | `false` | Whether to enable gradient |
 
 ### Slots
 
 #### (default)
 
-插入文本或`HTML`。
+Insert text or `HTML`.
 
 ### Events
 
 #### @update
 
-更新渐变结束
+End of update gradient
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Number | 最新结束值 |
+| $event | Number | Latest end value |
 
 #### @reset
 
-重置
+reset
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Number | 初始值 |
+| $event | Number | Initial value |
 
 #### @pauseResume
 
-切换渐变
+Toggle gradient
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
@@ -180,15 +180,15 @@ export default{
 
 #### update(value)
 
-更新渐变结束值
+Update gradient end value
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| value | Number | 最新结束值 |
+| value | Number | Latest end value |
 
 #### reset()
 
-重置
+reset
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
@@ -196,7 +196,7 @@ export default{
 
 #### pauseResume()
 
-切换渐变
+Toggle gradient
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |

@@ -1,18 +1,18 @@
-# 状态图标 StatusIcon
+# Status Icon
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-linear-layout>
-    <u-status-icon name="success">运行中</u-status-icon>
-    <u-status-icon name="pause">已停服</u-status-icon>
-    <u-status-icon name="warning">异常</u-status-icon>
-    <u-status-icon name="waiting">重启中</u-status-icon>
-    <u-status-icon name="error">更新失败</u-status-icon>
-    <u-status-icon name="mount">已绑定</u-status-icon>
-    <u-status-icon name="end">结束</u-status-icon>
-    <u-status-icon name="expire">失效</u-status-icon>
+    <u-status-icon name="success">Running</u-status-icon>
+    <u-status-icon name="pause">Service Stopped</u-status-icon>
+    <u-status-icon name="warning">Exception</u-status-icon>
+    <u-status-icon name="waiting">Restarting</u-status-icon>
+    <u-status-icon name="error">Update Failed</u-status-icon>
+    <u-status-icon name="mount">Bound</u-status-icon>
+    <u-status-icon name="end">End</u-status-icon>
+    <u-status-icon name="expire">Expired</u-status-icon>
 </u-linear-layout>
 ```
 
@@ -21,4 +21,4 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| name | String | | 对应图标的名称 |
+| name | String | | The name of the corresponding icon |

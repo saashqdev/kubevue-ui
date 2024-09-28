@@ -1,41 +1,41 @@
 <template>
     <div>
-        <h1>详情页</h1>
-        <p>详情页是一种比较常见的需求，根据使用场景的不同，可以大致划分为以下形式。</p>
+        <h1>Details Page</h1>
+        <p>Details page is a relatively common requirement, which can be roughly divided into the following forms according to different usage scenarios. </p>
         <div :class="$style.part">
             <u-desc-list>
-                <u-desc-list-group title="个人信息">
-                    <u-desc-list-item label="用户名">xxxxxx</u-desc-list-item>
-                    <u-desc-list-item label="登录账号">1111111</u-desc-list-item>
-                    <u-desc-list-item label="登录密码">
-                        <u-link>修改</u-link>
+                <u-desc-list-group title="Personal information">
+                    <u-desc-list-item label="username">xxxxxx</u-desc-list-item>
+                    <u-desc-list-item label="Login account">1111111</u-desc-list-item>
+                    <u-desc-list-item label="Login password">
+                        <u-link>Modify</u-link>
                     </u-desc-list-item>
-                    <u-desc-list-item label="手机">13888888888</u-desc-list-item>
+                    <u-desc-list-item label="mobile">13888888888</u-desc-list-item>
                 </u-desc-list-group>
-                <u-desc-list-group title="公司信息">
-                    <u-desc-list-item label="公司名">xxxxxx</u-desc-list-item>
-                    <u-desc-list-item label="联系电话">13688886666</u-desc-list-item>
-                    <u-desc-list-item label="联系邮箱">xxxx@163.com</u-desc-list-item>
+                <u-desc-list-group title="Company Information">
+                    <u-desc-list-item label="Company name">xxxxxx</u-desc-list-item>
+                    <u-desc-list-item label="Contact number">13688886666</u-desc-list-item>
+                    <u-desc-list-item label="Contact email">xxxx@gmail.com</u-desc-list-item>
                 </u-desc-list-group>
             </u-desc-list>
         </div>
         <div :class="$style.part">
             <u-info-list>
-                <u-info-list-group title="基本信息">
-                    <u-info-list-item label="VPC名称">defaultVPC</u-info-list-item>
+                <u-info-list-group title="Basic Information">
+                    <u-info-list-item label="VPC Name">DefaultVPC</u-info-list-item>
                     <u-info-list-item label="UUID">152f36a3cfff4572a3a35</u-info-list-item>
-                    <u-info-list-item label="网段">10.3.0.4/16</u-info-list-item>
-                    <u-info-list-item label="默认VPC">是</u-info-list-item>
-                    <u-info-list-item label="创建时间">2018-02-22</u-info-list-item>
+                    <u-info-list-item label="Network Segment">10.3.0.4/16</u-info-list-item>
+                    <u-info-list-item label="Default VPC">Yes</u-info-list-item>
+                    <u-info-list-item label="Creation Time">2018-02-22</u-info-list-item>
                 </u-info-list-group>
             </u-info-list>
             <u-info-list column="2">
-                <u-info-list-group title="基本信息">
-                    <u-info-list-item label="VPC名称">defaultVPC</u-info-list-item>
+                <u-info-list-group title="Basic Information">
+                    <u-info-list-item label="VPC Name">defaultVPC</u-info-list-item>
                     <u-info-list-item label="UUID">152f36a3cfff4572a3a35</u-info-list-item>
-                    <u-info-list-item label="网段">10.3.0.4/16</u-info-list-item>
-                    <u-info-list-item label="默认VPC">是</u-info-list-item>
-                    <u-info-list-item label="创建时间">2018-02-22</u-info-list-item>
+                    <u-info-list-item label="Network Segment">10.3.0.4/16</u-info-list-item>
+                    <u-info-list-item label="Default VPC">Yes</u-info-list-item>
+                    <u-info-list-item label="Creation Time">2018-02-22</u-info-list-item>
                 </u-info-list-group>
             </u-info-list>
         </div>

@@ -1,12 +1,12 @@
-### 基线对齐
+### Baseline Alignment
 
 ``` html
-文字
+Word
 <u-button>Error</u-button>
 <u-button color="error">Error</u-button>
 <u-button color="primary" ghost>Primary</u-button>
 <u-button icon="refresh" square></u-button>
 <u-button color="primary" icon="refresh" square></u-button>
-<u-button icon="create">添加</u-button>
-<u-button color="primary" icon="create">添加</u-button>
+<u-button icon="create">Add</u-button>
+<u-button color="primary" icon="create">Add</u-button>
 ```

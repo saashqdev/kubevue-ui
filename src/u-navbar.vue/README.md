@@ -1,95 +1,95 @@
-# 导航条 Navbar
+# Navigation Bar
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
-#### 路由模式
+#### Routing Mode
 
 ``` html
 <u-navbar>
-    <u-navbar-item to="u-navbar">组件</u-navbar-item>
-    <u-navbar-item>备案管理</u-navbar-item>
-    <u-navbar-item>帮助</u-navbar-item>
+    <u-navbar-item to="u-navbar">Component</u-navbar-item>
+    <u-navbar-item>Record Management</u-navbar-item>
+    <u-navbar-item>Help</u-navbar-item>
 </u-navbar>
 ```
 
-#### value模式
+#### Value Mode
 
 ``` html
 <u-navbar value="3" :router="false">
-    <u-navbar-item value="1">指南</u-navbar-item>
-    <u-navbar-item value="2">概念</u-navbar-item>
-    <u-navbar-item value="3">组件</u-navbar-item>
+    <u-navbar-item value="1">Guidelines</u-navbar-item>
+    <u-navbar-item value="2">Concept</u-navbar-item>
+    <u-navbar-item value="3">Component</u-navbar-item>
 </u-navbar>
 ```
 
-### 颜色扩展
+### Color Extension
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-navbar value="3" :router="false">
-        <u-navbar-item value="1">指南</u-navbar-item>
-        <u-navbar-item value="2">概念</u-navbar-item>
-        <u-navbar-item value="3">组件</u-navbar-item>
+        <u-navbar-item value="1">Guidelines</u-navbar-item>
+        <u-navbar-item value="2">Concept</u-navbar-item>
+        <u-navbar-item value="3">Component</u-navbar-item>
     </u-navbar>
     <u-navbar value="3" :router="false" color="inverse">
-        <u-navbar-item value="1">指南</u-navbar-item>
-        <u-navbar-item value="2">概念</u-navbar-item>
-        <u-navbar-item value="3">组件</u-navbar-item>
+        <u-navbar-item value="1">Guidelines</u-navbar-item>
+        <u-navbar-item value="2">Concept</u-navbar-item>
+        <u-navbar-item value="3">Component</u-navbar-item>
     </u-navbar>
 </u-linear-layout>
 ```
 
-### 位置
+### Location
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-navbar color="inverse" alignment="left">
-        <u-navbar-item to="u-navbar">组件</u-navbar-item>
-        <u-navbar-item>备案管理</u-navbar-item>
-        <u-navbar-item>帮助</u-navbar-item>
+        <u-navbar-item to="u-navbar">Component</u-navbar-item>
+        <u-navbar-item>Record Management</u-navbar-item>
+        <u-navbar-item>Help</u-navbar-item>
     </u-navbar>
     <u-navbar color="inverse" alignment="center">
-        <u-navbar-item to="u-navbar">组件</u-navbar-item>
-        <u-navbar-item>备案管理</u-navbar-item>
-        <u-navbar-item>帮助</u-navbar-item>
+        <u-navbar-item to="u-navbar">Component</u-navbar-item>
+        <u-navbar-item>Record Management</u-navbar-item>
+        <u-navbar-item>Help</u-navbar-item>
     </u-navbar>
     <u-navbar color="inverse" alignment="right">
-        <u-navbar-item to="u-navbar">组件</u-navbar-item>
-        <u-navbar-item>备案管理</u-navbar-item>
-        <u-navbar-item>帮助</u-navbar-item>
+        <u-navbar-item to="u-navbar">Component</u-navbar-item>
+        <u-navbar-item>Record Management</u-navbar-item>
+        <u-navbar-item>Help</u-navbar-item>
     </u-navbar>
 </u-linear-layout>
 ```
 
-### 分隔符
+### Separator
 
 ``` html
 <u-navbar>
-    <u-navbar-item>指南</u-navbar-item>
-    <u-navbar-item>概念</u-navbar-item>
-    <u-navbar-item>配置</u-navbar-item>
+    <u-navbar-item>Guide</u-navbar-item>
+    <u-navbar-item>Concept</u-navbar-item>
+    <u-navbar-item>Configuration</u-navbar-item>
     <u-navbar-divider></u-navbar-divider>
-    <u-navbar-item to="/proto-ui">组件</u-navbar-item>
-    <u-navbar-item to="/libraries">组件库</u-navbar-item>
+    <u-navbar-item to="/proto-ui">Component</u-navbar-item>
+    <u-navbar-item to="/libraries">Component library</u-navbar-item>
 </u-navbar>
 ```
 
-### 与Logo结合
+### Combined with Logo
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-navbar>
         <u-logo slot="left"></u-logo>
-        <u-navbar-item to="u-navbar">主体</u-navbar-item>
-        <u-navbar-item>备案管理</u-navbar-item>
-        <u-navbar-item>帮助</u-navbar-item>
+        <u-navbar-item to="u-navbar">Body</u-navbar-item>
+        <u-navbar-item>Record Management</u-navbar-item>
+        <u-navbar-item>Help</u-navbar-item>
     </u-navbar>
     <u-navbar color="inverse" alignment="right">
         <u-logo color="inverse" slot="left"></u-logo>
-        <u-navbar-item>产品</u-navbar-item>
-        <u-navbar-item to="u-navbar">价格</u-navbar-item>
-        <u-navbar-item>帮助</u-navbar-item>
+        <u-navbar-item>Products</u-navbar-item>
+        <u-navbar-item to="u-navbar">Price</u-navbar-item>
+        <u-navbar-item>Help</u-navbar-item>
     </u-navbar>
 </u-linear-layout>
 ```
@@ -99,104 +99,104 @@
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| router | Boolean | `true` | 是否根据vue-router来控制选择哪一项 |
-| value.sync, v-model | Any | | 当前选择的值 |
-| readonly | Boolean | `false` | 是否只读 |
-| disabled | Boolean | `false` | 是否禁用 |
+| router | Boolean | `true` | Whether to control which item to select based on vue-router |
+| value.sync, v-model | Any | | The currently selected value |
+| readonly | Boolean | `false` | Whether it is read-only |
+| disabled | Boolean | `false` | Whether to disable |
 
 ### Slots
 
 #### (default)
 
-插入`<u-navbar-item>`或`<u-navbar-divider>`子组件。
+Insert `<u-navbar-item>` or `<u-navbar-divider>` subcomponent.
 
 ### Events
 
 #### @before-select
 
-选择某一项前触发
+Trigger before selecting an item
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 选择项的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.item | Object | 选择项相关对象 |
-| $event.itemVM | NavbarItem | 选择项子组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
+| $event.value | Any | The value of the selection |
+| $event.oldValue | Any | Old value |
+| $event.item | Object | Selection related object |
+| $event.itemVM | NavbarItem | Selection subcomponent |
+| $event.preventDefault | Function | Prevent selection process |
 
 #### @input
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | Any | 选择项的值 |
+| $event | Any | The value of the selection |
 
 #### @select
 
-选择某一项时触发
+Triggered when an item is selected
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 改变后的值 |
-| $event.oldValue | Any | 旧的值 |
-| $event.item | Object | 单选模式中，选择项相关对象 |
-| $event.itemVM | NavbarItem |  单选模式中，选择项子组件 |
+| $event.value | Any | Changed value |
+| $event.oldValue | Any | Old value |
+| $event.item | Object | In radio selection mode, the object related to the selected item |
+| $event.itemVM | NavbarItem | In radio selection mode, select the item subcomponent |
 
 ## NavbarItem API
 ### Props/Attrs
 
 | Prop/Attr | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| value | Any | | 此项的值 |
-| disabled | Boolean | `false` | 禁用此项 |
-| item | Object | | 相关对象。当选择此项时，抛出的事件会传递该对象，便于开发 |
-| href | String |  | 链接地址 |
-| target | String |  | 打开方式 |
-| to | String,  Location |  | 需要vue-router，与`<router-link>`的`to`属性相同。可以是一个字符串或者是描述目标位置的对象。 |
-| replace | Boolean | `false` | 需要vue-router，与`<router-link>`的`replace`属性相同。如果为`true`，当点击时，会调用`router.replace()`而不是`router.push()`，于是导航后不会留下`history `记录。 |
-| exact | Boolean | `false` | 需要vue-router，与`<router-link>`的`exact`属性相同。是否与路由完全一致时才高亮显示。 |
+| value | Any | | The value of this item |
+| disabled | Boolean | `false` | Disable this |
+| item | Object | | Related objects. When this is selected, the event thrown will pass the object, making it easier to develop |
+| href | String | | Link address |
+| target | String | | Open method |
+| to | String, Location | | Requires vue-router, which is the same as the `to` attribute of `<router-link>`. Can be a string or an object describing the target location. |
+| replace | Boolean | `false` | Requires vue-router, the same as the `replace` attribute of `<router-link>`. If `true`, when clicked, `router.replace()` will be called instead of `router.push()`, so no `history` record will be left after navigation. |
+| exact | Boolean | `false` | Requires vue-router, the same as the `exact` attribute of `<router-link>`. It will be highlighted only if it is completely consistent with the route. |
 
 ### Slots
 
 #### (default)
 
-插入文本或HTML。
+Insert text or HTML.
 
 ### Events
 
 #### @before-select
 
-选择此项前触发
+Trigger before selecting this
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.value | Any | 此项的值 |
-| $event.item | Object | 此项的相关对象 |
-| $event.itemVM | NavbarItem | 此组件 |
-| $event.preventDefault | Function | 阻止选择流程 |
+| $event.value | Any | The value of this item |
+| $event.item | Object | The related object of this item |
+| $event.itemVM | NavbarItem | This component |
+| $event.preventDefault | Function | Prevent selection process |
 
 #### @before-navigate
 
-使用router相关属性切换路由前触发
+Triggered before switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | String,  Location | `to`属性的值 |
-| $event.replace | Boolean | `replace`属性的值 |
-| $event.exact | Boolean | `exact`属性的值 |
-| $event.preventDefault | Function | 阻止切换流程 |
+| $event.to | String, Location | The value of the `to` attribute |
+| $event.replace | Boolean | The value of the `replace` attribute |
+| $event.exact | Boolean | The value of the `exact` attribute |
+| $event.preventDefault | Function | Prevent switching process |
 
 #### @navigate
 
-使用router相关属性切换路由时触发
+Triggered when switching routes using router related attributes
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event.to | String,  Location | `to`属性的值 |
-| $event.replace | Boolean | `replace`属性的值 |
-| $event.exact | Boolean | `exact`属性的值 |
+| $event.to | String, Location | The value of the `to` attribute |
+| $event.replace | Boolean | The value of the `replace` attribute |
+| $event.exact | Boolean | The value of the `exact` attribute |
 
 ## NavbarDivider API
 
-无
+None

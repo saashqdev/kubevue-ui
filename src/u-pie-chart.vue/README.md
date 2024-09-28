@@ -1,57 +1,57 @@
-# 饼状图 PieChart
+# Pie Chart
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-pie-chart :data="[3, 6, 5, 4, 2]"></u-pie-chart>
 ```
 
 ``` html
-<u-pie-chart legend title="24小时消费" :data="[
-    { name: '容器服务', value: 20 },
-    { name: '云服务器', value: 20 },
-    { name: '负载均衡', value: 15 },
+<u-pie-chart legend title="24 hours consumption" :data="[
+    { name: 'Container Service', value: 20 },
+    { name: 'Cloud Server', value: 20 },
+    { name: 'Load Balancing', value: 15 },
     { name: 'RDS', value: 35 },
-    { name: '云硬盘', value: 9 },
-    { name: '消息队列', value: 1 },
-    { name: '公网 IP', value: 1 },
+    { name: 'Cloud Hard Disk', value: 9 },
+    { name: 'Message Queue', value: 1 },
+    { name: 'Public IP', value: 1 },
 ]"></u-pie-chart>
 ```
 
 ``` html
-<u-pie-chart legend title="24小时消费" :data="[
-    { name: '容器服务', value: 20 },
-    { name: '云服务器', value: 20 },
-    { name: '负载均衡', value: 15 },
+<u-pie-chart legend title="24 hours consumption" :data="[
+    { name: 'Container Service', value: 20 },
+    { name: 'Cloud Server', value: 20 },
+    { name: 'Load Balancing', value: 15 },
     { name: 'RDS', value: 35 },
-    { name: '云硬盘', value: 9 },
-    { name: '消息队列', value: 0 },
-    { name: '公网 IP', value: 0 },
+    { name: 'Cloud Hard Disk', value: 9 },
+    { name: 'Message Queue', value: 0 },
+    { name: 'Public IP', value: 0 },
 ]"></u-pie-chart>
 ```
 
-### 数据状态
+### Data Status
 
-#### 加载中
+#### Loading
 ``` html
-<u-pie-chart title="24小时消费" border legend></u-pie-chart>
+<u-pie-chart title="24-hour consumption" border legend></u-pie-chart>
 ```
 
-#### 加载失败
+#### Loading Failed
 ``` html
-<u-pie-chart title="24小时消费" border legend :data="null"></u-pie-chart>
+<u-pie-chart title="24-hour consumption" border legend :data="null"></u-pie-chart>
 ```
 
-#### 空态
+#### Empty State
 ``` html
-<u-pie-chart title="24小时消费" legend :data="[]"></u-pie-chart>
+<u-pie-chart title="24-hour consumption" legend :data="[]"></u-pie-chart>
 ```
 
-#### 和为0
+#### The Sum is 0
 
 ``` html
-<u-pie-chart legend title="每星期访问量" :data="[
+<u-pie-chart legend title="Visits Per Week" :data="[
     { name: 'selector1', value: 0 },
     { name: 'selector2', value: 0 },
     { name: 'selector3', value: 0 },
@@ -59,14 +59,14 @@
 ]"></u-pie-chart>
 ```
 
-### 设置颜色
+### Set Color
 
 ``` html
 <u-pie-chart legend :data="[
-    { name: '请求成功数', value: 90, color: 'success' },
-    { name: '请求失败数', value: 10, color: 'error' },
-    { name: '线程超时次数', value: 4, color: '#5b9cff' },
-    { name: '线程拒绝次数', value: 6, color: 'warning' },
+    { name: 'Number of successful requests', value: 90, color: 'success' },
+    { name: 'Number of failed requests', value: 10, color: 'error' },
+    { name: 'Number of thread timeouts', value: 4, color: '#5b9cff' },
+    { name: 'Number of thread rejections', value: 6, color: 'warning' },
 ]"></u-pie-chart>
 ```
 
@@ -76,16 +76,16 @@
 
 | Prop | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| title | String |  | 图表的标题 |
-| caption | String |  | 图表的描述 |
-| data | Array |  | 图表需要显示的数据,数组中的对象key值：percent表示占比，请传入整数形式，例30表示30%，name表示占比的名称，会在底部的legend中显示 |
-| border | Boolean | false | 是否有表框 |
-| width | String | `100%` | 图表的宽度 |
-| height | String | `480px` | 图表的高度 |
-| titleAlign | String | `center` | 图表标题的对齐方式，默认是居中，值有:left,center,right |
+| title | String | | The title of the chart |
+| caption | String | | Description of the chart |
+| data | Array | | The data to be displayed in the chart, the object key value in the array: percent represents the proportion, please pass in an integer form, for example 30 represents 30%, name represents the name of the proportion, which will be displayed in the legend at the bottom |
+| border | Boolean | false | Whether there is a table frame |
+| width | String | `100%` | The width of the chart |
+| height | String | `480px` | The height of the chart |
+| titleAlign | String | `center` | The alignment of the chart title, the default is centered, the values   are: left, center, right |
 
 ### Slot
 
 | Slot | Description |
 | ---- | ----------- |
-| tooltip | 自定义tooltip内容(作用域插槽，请参照示例自定义tooltip的写法) |
+| tooltip | Custom tooltip content (scope slot, please refer to the example how to write a custom tooltip) |

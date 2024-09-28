@@ -1,42 +1,42 @@
 <template>
     <div>
-        <h1>日期选择</h1>
-        <p>日期选择是个常见的需求，按照使用场景可分为以下四种</p>
+        <h1>Date Selection</h1>
+        <p>Date selection is a common requirement, which can be divided into the following four types according to usage scenarios</p>
         <div :class="$style.part">
-            <h3>日历</h3>
+            <h3>Calendar</h3>
             <u-linear-layout>
                 <u-calendar :class="$style.inline" date="2018-08-08"></u-calendar>
-                <u-calendar :class="$style.inline" date="2018-08-08" min-date="2018-08-02" max-date="2018-08-18"></u-calendar>
+                <u-calendar :class="$style.inline" date="2018-08-08" min-date="2018-08-02" max-date="2018-08-18"></u-calendar >
             </u-linear-layout>
         </div>
         <div :class="$style.part">
-            <h3>日期选择</h3>
+            <h3>Date Selection</h3>
             <div :class="$style.label">
-                <label>申请日期：</label>
+                <label>Application Date:</label>
                 <u-date-picker></u-date-picker>
-                <span :class="$style.btn"> 至 </span>
+                <span :class="$style.btn"> to </span>
                 <u-date-picker></u-date-picker>
             </div>
             <div :class="$style.label">
-                <label>审核日期：</label>
+                <label>Review Date:</label>
                 <u-date-picker></u-date-picker>
-                <span :class="$style.btn"> 至 </span>
+                <span :class="$style.btn"> to </span>
                 <u-date-picker></u-date-picker>
             </div>
         </div>
         <div :class="$style.part">
-            <h3>时间选择</h3>
+            <h3>Time Selection</h3>
             <div :class="$style.label">
-                <label>开始时间：</label>
+                <label>Start Time:</label>
                 <u-time-picker width="56" time="15:46:33"></u-time-picker>
             </div>
             <div :class="$style.label">
-                <label>结束时间：</label>
+                <label>End Time:</label>
                 <u-time-picker width="56" time="16:46:33"></u-time-picker>
             </div>
         </div>
         <div :class="$style.part">
-            <h3>日期时间选择</h3>
+            <h3>Date and Time Selection</h3>
             <u-date-time-picker date="2018-08-08" autofocus></u-date-time-picker>
         </div>
     </div>

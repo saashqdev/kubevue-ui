@@ -1,20 +1,20 @@
 <template>
     <div>
-        <h1>高级列表</h1>
-        <p>在一些复杂的场景下，基础的表单无法满足我们的需求，需要在基础表单的基础上添加一些自定义的功能或者样式</p>
+        <h1>Advanced List</h1>
+        <p>In some complex scenarios, the basic form cannot meet our needs, and some customized functions or styles need to be added to the basic form</p>
         <div>
-            <h3>作用域插槽的方式</h3>
+            <h3>Scope Slot Method</h3>
             <u-table-view :data="tdata">
-                <u-table-view-column :formatter="dateFormat" title="日期" width="20%" label="date" sortable></u-table-view-column>
-                <u-table-view-column title="姓名" width="10%" label="name"></u-table-view-column>
-                <u-table-view-column title="地址" width="15%" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="10%" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="20%" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="10%" label="address" tooltip></u-table-view-column>
-                <u-table-view-column :options="options" :value="value" :filter-method="filterMethod" title="性别" width="15%" label="female" filter></u-table-view-column>
-                <u-table-view-column title="占比" width="200">
+                <u-table-view-column :formatter="dateFormat" title="Date" width="20%" label="date" sortable></u-table-view-column>
+                <u-table-view-column title="Name" width="10%" label="name"></u-table-view-column>
+                <u-table-view-column title="Address" width="15%" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="10%" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="20%" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="10%" label="address" tooltip></u-table-view-column>
+                <u-table-view-column :options="options" :value="value" :filter-method="filterMethod" title="Gender" width="15%" label="female" filter></u- table-view-column>
+                <u-table-view-column title="Proportion" width="200">
                     <template slot-scope="scope">
-                        <u-button @click="click(scope.row)">配置</u-button>
+                        <u-button @click="click(scope.row)">Configuration</u-button>
                     </template>
                 </u-table-view-column>
             </u-table-view>
@@ -26,39 +26,39 @@
             </u-modal>
         </div>
         <!-- <div>
-            <h3>表格行可展开</h3>
+            <h3>Table Rows can be Expanded</h3>
             <u-table-view :data="tdata">
                 <u-table-view-column type="expand">
                     <template slot-scope="scope">
                         <u-info-list style="overflow:hidden;text-align:left;white-space:initial;">
-                            <u-info-list-group title="基本信息">
-                                <u-info-list-item label="VPC名称">{{scope.row.name}}</u-info-list-item>
+                            <u-info-list-group title="Basic information">
+                                <u-info-list-item label="VPC Name">{{scope.row.name}}</u-info-list-item>
                                 <u-info-list-item label="UUID">152f36a3cfff4572a3a35</u-info-list-item>
-                                <u-info-list-item label="网段">10.3.0.4/16</u-info-list-item>
-                                <u-info-list-item label="默认VPC">是</u-info-list-item>
-                                <u-info-list-item label="创建时间">2018-02-22</u-info-list-item>
+                                <u-info-list-item label="Network segment">10.3.0.4/16</u-info-list-item>
+                                <u-info-list-item label="Default VPC">Yes</u-info-list-item>
+                                <u-info-list-item label="Creation Time">2018-02-22</u-info-list-item>
                             </u-info-list-group>
-                            <u-info-list-group title="基本信息">
-                                <u-info-list-item label="VPC名称">defaultVPC</u-info-list-item>
+                            <u-info-list-group title="Basic Information">
+                                <u-info-list-item label="VPC Name">defaultVPC</u-info-list-item>
                                 <u-info-list-item label="UUID">152f36a3cfff4572a3a35</u-info-list-item>
-                                <u-info-list-item label="网段">10.3.0.4/16</u-info-list-item>
-                                <u-info-list-item label="默认VPC">是</u-info-list-item>
-                                <u-info-list-item label="创建时间">2018-02-22</u-info-list-item>
+                                <u-info-list-item label="Network Segment">10.3.0.4/16</u-info-list-item>
+                                <u-info-list-item label="Default VPC">Yes</u-info-list-item>
+                                <u-info-list-item label="Creation Time">2018-02-22</u-info-list-item>
                             </u-info-list-group>
                         </u-info-list>
                     </template>
                 </u-table-view-column>
-                <u-table-view-column width="200" title="日期" label="date" sortable type="time" time-format="YYYY-MM-DD"></u-table-view-column>
-                <u-table-view-column title="姓名" width="200" label="name" ></u-table-view-column>
-                <u-table-view-column title="地址" width="200" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="200" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="200" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="200" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="地址" width="200" label="address" tooltip></u-table-view-column>
-                <u-table-view-column title="性别" width="200" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table-view-column>
-                <u-table-view-column title="操作" width="150">
+                <u-table-view-column width="200" title="Date" label="date" sortable type="time" time-format="YYYY-MM-DD"></u-table-view-column >
+                <u-table-view-column title="Name" width="200" label="name" ></u-table-view-column>
+                <u-table-view-column title="Address" width="200" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="200" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="200" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="200" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Address" width="200" label="address" tooltip></u-table-view-column>
+                <u-table-view-column title="Gender" width="200" label="female" filter :options="options" :value="value" :filter-method="filterMethod"></u-table -view-column>
+                <u-table-view-column title="Operation" width="150">
                     <template slot-scope="scope">
-                        <u-button @click="click(scope.row)">配置</u-button>
+                        <u-button @click="click(scope.row)">Configuration</u-button>
                     </template>
                 </u-table-view-column>
             </u-table-view>
@@ -78,45 +78,45 @@ export default {
         return {
             tdata: [{
                 date: 1501977600000,
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄',
-                female: '男',
+                name: 'Homer Simpson',
+                address: 'Kubeworkz, 1931 Norris Avenue, Fort Erie, Ontario',
+                male: 'Male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1502236800000,
-                name: '王大虎',
-                address: '上海市普陀区金沙江路 1517 弄',
-                female: '女',
+                name: 'Marge Simpson',
+                address: 'Skunkhollow Technology Park, 1901 Norris Avenue, Fort Erie, Ontario',
+                female: 'Female',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503100800000,
-                name: '天王盖地虎',
-                address: '上海市普陀区金沙江路 1519 弄',
-                female: '男',
+                name: 'Bart Simpson',
+                address: 'Camden Science and Technology Park, 29 Barclay Street, Hamilton, Ontario',
+                male: 'Male',
                 use: 12,
                 total: 20,
             }, {
                 date: 1503964800000,
-                name: '小鸡炖蘑菇',
-                address: '上海市普陀区金沙江路 1516 弄',
-                female: '女',
+                name: 'Lisa Simpson',
+                address: 'Springfield Technology Park, 29 Camden Street, Toronto, Ontario',
+                female: 'Female',
                 use: 12,
                 total: 20,
             }],
             options: [
-                {
-                    name: '全部',
+            {
+                    name: 'All',
                     value: '',
                 },
                 {
-                    name: '男',
-                    value: '男',
+                    name: 'Male',
+                    value: 'Male',
                 },
                 {
-                    name: '女',
-                    value: '女',
+                    name: 'Female',
+                    value: 'Female',
                 },
             ],
             value: '',

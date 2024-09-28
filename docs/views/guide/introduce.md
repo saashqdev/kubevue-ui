@@ -1,24 +1,24 @@
-# 介绍
+# Introduction
 
-### Cloud UI 是什么？
+### What is Cloud UI?
 
-Cloud UI 是网易云计算前端团队推出的一款基于 Kubevue 的桌面端组件库，主要服务于网易云官网及相关产品。
+Cloud UI is a Kubevue-based desktop component library launched by the Kubeworkz Cloud Computing front-end team. It mainly serves the Kubeworkz Cloud official website and related products.
 
-该组件库经过大量的项目实践和总结，数量丰富、功能完善。可以大大降低开发成本，为产品提供更好的用户体验。
+After extensive project practice and summary, this component library is rich in quantity and complete in function. It can greatly reduce development costs and provide a better user experience for the product.
 
-### 特性
+### Features
 
-- 高质量、数量丰富、功能完善
-- 开箱即用、扩展灵活
-- 持续维护更新
+- High quality, abundant quantity, complete functions
+- Ready to use out of the box, flexible to expand
+- Continuous maintenance and updates
 
-### 支持环境
+### Support Environment
 
-- 支持 Vue.js 2.x
-- 支持现代浏览器和 IE9 及以上
+- Support Vue.js 2.x
+- Supports modern browsers and IE9 and above
 
-### 如何贡献
+### How to Contribute
 
-- 使用中存在问题，可以给我们 [报告 Bug](https://github.com/kubevue/kubevue-ui/issues)
-- 希望参与贡献，欢迎 [Pull Request](https://github.com/kubevue/kubevue-ui/pulls)
+- If there are any problems during use, you can [report bug](https://github.com/saashqdev/kubevue-ui/issues)
+- If you want to contribute, welcome [Pull Request](https://github.com/saashqdev/kubevue-ui/pulls)
 

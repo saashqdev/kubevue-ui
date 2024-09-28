@@ -2,25 +2,25 @@
     <div :class="$style.root">
         <div :class="$style.side">
             <u-sidebar color="inverse" collapsible accordion expand-trigger="click">
-                <u-sidebar-group title="dashboard">
-                    <u-sidebar-item exact to="/demo/dashboard/analysis">分析页</u-sidebar-item>
-                    <u-sidebar-item exact to="/demo/dashboard/monitor">监控页</u-sidebar-item>
+                <u-sidebar-group title="Dashboard">
+                    <u-sidebar-item exact to="/demo/dashboard/analysis">Analysis Page</u-sidebar-item>
+                    <u-sidebar-item exact to="/demo/dashboard/monitor">Monitor Page</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="表单页">
-                    <u-sidebar-item exact to="/demo/form/basic">基础表单</u-sidebar-item>
-                    <u-sidebar-item exact to="/demo/form/advance">高级表单</u-sidebar-item>
+                <u-sidebar-group title="Form Page">
+                    <u-sidebar-item exact to="/demo/form/basic">Basic Form</u-sidebar-item>
+                    <u-sidebar-item exact to="/demo/form/advance">Advanced Form</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="列表页">
-                    <u-sidebar-item exact to="/demo/table/basic">基础表格</u-sidebar-item>
-                    <u-sidebar-item exact to="/demo/table/advance">高级表格</u-sidebar-item>
-                    <u-sidebar-item exact to="/demo/table/select">选择列表</u-sidebar-item>
+                <u-sidebar-group title="List Page">
+                    <u-sidebar-item exact to="/demo/table/basic">Basic Table</u-sidebar-item>
+                    <u-sidebar-item exact to="/demo/table/advance">Advanced Table</u-sidebar-item>
+                    <u-sidebar-item exact to="/demo/table/select">Select List</u-sidebar-item>
                 </u-sidebar-group>
-                <u-sidebar-group title="详情">
-                    <u-sidebar-item exact to="/demo/detail/basic">基础详情</u-sidebar-item>
-                    <!-- <u-sidebar-item exact to="/demo/detail/advance">高级详情</u-sidebar-item> -->
+                <u-sidebar-group title="Details">
+                    <u-sidebar-item exact to="/demo/detail/basic">Basic Details</u-sidebar-item>
+                    <!-- <u-sidebar-item exact to="/demo/detail/advance">Advanced Details</u-sidebar-item> -->
                 </u-sidebar-group>
-                <u-sidebar-group title="日期页">
-                    <u-sidebar-item exact to="/demo/date/basic">日期选择</u-sidebar-item>
+                <u-sidebar-group title="Date Page">
+                    <u-sidebar-item exact to="/demo/date/basic">Date Selection</u-sidebar-item>
                 </u-sidebar-group>
             </u-sidebar>
         </div>

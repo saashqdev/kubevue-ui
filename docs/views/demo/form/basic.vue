@@ -1,46 +1,46 @@
 <template>
     <div>
-        <h1>基础表单</h1>
-        <p>表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景</p>
+        <h1>Basic Form</h1>
+        <p>Form pages are used to collect or verify information from users. Basic forms are commonly used in form scenarios with few data items</p>
         <div :class="$style.form">
             <u-form :rules="rules" gap="large" @validate="canSubmit = $event.valid">
-                <u-form-item label="计费方式" required>
+                <u-form-item label="Billing method" required>
                     <u-radios value="0">
-                        <u-radio label="0">包年包月</u-radio>
-                        <u-radio label="1">按量付费</u-radio>
+                        <u-radio label="0">Yearly and Monthly Subscription</u-radio>
+                        <u-radio label="1">Pay as you Go</u-radio>
                     </u-radios>
                 </u-form-item>
-                <u-form-item label="实例名称" name="name">
-                    <u-input size="huge" maxlength="63" placeholder="由1-63个字母，数字，中划线组成，以字母开头，字母或数字结尾"></u-input>
+                <u-form-item label="Instance Name" name="name">
+                    <u-input size="huge" maxlength="63" placeholder="Composed of 1-63 letters, numbers, and underscores, starting with a letter and ending with a letter or number"></u-input>
                 </u-form-item>
                 <u-form-item label="" name="label">
-                    <u-input size="huge" maxlength="63" placeholder="label为空的必填项"></u-input>
+                    <u-input size="huge" maxlength="63" placeholder="Required if label is empty"></u-input>
                 </u-form-item>
-                <u-form-item label="规格">
+                <u-form-item label="Specification">
                     <u-capsules value="0101">
-                        <u-capsule value="0101">1核 1GB</u-capsule>
-                        <u-capsule value="0102">1核 2GB</u-capsule>
-                        <u-capsule value="0204">2核 4GB</u-capsule>
-                        <u-capsule value="0408">4核 8GB</u-capsule>
-                        <u-capsule value="0816">8核 16GB</u-capsule>
-                        <u-capsule value="0832">8核 32GB</u-capsule>
-                        <u-capsule value="1664">16核 64GB</u-capsule>
+                        <u-capsule value="0101">1 core 1GB</u-capsule>
+                        <u-capsule value="0102">1 core 2GB</u-capsule>
+                        <u-capsule value="0204">2 core 4GB</u-capsule>
+                        <u-capsule value="0408">4 core 8GB</u-capsule>
+                        <u-capsule value="0816">8 core 16GB</u-capsule>
+                        <u-capsule value="0832">8 core 32GB</u-capsule>
+                        <u-capsule value="1664">16 core 64GB</u-capsule>
                     </u-capsules>
                 </u-form-item>
-                <u-form-item label="类型" description="高性能 SSD 云盘不支持快照功能" layout="block">
+                <u-form-item label="Type" description="High-performance SSD cloud disk does not support snapshot function" layout="block">
                     <u-capsules value="SSD">
-                        <u-capsule value="SSD">SSD 云盘</u-capsule>
-                        <u-capsule value="HSSD">高性能 SSD 云盘</u-capsule>
+                        <u-capsule value="SSD">SSD Cloud Disk</u-capsule>
+                        <u-capsule value="HSSD">High Performance SSD Cloud Disk</u-capsule>
                     </u-capsules>
                 </u-form-item>
-                <u-form-item label="端口号">
+                <u-form-item label="Port Number">
                     <u-input size="huge" maxlength="5" placeholder="1150-65535" value="3306"></u-input>
                 </u-form-item>
-                <u-form-item label="详情">
+                <u-form-item label="Details">
                     <u-textarea size="huge"></u-textarea>
                 </u-form-item>
                 <u-form-item>
-                    <u-button :disabled="!canSubmit" color="primary">立即创建</u-button>
+                    <u-button :disabled="!canSubmit" color="primary">Create Now</u-button>
                 </u-form-item>
             </u-form>
         </div>
@@ -53,10 +53,10 @@ export default {
         return {
             rules: {
                 name: [
-                    { type: 'string', required: true, trigger: 'input + blur', message: '请输入实例名称' },
+                    { type: 'string', required: true, trigger: 'input + blur', message: 'Please enter the instance name' },
                 ],
                 label: [
-                    { type: 'string', required: true, trigger: 'input + blur', message: '请输入label' },
+                    { type: 'string', required: true, trigger: 'input + blur', message: 'Please enter label' },
                 ],
             },
             canSubmit: false,

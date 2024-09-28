@@ -79,7 +79,7 @@ export default {
             this._getSize();
 
             //
-            // 确定横坐标
+            // Determine the abscissa
             //
             {
                 const xAxis_ = this.xAxis_;
@@ -95,7 +95,7 @@ export default {
                                 break;
                         }
 
-                        // 如果不能整除，则补充空数据
+                        // If it cannot be divided evenly, add empty data
                         if (tick === 1) {
                             this.currentData.push({ hidden: true });
                             pieceCounts++;
@@ -111,12 +111,12 @@ export default {
             }
 
             //
-            // 确定纵坐标
+            // Determine the vertical coordinate
             //
             {
                 const yAxis_ = this.yAxis_;
 
-                // 如果没有设置最小值和最大值，则寻找
+                // If the minimum and maximum values are not set, look for
                 if (this.yAxis.min !== undefined)
                     yAxis_.min = this.yAxis.min;
                 else {
@@ -124,7 +124,7 @@ export default {
                         !series.absent && Math.min(...this.currentData.map((item) =>
                             item[series.field || series.key] !== undefined ? item[series.field || series.key] : Infinity)
                         )
-                    )); // 支持空数据
+                    )); // supports empty data
                 }
                 if (this.yAxis.max !== undefined)
                     yAxis_.max = this.yAxis.max;
@@ -133,7 +133,7 @@ export default {
                         !series.absent && Math.max(...this.currentData.map((item) =>
                             item[series.field || series.key] !== undefined ? item[series.field || series.key] : -Infinity)
                         )
-                    )); // 支持空数据
+                    )); // Support empty data
                 }
 
                 if (yAxis_.min === yAxis_.max && yAxis_.min > 0)
@@ -147,7 +147,7 @@ export default {
                 yAxis_.min = Math.floor(yAxis_.min / tick) * tick;
                 yAxis_.max = Math.ceil(yAxis_.max / tick) * tick;
 
-                // 如果最小值和最大值相等，则强行区分
+                // If the minimum and maximum values   are equal, force the distinction
                 if (yAxis_.min === yAxis_.max)
                     yAxis_.max = yAxis_.min + yAxis_.count;
 
@@ -158,7 +158,7 @@ export default {
 
                 for (let i = 0; i <= yAxis_.count; i++) {
                     const value = yAxis_.min + i * tick;
-                    yAxis_.data.push(value.toFixed(fixedCount)); // 防止+的时候出现无限小数的情况
+                    yAxis_.data.push(value.toFixed(fixedCount)); // Prevent infinite decimals from appearing when +
                 }
 
                 const dataMax = Number(yAxis_.data[yAxis_.data.length - 1]);
@@ -172,7 +172,7 @@ export default {
         getD(series, type) {
             if (!this.width_ || !this.height_ || !this.currentData || !this.xAxis_.data.length || !this.yAxis_.data.length)
                 return;
-            if (this.currentData.length <= 1) // 一个点无需绘制线条
+            if (this.currentData.length <= 1) // A point without drawing a line
                 return;
 
             if (series.absent)
@@ -192,7 +192,7 @@ export default {
                     ];
                 }
             });
-            points.push(null); // 起始点也可以看做间断结束，最后一个null看做间断开始
+            points.push(null); // The starting point can also be regarded as the end of the discontinuity, and the last null is regarded as the beginning of the discontinuity.
 
             const cmds = [];
             let discontinued = true;
@@ -251,7 +251,7 @@ export default {
                 return Math.round(num / power) * power;
             } else if (num > 0)
                 return +num.toFixed(String(num).match(/^0\.0*/)[0].length - 1);
-            else // 不解决0或负数
+            else // Does not solve for 0 or negative numbers
                 return num;
         },
         getFixedCount(num) {
@@ -276,14 +276,14 @@ export default {
             this.currentItem = this.currentData[index];
             let diff = null;
             const isPointExist = this.seriesList.some((series, index) => {
-                // 修复数据为0不显示tooltip的bug
+                // Fixed the bug of not displaying tooltip when data is 0
                 if (this.currentItem && (this.currentItem[series.field || series.key] !== undefined || this.currentItem[series.field || series.key] !== null)) {
                     diff = index;
                     return true;
                 } else
                     return false;
             });
-            // 需要特殊处理下 数据点不存在的情况
+            // Special handling is required when the data point does not exist
             if (!isPointExist) {
                 this.tooltipOpen = false;
                 return false;

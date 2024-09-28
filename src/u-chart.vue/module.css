@@ -97,7 +97,7 @@ $chart-legend-height: 35px;
     background: $brand-disabled;
 }
 
-/* @TODO: border 是否需要更多含义 */
+/* @TODO: Does border need more meaning? */
 .root[border] {
     border: 1px solid $border-color-base;
 }

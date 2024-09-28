@@ -79,7 +79,7 @@ export default {
         autoStart(newValue) {
             if (newValue) {
                 this.counter.start(this.endCallback);
-                // 暂不支持change方法 需要重构下
+                // The change method is not supported yet and needs to be refactored.
                 // this.$emit('change', this.counter.frameVal);
             }
         },

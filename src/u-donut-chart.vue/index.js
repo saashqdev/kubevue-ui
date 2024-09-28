@@ -60,7 +60,7 @@ export default {
             return d;
         },
         getLabelStyle(item) {
-            // 解决首次加载 this.svgSize为0的情况
+            // Solve the situation where this.svgSize is 0 when loading for the first time
             if (this.$refs.svg && !this.svgWidth)
                 this.getSize();
 

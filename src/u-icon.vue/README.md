@@ -1,7 +1,7 @@
-# 图标 Icon
+# Icon Icon
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
 ``` html
 <u-linear-layout>

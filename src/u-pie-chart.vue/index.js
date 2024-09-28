@@ -33,7 +33,7 @@ export default {
         data: {
             deep: true,
             handler(data) {
-                // 解决数组内对象值发生变化的情况 需要重置selectedItem
+                // To solve the situation where the object value in the array changes, selectedItem needs to be reset.
                 this.selectedItem = null;
                 this.currentData = this.handleData(data);
                 this.draw();
@@ -44,7 +44,7 @@ export default {
         window.addEventListener('resize', this.getSize);
     },
     mounted() {
-        // 必须要用 setTimeout，不然获取不到 svg
+        // SetTimeout must be used, otherwise the svg cannot be obtained
         setTimeout(() => this.draw());
     },
     destoryed() {
@@ -53,7 +53,7 @@ export default {
     methods: {
         draw() {
             this.getSize();
-            // 其他动态绑定
+            // Other dynamic bindings
             this.currentData.forEach((item) => item.d = this.getD(item));
         },
         getSize() {
@@ -72,11 +72,11 @@ export default {
             }
         },
         handleData(data) {
-            // 保证内部始终为 Array
+            // Guaranteed to always be an Array inside
             if (!data)
                 return [];
 
-            // 纯数字的情况
+            // Pure numbers
             if (typeof data[0] !== 'object')
                 data = data.map((value, index) => ({ value, name: index + 1 }));
 

@@ -1,37 +1,37 @@
-# 操作列表 Actions
+# Action List Actions
 
-## 示例
-### 基本形式
+## Example
+### Basic Form
 
-`'u-action'`实际使用组件`'u-link'`进行渲染，所以具备`'u-link'`的所有功能，不需要再其内部使用`'u-link'`组件实现跳转等功能
+`'u-action'` actually uses the component `'u-link'` for rendering, so it has all the functions of `'u-link'` and does not need to use the `'u-link'` component internally to implement jumps. and other functions
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-actions>
-        <u-action disabled>设置</u-action>
-        <u-action to="/components/u-navbar">跳转到 Navbar</u-action>
-        <u-action>重启</u-action>
+        <u-action disabled>Settings</u-action>
+        <u-action to="/components/u-navbar">Jump to Navbar</u-action>
+        <u-action>Restart</u-action>
     </u-actions>
     <u-actions>
-        <u-action disabled>设置</u-action>
-        <u-action to="/components/u-navbar">跳转到 Navbar</u-action>
-        <u-action>重启</u-action>
-        <u-action disabled>保存为镜像</u-action>
-        <u-action to="/components/u-select">跳转到 Select</u-action>
+        <u-action disabled>Settings</u-action>
+        <u-action to="/components/u-navbar">Jump to Navbar</u-action>
+        <u-action>Restart</u-action>
+        <u-action disabled>Save as image</u-action>
+        <u-action to="/components/u-select">Jump to Select</u-action>
     </u-actions>
 </u-linear-layout>
 ```
 
-### 使用指令
+### Using instructions
 
 ``` html
 <u-linear-layout direction="vertical">
     <u-actions>
-        <u-action disabled>设置</u-action>
-        <u-action v-tooltip="'跳转到 Navbar'" to="/components/u-navbar">显示Tips</u-action>
-        <u-action>重启</u-action>
-        <u-action disabled>保存为镜像</u-action>
-        <u-action v-tooltip="'跳转到 Select'" to="/components/u-select">显示Tips</u-action>
+        <u-action disabled>Settings</u-action>
+        <u-action v-tooltip="'Jump to Navbar'" to="/components/u-navbar">Show Tips</u-action>
+        <u-action>Restart</u-action>
+        <u-action disabled>Save as image</u-action>
+        <u-action v-tooltip="'Jump to Select'" to="/components/u-select">Show Tips</u-action>
     </u-actions>
 </u-linear-layout>
 ```
@@ -42,19 +42,19 @@
 
 | Attr/Prop | Type | Default | Description |
 | --------- | ---- | ------- | ----------- |
-| max-count | Number | 3 | 一列最多显示链接个数 |
-| menu-title | String | '更多' | 菜单标题 |
-| placement | String | `'bottom-end'`| 菜单的弹出方向。可选值：`'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start'`, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
+| max-count | Number | 3 | Maximum number of links displayed in a column |
+| menu-title | String | 'More' | Menu title |
+| placement | String | `'bottom-end'`| The pop-up direction of the menu. Optional values: `'top'`, `'bottom'`, `'left'`, `'right'`, `'top-start'`, `'top-end'`, `'bottom-start' `, `'bottom-end'`, `'left-start`',` 'left-end'`, `'right-start'`, `'right-end'` |
 
 ### Slots
 
 #### (default)
 
-插入`<u-action>`子组件。
+Insert the `<u-action>` child component.
 
 ## Action API
 
-属性全部透传。
+All attributes are transmitted transparently.
 
 ### Attrs/Props
 
@@ -63,12 +63,12 @@
 
 ### Events
 
-事件全部透传。
+All events are disclosed.
 
 #### @click
 
-点击此项时触发，与原生 click 事件不同的是，它只会在非禁用状态下触发。
+Fires when this item is clicked, unlike the native click event, which only fires in a non-disabled state.
 
 | Param | Type | Description |
 | ----- | ---- | ----------- |
-| $event | MouseEvent | 鼠标事件对象 |
+| $event | MouseEvent | Mouse event object |

@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         handleSeriesList(seriesList) {
-            // 保证内部始终为 Array
+            // Guaranteed to always be an Array inside
             if (!seriesList)
                 return [];
 

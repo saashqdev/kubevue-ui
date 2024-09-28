@@ -2,35 +2,35 @@
     <div :class="$style.root">
         <div :class="$style.row">
             <u-overview-item>
-                <span slot="label" :class="$style.label_success">台</span>
-                <h5 slot="title">物理机</h5>
+                <span slot="label" :class="$style.label_success">Fort Erie</span>
+                <h5 slot="title">Physical Machine</h5>
                 <template slot="content">180</template>
             </u-overview-item>
             <u-overview-item>
-                <span slot="label" :class="$style.label_info">台</span>
-                <h5 slot="title">云主机</h5>
+                <span slot="label" :class="$style.label_info">Fort Erie</span>
+                <h5 slot="title">Cloud Host</h5>
                 <span slot="content">200</span>
             </u-overview-item>
             <u-overview-item>
-                <span slot="label" :class="$style.label_primary">个</span>
-                <h5 slot="title">外网ip</h5>
+                <span slot="label" :class="$style.label_primary">Network Segment</span>
+                <h5 slot="title">Network IP</h5>
                 <span slot="content">1180</span>
             </u-overview-item>
             <u-overview-item>
-                <span slot="label" :class="$style.label_danger">个</span>
-                <h5 slot="title">卷</h5>
+                <span slot="label" :class="$style.label_danger">Volume</span>
+                <h5 slot="title">Volume</h5>
                 <span slot="content">1202</span>
             </u-overview-item>
         </div>
         <div :class="$style.row">
             <div :class="$style.title">
-                <h5 :class="$style.h5">资源趋势图</h5>
+                <h5 :class="$style.h5">Resource Trend Chart</h5>
                 <div :class="$style.btngroup">
                     <u-linear-layout gap="none">
                         <u-capsules :value="time" @select="changeTime($event.value, 'time')">
-                            <u-capsule value="day">一天</u-capsule>
-                            <u-capsule value="week">一个星期</u-capsule>
-                            <u-capsule value="month">一个月</u-capsule>
+                            <u-capsule value="day">One Day</u-capsule>
+                            <u-capsule value="week">One Week</u-capsule>
+                            <u-capsule value="month">One Month</u-capsule>
                         </u-capsules>
                     </u-linear-layout>
                 </div>
@@ -41,7 +41,7 @@
                         <template v-for="(item,index) in monitorData">
                             <div :key="index" :slot="'tooltipTemplate'+index">
                                 <p>{{ item.week }}</p>
-                                <p>云主机 {{ item.number }}</p>
+                                <p>Cloud Host {{ item.number }}</p>
                             </div>
                         </template>
                     </u-line-chart>
@@ -51,8 +51,8 @@
                         <li>
                             <h2 :class="$style.right">100</h2>
                             <h2 :class="$style.nomargin">70</h2>
-                            <small>vcpu(核)</small>
-                            <span :class="$style.right">容量</span>
+                            <small>VCPU(core)</small>
+                            <span :class="$style.right">Capacity</span>
                             <u-tooltip placement="top">
                                 <u-linear-progress :percent="70"></u-linear-progress>
                                 <div slot="content">
@@ -63,8 +63,8 @@
                         <li>
                             <h2 :class="$style.right">100</h2>
                             <h2 :class="$style.nomargin">65</h2>
-                            <small>内存(G)</small>
-                            <span :class="$style.right">容量</span>
+                            <small>Memory (G)</small>
+                            <span :class="$style.right">Capacity</span>
                             <u-tooltip placement="top">
                                 <u-linear-progress :percent="65"></u-linear-progress>
                                 <div slot="content">
@@ -75,8 +75,8 @@
                         <li>
                             <h2 :class="$style.right">100</h2>
                             <h2 :class="$style.nomargin">0</h2>
-                            <small>存储(G)</small>
-                            <span :class="$style.right">容量</span>
+                            <small>Storage(G)</small>
+                            <span :class="$style.right">Capacity</span>
                             <u-tooltip placement="top">
                                 <u-linear-progress :percent="0"></u-linear-progress>
                                 <div slot="content">
@@ -90,13 +90,13 @@
         </div>
         <div :class="$style.row">
             <div :class="$style.title">
-                <h5 :class="$style.h5">虚拟资源占比趋势图</h5>
+                <h5 :class="$style.h5">Virtual Resource Ratio Trend Chart</h5>
                 <!-- <div :class="$style.btngroup">
                     <u-linear-layout gap="none">
                         <u-capsules :value="time1" @select="changeTime($event.value, 'time1')">
-                            <u-capsule value="day">一天</u-capsule>
-                            <u-capsule value="week">一周</u-capsule>
-                            <u-capsule value="month">一个月</u-capsule>
+                            <u-capsule value="day">One   Day</u-capsule>
+                            <u-capsule value="week">One   Week</u-capsule>
+                            <u-capsule value="month">One   Month</u-capsule>
                         </u-capsules>
                     </u-linear-layout>
                 </div> -->
@@ -117,7 +117,7 @@
                         <template v-for="(item,index) in vmData">
                             <div :key="index" :slot="'tooltipTemplate'+index">
                                 <p>{{ item.week }}</p>
-                                <p>内存 {{ item.mem }}%</p>
+                                <p>Memory {{ item.mem }}%</p>
                             </div>
                         </template>
                     </u-line-chart>
@@ -127,13 +127,13 @@
                         <u-circular-specific-progress :percent="73">
                             <div>VCPU</div>
                         </u-circular-specific-progress>
-                        <span>cpu利用率</span>
+                        <span>CPU Utilization</span>
                     </span>
                    <span :class="$style.circular">
                        <u-circular-specific-progress :percent="54">
-                            <div>内存</div>
+                            <div>Memory</div>
                         </u-circular-specific-progress>
-                        <span>内存使用率</span>
+                        <span>Memory Usage</span>
                    </span>
                 </div>
             </div>
@@ -155,30 +155,30 @@ export default {
                 { week: '24:00', number: 420 },
             ],
             data2: [
-                { week: '星期一', number: 150 },
-                { week: '星期二', number: 300 },
-                { week: '星期三', number: 28 },
-                { week: '星期四', number: 200 },
-                { week: '星期五', number: 74 },
-                { week: '星期六', number: 532 },
-                { week: '星期日', number: 420 },
+                { week: 'Monday', number: 150 },
+                { week: 'Tuesday', number: 300 },
+                { week: 'Wednesday', number: 28 },
+                { week: 'Thursday', number: 200 },
+                { week: 'Friday', number: 74 },
+                { week: 'Saturday', number: 532 },
+                { week: 'Sunday', number: 420 },
             ],
             data3: [
-                { week: '1号', number: 150 },
+                { week: '1st', number: 150 },
                 { week: '3号', number: 300 },
-                { week: '5号', number: 28 },
-                { week: '7号', number: 200 },
-                { week: '9号', number: 74 },
-                { week: '11号', number: 532 },
-                { week: '13号', number: 420 },
-                { week: '15号', number: 150 },
-                { week: '17号', number: 300 },
-                { week: '19号', number: 28 },
-                { week: '21号', number: 200 },
-                { week: '23号', number: 74 },
-                { week: '15号', number: 532 },
-                { week: '27号', number: 420 },
-                { week: '30号', number: 299 },
+                { week: '5th', number: 28 },
+                { week: '7th', number: 200 },
+                { week: '9th', number: 74 },
+                { week: '11th', number: 532 },
+                { week: '13th', number: 420 },
+                { week: '15th', number: 150 },
+                { week: '17th', number: 300 },
+                { week: '19th', number: 28 },
+                { week: '21', number: 200 },
+                { week: '23', number: 74 },
+                { week: '15th', number: 532 },
+                { week: '27th', number: 420 },
+                { week: '30th', number: 299 },
             ],
             monitorData: [
                 { week: '0:00', number: 150 },
@@ -204,12 +204,12 @@ export default {
             smooth: true,
             time: 'day',
             loading: false,
-            title: '云主机总量',
-            title1: 'cpu利用率',
-            title2: '内存利用率',
-            series: [{ name: '访问量', key: 'number' }],
-            series1: [{ name: 'vcpu', key: 'vcpu' }],
-            series2: [{ name: '内存', key: 'mem' }],
+            title: 'Total Number of Cloud Hosts',
+            title1: 'CPU Utilization',
+            title2: 'Memory Utilization',
+            series: [{ name: 'Visits', key: 'number' }],
+            series1: [{ name: 'VCPU', key: 'vcpu' }],
+            series2: [{ name: 'Memory', key: 'mem' }],
             titleAlign: 'left',
         };
     },

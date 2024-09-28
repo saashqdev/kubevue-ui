@@ -6,10 +6,10 @@ export default {
         titleAlignment: { type: String, default: 'center' },
         border: { type: Boolean, default: false },
         loading: { type: Boolean, default: false },
-        loadingText: { type: String, default: '正在加载中...' },
+        loadingText: { type: String, default: 'Loading...' },
         error: { type: Boolean, default: false },
-        errorText: { type: String, default: '加载失败，请重试' },
-        emptyText: { type: String, default: '暂无数据' },
+        errorText: { type: String, default: 'Loading failed, please try again' },
+        emptyText: { type: String, default: 'No data yet' },
     },
     data() {
         return {
@@ -39,28 +39,28 @@ export default {
     },
     methods: {
         handleResize() {
-            // 判断是否会出现水平滚动条
+            // Determine whether a horizontal scroll bar will appear
             // let parentWidth = this.$el.offsetWidth;
             // let tableWidth = this.$refs.body.offsetWidth;
-            // // 初始表格是隐藏的需要特殊处理，因为此时上面两个值为0
+            // // The initial table is hidden and requires special processing, because the above two values     are 0 at this time
             // if (parentWidth === 0)
-            //     parentWidth = tableWidth = this.$refs.root.parentNode.offsetWidth;
+            // parentWidth = tableWidth = this.$refs.root.parentNode.offsetWidth;
 
-            // // 分别获取有百分比、具体数值、无 width 的 column 集合
+            // // Get column collections with percentages, specific values, and no width respectively
             // const percentColumnVMs = [];
             // const valueColumnVMs = [];
             // const noWidthColumnVMs = [];
             // this.columnVMs.forEach((columnVM) => {
-            //     if (columnVM.tempWidth && columnVM.tempWidth.endsWith('%'))
-            //         percentColumnVMs.push(columnVM);
-            //     else if (columnVM.tempWidth)
-            //         valueColumnVMs.push(columnVM);
-            //     else
-            //         noWidthColumnVMs.push(columnVM);
+            // if (columnVM.tempWidth && columnVM.tempWidth.endsWith('%'))
+            // percentColumnVMs.push(columnVM);
+            // else if (columnVM.tempWidth)
+            // valueColumnVMs.push(columnVM);
+            //else
+            // noWidthColumnVMs.push(columnVM);
             // });
 
-            // let remainedWidth = 0;
-            // // 全部都是百分数
+            // remained letWidth = 0;
+            // // All are percentages
             // if (percentColumnVMs.length === this.columnVMs.length) {
             //     let sumWidth = this.columnVMs.reduce((prev, curr) => prev + parseFloat(curr.tempWidth), 0);
             //     if (sumWidth !== 100) {

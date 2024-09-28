@@ -3,7 +3,7 @@ export default {
     childName: 'u-action',
     props: {
         maxCount: { type: Number, default: 3 },
-        menuTitle: { type: String, default: '更多' },
+        menuTitle: { type: String, default: 'More' },
         placement: { type: String, default: 'bottom-end' },
     },
     data() {
